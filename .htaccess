@@ -1,0 +1,144 @@
+<IfModule mod_rewrite.c>
+
+    Options +FollowSymlinks
+
+    RewriteEngine On
+
+</IfModule>
+
+ 
+
+<IfModule mod_rewrite.c>    
+
+    RewriteCond %{REQUEST_URI} ^/(admin)
+
+    RewriteRule ^admin/assets/(.*)$ backend/web/assets/$1 [L]
+
+    RewriteRule ^admin/css/(.*)$ backend/web/css/$1 [L]
+
+    RewriteRule ^admin/js/(.*)$ backend/web/js/$1 [L]
+
+    RewriteCond %{REQUEST_URI} !^/backend/web/(assets|js|css|js)/
+
+    RewriteCond %{REQUEST_URI} ^/(admin)
+
+    RewriteRule ^.*$ backend/web/index.php [L]
+
+    RewriteCond %{REQUEST_URI} ^/(assets|css|js|images)
+
+    RewriteRule ^assets/(.*)$ frontend/web/assets/$1 [L]
+
+    RewriteRule ^css/(.*)$ frontend/web/css/$1 [L]
+
+    RewriteRule ^js/(.*)$ frontend/web/js/$1 [L]
+
+    RewriteRule ^images/(.*)$ frontend/web/images/$1 [L]
+
+    RewriteRule ^(.*)$ frontend/web/$1 [L]
+
+    RewriteCond %{REQUEST_URI} !^/(frontend|backend)/web/(assets|css|js)/
+
+    RewriteCond %{REQUEST_URI} !index.php
+
+    RewriteCond %{REQUEST_FILENAME} !-f [OR]
+
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    RewriteRule ^.*$ frontend/web/index.php
+
+</IfModule>
+
+
+
+# BEGIN cPanel-generated php ini directives, do not edit
+
+# Manual editing of this file may result in unexpected behavior.
+
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+
+<IfModule php5_module>
+
+   php_flag asp_tags Off
+
+   php_flag display_errors Off
+
+   php_value max_execution_time 120
+
+   php_value max_input_time 60
+
+   php_value max_input_vars 1000
+
+   php_value memory_limit 512M
+
+   php_value post_max_size 128M
+
+   php_value session.gc_maxlifetime 1440
+
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php56"
+
+   php_value upload_max_filesize 64M
+
+   php_flag zlib.output_compression Off
+
+</IfModule>
+
+<IfModule lsapi_module>
+
+   php_flag asp_tags Off
+
+   php_flag display_errors Off
+
+   php_value max_execution_time 120
+
+   php_value max_input_time 60
+
+   php_value max_input_vars 1000
+
+   php_value memory_limit 512M
+
+   php_value post_max_size 128M
+
+   php_value session.gc_maxlifetime 1440
+
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php56"
+
+   php_value upload_max_filesize 64M
+
+   php_flag zlib.output_compression Off
+
+</IfModule>
+
+# END cPanel-generated php ini directives, do not edit
+
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php7_module>
+   php_flag display_errors Off
+   php_value max_execution_time 120
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 1024M
+   php_value post_max_size 128M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php56"
+   php_value upload_max_filesize 64M
+   php_flag zlib.output_compression On
+</IfModule>
+<IfModule lsapi_module>
+   php_flag display_errors Off
+   php_value max_execution_time 120
+   php_value max_input_time 60
+   php_value max_input_vars 1000
+   php_value memory_limit 1024M
+   php_value post_max_size 128M
+   php_value session.gc_maxlifetime 1440
+   php_value session.save_path "/var/cpanel/php/sessions/ea-php56"
+   php_value upload_max_filesize 64M
+   php_flag zlib.output_compression On
+</IfModule>
+# END cPanel-generated php ini directives, do not edit

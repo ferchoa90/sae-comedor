@@ -1,0 +1,127 @@
+@media screen and (max-width: 1700px){
+  .container-trivia {
+    width: 100%;
+    margin: 10px 0%;
+  }
+}
+@media screen and (max-width: 1366px){
+  #container-registro {
+    width: 50%;
+    margin: 20px 25%;
+  }
+}
+@media screen and (max-width: 1280px){
+  .cont-page {
+      width: 70%;
+      margin: 0 2%;
+      float: left;
+  }
+}
+@media screen and (max-width: 1024px){
+  .cont-page {
+      width: 90%;
+      margin: 0 5%;
+  }
+  header{
+    display: block;
+  }
+  #logo-responsive {
+    display: block;
+	}
+}
+@media screen and (max-width: 768px){
+  .cont-page {
+    width: 98%;
+    margin: 0 1%;
+  }
+  #container-registro {
+    width: 70%;
+    margin: 20px 15%;
+  }
+  .banner-publicidad{
+    width: 96%;
+    margin:10px auto 30px auto;
+  }
+  .btn-home{
+    width: 48%;
+    float: left;
+    margin:0 1%;
+  }
+  .container-question p {
+    font-size: 1rem;
+  }
+  .check-left .checkmark{
+    left: 85%;
+  }
+  .cont-games button {
+    width: 50%;
+    margin: 15px 25% 60px 25%;
+  }
+}
+@media screen and (max-width: 600px){
+  .team img{
+    width: 60px;
+    margin:0;
+  }
+  .border-menu {
+    padding: 20px 10px;
+  }
+  body {
+    font-size: 0.8rem;
+  }
+  .btn-home button {
+    width: 70%;
+    margin: 15px 15% 30px 15%;
+  }
+}
+@media screen and (max-width: 500px){
+  .cont-games h3 img{
+	width:25%;
+  }
+  #container-registro {
+    width: 96%;
+    margin: 20px 2%;
+  }
+  #logo-home {
+    width: 150px;
+  }
+  .btn-home p{
+    display: none;
+  }
+  .check-left .checkmark{
+    left: 75%;
+  }
+  .marcador{
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .check-left{
+    padding-right: 30px;
+  }
+  .check-right{
+    padding-left: 30px;
+  }
+  .cont-games button {
+    width: 70%;
+    margin: 15px 15% 60px 15%;
+  }
+  #logo-responsive {
+    width:80px;
+  }
+  .btn-play {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 450px){
+  .team-c, .team-right span{
+     float: right;
+     width: 100%;
+     text-align: center;
+     padding: 4px 0;
+  }
+  .team-left img, .team-right img{
+    width: 61px;
+    margin: 0 auto;
+    display: block;
+  }
+}

@@ -1,0 +1,1352 @@
+[07-Oct-2019 09:29:32 UTC] An Error occurred while handling another error:
+exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php:687
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(881): yii\db\Schema->quoteValue('0')
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(209): yii\db\Connection->quoteValue('0')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1099): yii\db\Command->getRawSql()
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#12 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#18 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#19 [internal function]: yii\web\ErrorAction->run()
+#20 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#21 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#22 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#23 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#24 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#25 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#26 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php:624
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(881): yii\db\Schema->quoteValue('0')
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(209): yii\db\Connection->quoteValue('0')
+#5 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1099): yii\db\Command->getRawSql()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#10 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#12 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#17 [internal function]: yii\web\ErrorAction->run()
+#18 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#19 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#20 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#21 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#22 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#23 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#24 {main}
+Additional Information:
+
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "admin/".' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('admin/', Array)
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XZsFe0D0hXRWNI4WLpQShwAAAAY',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/index.php/admin/',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'https://todosvuelven.com.ec/index.php/admin/',
+    'REDIRECT_REDIRECT_HTTPS' => 'on',
+    'REDIRECT_REDIRECT_SSL_TLS_SNI' => 'todosvuelven.com.ec',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XZsFe0D0hXRWNI4WLpQShwAAAAY',
+    'REDIRECT_SCRIPT_URL' => '/index.php/admin/',
+    'REDIRECT_SCRIPT_URI' => 'https://todosvuelven.com.ec/index.php/admin/',
+    'REDIRECT_HTTPS' => 'on',
+    'REDIRECT_SSL_TLS_SNI' => 'todosvuelven.com.ec',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XZsFe0D0hXRWNI4WLpQShwAAAAY',
+    'SCRIPT_URL' => '/index.php/admin/',
+    'SCRIPT_URI' => 'https://todosvuelven.com.ec/index.php/admin/',
+    'HTTPS' => 'on',
+    'SSL_TLS_SNI' => 'todosvuelven.com.ec',
+    'HTTP_TE' => 'deflate,gzip;q=0.3',
+    'HTTP_KEEP_ALIVE' => '300',
+    'HTTP_CONNECTION' => 'Keep-Alive, TE',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:62.0) Gecko/20100101 Firefox/62.0',
+    'HTTP_X_HTTPS' => '1',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '443',
+    'REMOTE_ADDR' => '185.128.26.20',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'https',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'REMOTE_PORT' => '48846',
+    'REDIRECT_URL' => '/frontend/web/index.php/admin/',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/index.php/admin/',
+    'SCRIPT_NAME' => '/frontend/web/index.php',
+    'PATH_INFO' => '/admin/',
+    'PATH_TRANSLATED' => '/home/todosvuelven/public_html/admin/',
+    'ORIG_PATH_INFO' => '/frontend/web/index.php/admin/',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/frontend/web/index.php/admin/',
+    'PHP_SELF' => '/frontend/web/index.php/admin/',
+    'REQUEST_TIME_FLOAT' => 1570440571.9818489551544189453125,
+    'REQUEST_TIME' => 1570440571,
+    'argv' => [],
+    'argc' => 0,
+]
+[17-Nov-2019 15:47:57 UTC] An Error occurred while handling another error:
+exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#12 [internal function]: yii\web\ErrorAction->run()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#18 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'
+The SQL being executed was: SELECT * FROM `productos` WHERE (`isDeleted`='0') AND (`estado`='ACTIVO') ORDER BY `orden` LIMIT 6' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#12 [internal function]: yii\web\ErrorAction->run()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#18 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'estado' in 'where clause'
+)
+
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "images/articulos/20191117020216-coca_cola_lata.jpg".' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('images/articulo...', Array)
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XdFrrd-Bxksi5i1@0-DZBgAAAAU',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/frontend/web/images/articulos/20191117020216-coca_cola_lata.jpg',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/20191117020216-coca_cola_lata.jpg',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XdFrrd-Bxksi5i1@0-DZBgAAAAU',
+    'REDIRECT_SCRIPT_URL' => '/frontend/web/images/articulos/20191117020216-coca_cola_lata.jpg',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/20191117020216-coca_cola_lata.jpg',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XdFrrd-Bxksi5i1@0-DZBgAAAAU',
+    'SCRIPT_URL' => '/frontend/web/images/articulos/20191117020216-coca_cola_lata.jpg',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/20191117020216-coca_cola_lata.jpg',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_PRAGMA' => 'no-cache',
+    'HTTP_CACHE_CONTROL' => 'no-cache',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/productos/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => 'advanced-backend=ku322cv7aofc6lcjghs7k90q10; _identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=4e2932766a0be030401b6f967fc91865a817daf4b83d7516a766fb9de0b0254fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22yQK6XVvJdeLU_UVlyCXkq9YYdVJ_1yth%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '66.30.106.163',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'REMOTE_PORT' => '9129',
+    'REDIRECT_URL' => '/frontend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/frontend/web/images/articulos/20191117020216-coca_cola_lata.jpg',
+    'SCRIPT_NAME' => '/frontend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/frontend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1574005677.37372493743896484375,
+    'REQUEST_TIME' => 1574005677,
+    'argv' => [],
+    'argc' => 0,
+]
+[17-Nov-2019 15:47:57 UTC] An Error occurred while handling another error:
+exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#12 [internal function]: yii\web\ErrorAction->run()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#18 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'
+The SQL being executed was: SELECT * FROM `productos` WHERE (`isDeleted`='0') AND (`estado`='ACTIVO') ORDER BY `orden` LIMIT 6' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#12 [internal function]: yii\web\ErrorAction->run()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#18 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'estado' in 'where clause'
+)
+
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "images/articulos/gelpenxtremesmooth.png".' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('images/articulo...', Array)
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XdFrrYBMD50ss0thkxOGGgAAAAI',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XdFrrYBMD50ss0thkxOGGgAAAAI',
+    'REDIRECT_SCRIPT_URL' => '/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XdFrrYBMD50ss0thkxOGGgAAAAI',
+    'SCRIPT_URL' => '/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_PRAGMA' => 'no-cache',
+    'HTTP_CACHE_CONTROL' => 'no-cache',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/productos/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => 'advanced-backend=ku322cv7aofc6lcjghs7k90q10; _identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=4e2932766a0be030401b6f967fc91865a817daf4b83d7516a766fb9de0b0254fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22yQK6XVvJdeLU_UVlyCXkq9YYdVJ_1yth%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '66.30.106.163',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'REMOTE_PORT' => '9130',
+    'REDIRECT_URL' => '/frontend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'SCRIPT_NAME' => '/frontend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/frontend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1574005677.37644100189208984375,
+    'REQUEST_TIME' => 1574005677,
+    'argv' => [],
+    'argc' => 0,
+]
+[17-Nov-2019 15:48:40 UTC] An Error occurred while handling another error:
+exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#12 [internal function]: yii\web\ErrorAction->run()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#18 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'
+The SQL being executed was: SELECT * FROM `productos` WHERE (`isDeleted`='0') AND (`estado`='ACTIVO') ORDER BY `orden` LIMIT 6' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#12 [internal function]: yii\web\ErrorAction->run()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#18 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'estado' in 'where clause'
+)
+
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "images/articulos/gelpenxtremesmooth.png".' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('images/articulo...', Array)
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XdFr2EnraROtG1WVa5SDOAAAAAA',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XdFr2EnraROtG1WVa5SDOAAAAAA',
+    'REDIRECT_SCRIPT_URL' => '/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XdFr2EnraROtG1WVa5SDOAAAAAA',
+    'SCRIPT_URL' => '/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_PRAGMA' => 'no-cache',
+    'HTTP_CACHE_CONTROL' => 'no-cache',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/productos/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => 'advanced-backend=ku322cv7aofc6lcjghs7k90q10; _identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=4e2932766a0be030401b6f967fc91865a817daf4b83d7516a766fb9de0b0254fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22yQK6XVvJdeLU_UVlyCXkq9YYdVJ_1yth%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '66.30.106.163',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'REMOTE_PORT' => '9209',
+    'REDIRECT_URL' => '/frontend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/frontend/web/images/articulos/gelpenxtremesmooth.png',
+    'SCRIPT_NAME' => '/frontend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/frontend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1574005720.9200179576873779296875,
+    'REQUEST_TIME' => 1574005720,
+    'argv' => [],
+    'argc' => 0,
+]
+[25-Feb-2020 01:27:46 UTC] An Error occurred while handling another error:
+exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#12 [internal function]: yii\web\ErrorAction->run()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#18 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'
+The SQL being executed was: SELECT * FROM `productos` WHERE (`isDeleted`='0') AND (`estado`='ACTIVO') ORDER BY `orden` LIMIT 6' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#12 [internal function]: yii\web\ErrorAction->run()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#18 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'estado' in 'where clause'
+)
+
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "images/articulos/undefined".' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('images/articulo...', Array)
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XlR4Ev0eSZlqfQRY4Nv0GQAAAAg',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/frontend/web/images/articulos/undefined',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/undefined',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XlR4Ev0eSZlqfQRY4Nv0GQAAAAg',
+    'REDIRECT_SCRIPT_URL' => '/frontend/web/images/articulos/undefined',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/undefined',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XlR4Ev0eSZlqfQRY4Nv0GQAAAAg',
+    'SCRIPT_URL' => '/frontend/web/images/articulos/undefined',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/undefined',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/inventario/nuevo',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => 'advanced-backend=kd6bs51ggc1g7vh9hg40klld44; _identity-backend=0f78259cf15ef677654527fbff7cb4a8f1a71775f46011ab240dc109b8aa72cba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A79%3A%22%5B%7B%22id%22%3A10001%2C%22cedula%22%3A%220911969095%22%7D%2C%22NSN-4dv8OL3HBjalR3rQTTEhwQpLh8xf%22%2C2592000%5D%22%3B%7D; _csrf-backend=3cec78feb3965e7c310214d2fc9590b36885511d1ec41497deefd8cb8e575023a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22raQMos6PlHObRHYvhWTAsbuy4RLp0Ahh%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.48.237',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'REMOTE_PORT' => '3215',
+    'REDIRECT_URL' => '/frontend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/frontend/web/images/articulos/undefined',
+    'SCRIPT_NAME' => '/frontend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/frontend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1582594066.316112995147705078125,
+    'REQUEST_TIME' => 1582594066,
+    'argv' => [],
+    'argc' => 0,
+]
+[25-Feb-2020 01:29:56 UTC] An Error occurred while handling another error:
+exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#12 [internal function]: yii\web\ErrorAction->run()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#18 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'
+The SQL being executed was: SELECT * FROM `productos` WHERE (`isDeleted`='0') AND (`estado`='ACTIVO') ORDER BY `orden` LIMIT 6' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#12 [internal function]: yii\web\ErrorAction->run()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#18 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'estado' in 'where clause'
+)
+
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "images/articulos/undefined".' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('images/articulo...', Array)
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XlR4lFuBuI0XDMuAK6mX8wAAAAY',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/frontend/web/images/articulos/undefined',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/undefined',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XlR4lFuBuI0XDMuAK6mX8wAAAAY',
+    'REDIRECT_SCRIPT_URL' => '/frontend/web/images/articulos/undefined',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/undefined',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XlR4lFuBuI0XDMuAK6mX8wAAAAY',
+    'SCRIPT_URL' => '/frontend/web/images/articulos/undefined',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/undefined',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_PRAGMA' => 'no-cache',
+    'HTTP_CACHE_CONTROL' => 'no-cache',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/inventario/nuevo',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => '_identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=08c3cd649d3e1e780826354ca0c6a11c7f86a59f7558284abc44eeb781431842a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22sGAviua8frtSncwvX1qFGK0nnOC5auBE%22%3B%7D; advanced-backend=ofgbbjp8st4m0ptktfe6d0bca0',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.4',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'REMOTE_PORT' => '52317',
+    'REDIRECT_URL' => '/frontend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/frontend/web/images/articulos/undefined',
+    'SCRIPT_NAME' => '/frontend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/frontend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1582594196.2588150501251220703125,
+    'REQUEST_TIME' => 1582594196,
+    'argv' => [],
+    'argc' => 0,
+]
+[25-Feb-2020 01:30:17 UTC] An Error occurred while handling another error:
+exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php:1258
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1258): PDOStatement->execute()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#12 [internal function]: yii\web\ErrorAction->run()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#18 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#19 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'estado' in 'where clause'
+The SQL being executed was: SELECT * FROM `productos` WHERE (`isDeleted`='0') AND (`estado`='ACTIVO') ORDER BY `orden` LIMIT 6' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Schema.php:664
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1263): yii\db\Schema->convertException(Object(PDOException), 'SELECT * FROM `...')
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1148): yii\db\Command->internalExecute('SELECT * FROM `...')
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#5 /home/todosvuelven/public_html/frontend/views/layouts/main.php(19): yii\db\ActiveQuery->all()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(frontend\controllers\SiteController))
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#12 [internal function]: yii\web\ErrorAction->run()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#18 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#19 {main}
+Additional Information:
+Array
+(
+    [0] => 42S22
+    [1] => 1054
+    [2] => Unknown column 'estado' in 'where clause'
+)
+
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request "images/articulos/undefined".' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('images/articulo...', Array)
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XlR4qL78YfZzaSWvmFru8QAAAAQ',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/frontend/web/images/articulos/undefined',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/undefined',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XlR4qL78YfZzaSWvmFru8QAAAAQ',
+    'REDIRECT_SCRIPT_URL' => '/frontend/web/images/articulos/undefined',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/undefined',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XlR4qL78YfZzaSWvmFru8QAAAAQ',
+    'SCRIPT_URL' => '/frontend/web/images/articulos/undefined',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/images/articulos/undefined',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_PRAGMA' => 'no-cache',
+    'HTTP_CACHE_CONTROL' => 'no-cache',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    'HTTP_ACCEPT' => 'image/webp,image/apng,image/*,*/*;q=0.8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/inventario/nuevo',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => '_identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=08c3cd649d3e1e780826354ca0c6a11c7f86a59f7558284abc44eeb781431842a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22sGAviua8frtSncwvX1qFGK0nnOC5auBE%22%3B%7D; advanced-backend=ofgbbjp8st4m0ptktfe6d0bca0',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.4',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'REMOTE_PORT' => '7701',
+    'REDIRECT_URL' => '/frontend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/frontend/web/images/articulos/undefined',
+    'SCRIPT_NAME' => '/frontend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/frontend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1582594216.960628986358642578125,
+    'REQUEST_TIME' => 1582594216,
+    'argv' => [],
+    'argc' => 0,
+]
+[02-Mar-2020 13:36:51 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/frontend/controllers/SiteController.php on line 623.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/frontend/controllers/SiteController.php on line 623.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'Xl0L8xyAUhibs08-XTekVgAAAAA',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/frontend/web/site/ingresarfactura',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/site/ingresarfactura',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'Xl0L8xyAUhibs08-XTekVgAAAAA',
+    'REDIRECT_SCRIPT_URL' => '/frontend/web/site/ingresarfactura',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/site/ingresarfactura',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'Xl0L8xyAUhibs08-XTekVgAAAAA',
+    'SCRIPT_URL' => '/frontend/web/site/ingresarfactura',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/site/ingresarfactura',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '434',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/frontend/web/site/facturar',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => 'sesion=1583117057370-91284851; _ga=GA1.3.1581661431.1583117058; _gid=GA1.3.1903814024.1583117058; advanced-frontend=ipgbdqvmudlamhmvuj8m79a235; _csrf-frontend=9c5630e359a8d923abc94b87a6cc51f44eb705fb51af1482d6b33879c6fd880da%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22IZwBlkV_4x6MtzoqSyFSlC2jaPo6pxuv%22%3B%7D; advanced-backend=dpqat49dtskei2n3lf6voo3kc6; _identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=ff1131614ae127621d4fb5d94c88fd3facb76ba48750839a1314c358f6faee2aa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%226tK_ELpt-EjFAQYhJyLHuKe9x8Js-b9C%22%3B%7D; _gat_gtag_UA_92085539_1=1',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.48.237',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'REMOTE_PORT' => '33889',
+    'REDIRECT_URL' => '/frontend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/frontend/web/site/ingresarfactura',
+    'SCRIPT_NAME' => '/frontend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/frontend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1583156211.561088085174560546875,
+    'REQUEST_TIME' => 1583156211,
+    'argv' => [],
+    'argc' => 0,
+]
+[02-Mar-2020 13:37:58 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/frontend/controllers/SiteController.php on line 623.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/frontend/controllers/SiteController.php on line 623.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'Xl0MNpLpHRvfXMzMYs1JXwAAAAI',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/frontend/web/site/ingresarfactura',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/site/ingresarfactura',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'Xl0MNpLpHRvfXMzMYs1JXwAAAAI',
+    'REDIRECT_SCRIPT_URL' => '/frontend/web/site/ingresarfactura',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/site/ingresarfactura',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'Xl0MNpLpHRvfXMzMYs1JXwAAAAI',
+    'SCRIPT_URL' => '/frontend/web/site/ingresarfactura',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/site/ingresarfactura',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '434',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/frontend/web/site/facturar',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => 'sesion=1583117057370-91284851; _ga=GA1.3.1581661431.1583117058; _gid=GA1.3.1903814024.1583117058; advanced-frontend=ipgbdqvmudlamhmvuj8m79a235; _csrf-frontend=9c5630e359a8d923abc94b87a6cc51f44eb705fb51af1482d6b33879c6fd880da%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22IZwBlkV_4x6MtzoqSyFSlC2jaPo6pxuv%22%3B%7D; advanced-backend=dpqat49dtskei2n3lf6voo3kc6; _identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=ff1131614ae127621d4fb5d94c88fd3facb76ba48750839a1314c358f6faee2aa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%226tK_ELpt-EjFAQYhJyLHuKe9x8Js-b9C%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.48.237',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'REMOTE_PORT' => '8131',
+    'REDIRECT_URL' => '/frontend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/frontend/web/site/ingresarfactura',
+    'SCRIPT_NAME' => '/frontend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/frontend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1583156278.1402919292449951171875,
+    'REQUEST_TIME' => 1583156278,
+    'argv' => [],
+    'argc' => 0,
+]
+[03-Mar-2020 13:06:33 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/frontend/controllers/SiteController.php on line 624.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/frontend/controllers/SiteController.php on line 624.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'Xl5WWURJizA@qeIJdns-fgAAAAk',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/frontend/web/site/ingresarfactura',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/site/ingresarfactura',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'Xl5WWURJizA@qeIJdns-fgAAAAk',
+    'REDIRECT_SCRIPT_URL' => '/frontend/web/site/ingresarfactura',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/site/ingresarfactura',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'Xl5WWURJizA@qeIJdns-fgAAAAk',
+    'SCRIPT_URL' => '/frontend/web/site/ingresarfactura',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/frontend/web/site/ingresarfactura',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '480',
+    'HTTP_PRAGMA' => 'no-cache',
+    'HTTP_CACHE_CONTROL' => 'no-cache',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/frontend/web/site/facturar',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => '_identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=08c3cd649d3e1e780826354ca0c6a11c7f86a59f7558284abc44eeb781431842a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22sGAviua8frtSncwvX1qFGK0nnOC5auBE%22%3B%7D; advanced-frontend=on5jgcbcpjaqs1bc73tub3skl3; _csrf-frontend=927a2ff50159e61f8cbded928f91e16eef267e035939d2b3ed1ddd5e7b3aa38ba%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22l9WTcOAHocE0eaa8HTirMNhgVrMzsOBH%22%3B%7D; _ga=GA1.3.1221076256.1582654241; _gid=GA1.3.711893772.1583202945; sesion=1583202944607-54996136; advanced-backend=m4r22pierpoiqtv96b6ns76vm0',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.4',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'REMOTE_PORT' => '58899',
+    'REDIRECT_URL' => '/frontend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/frontend/web/site/ingresarfactura',
+    'SCRIPT_NAME' => '/frontend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/frontend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/frontend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1583240793.5919139385223388671875,
+    'REQUEST_TIME' => 1583240793,
+    'argv' => [],
+    'argc' => 0,
+]
+[24-Oct-2020 19:24:02 UTC] An Error occurred while handling another error:
+PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php:687
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#3 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(881): yii\db\Schema->quoteValue('WEB')
+#6 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(209): yii\db\Connection->quoteValue('WEB')
+#7 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(1099): yii\db\Command->getRawSql()
+#8 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#10 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#11 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#12 /home/agtecnologyec/public_html/facturacion/frontend/views/layouts/main.php(110): yii\db\ActiveQuery->all()
+#13 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/View.php(336): require('/home/agtecnolo...')
+#14 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/agtecnolo...', Array)
+#15 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/agtecnolo...', Array, Object(frontend\controllers\SiteController))
+#16 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#17 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#18 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#19 [internal function]: yii\web\ErrorAction->run()
+#20 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#21 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#22 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#23 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#24 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#25 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#26 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php:624
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#1 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(881): yii\db\Schema->quoteValue('WEB')
+#4 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(209): yii\db\Connection->quoteValue('WEB')
+#5 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(1099): yii\db\Command->getRawSql()
+#6 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#8 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#9 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#10 /home/agtecnologyec/public_html/facturacion/frontend/views/layouts/main.php(110): yii\db\ActiveQuery->all()
+#11 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/View.php(336): require('/home/agtecnolo...')
+#12 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/agtecnolo...', Array)
+#13 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/agtecnolo...', Array, Object(frontend\controllers\SiteController))
+#14 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#15 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#16 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#17 [internal function]: yii\web\ErrorAction->run()
+#18 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#19 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#20 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#21 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#22 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#23 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#24 {main}
+Additional Information:
+
+Previous exception:
+yii\base\InvalidRouteException: Unable to resolve the request "images/favicon.ico". in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('images/favicon....', Array)
+#1 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/agtecnologyec/public_html/facturacion/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/agtecnologyec/public_html/facturacion/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'X5R-UooTYV37tCQYqgFFcAAAAAk',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/frontend/web/images/favicon.ico',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/frontend/web/images/favicon.ico',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'X5R-UooTYV37tCQYqgFFcAAAAAk',
+    'REDIRECT_SCRIPT_URL' => '/frontend/web/images/favicon.ico',
+    'REDIRECT_SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/frontend/web/images/favicon.ico',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php72',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'X5R-UooTYV37tCQYqgFFcAAAAAk',
+    'SCRIPT_URL' => '/frontend/web/images/favicon.ico',
+    'SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/frontend/web/images/favicon.ico',
+    'HTTP_HOST' => 'facturacion.agtecnologyec.com',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/*,*/*;q=0.8',
+    'HTTP_REFERER' => 'http://facturacion.agtecnologyec.com/frontend/web/site/login',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => '_csrf-frontend=69a46c59e6f338866a9ad9d938a3ffb8171e247cf6030eefac0db694d4402ea6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22fqwy_QnlS9Axxt9iw_VL9O5_W5Cj8tYq%22%3B%7D; _ga=GA1.2.515890425.1603567439; _gid=GA1.2.1048328902.1603567439; _gat_gtag_UA_92085539_1=1',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'facturacion.agtecnologyec.com',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.3',
+    'DOCUMENT_ROOT' => '/home/agtecnologyec/public_html/facturacion',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@facturacion.agtecnologyec.com',
+    'SCRIPT_FILENAME' => '/home/agtecnologyec/public_html/facturacion/frontend/web/index.php',
+    'REMOTE_PORT' => '58584',
+    'REDIRECT_URL' => '/frontend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/frontend/web/images/favicon.ico',
+    'SCRIPT_NAME' => '/frontend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php72',
+    'ORIG_PATH_INFO' => '/frontend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/agtecnologyec/public_html/facturacion/frontend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php72',
+    'PHP_SELF' => '/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1603567442.2504940032958984375,
+    'REQUEST_TIME' => 1603567442,
+    'argv' => [],
+    'argc' => 0,
+]
+[24-Oct-2020 19:24:02 UTC] An Error occurred while handling another error:
+PDOException: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php:687
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#3 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(881): yii\db\Schema->quoteValue('WEB')
+#6 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(209): yii\db\Connection->quoteValue('WEB')
+#7 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(1099): yii\db\Command->getRawSql()
+#8 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#10 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#11 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#12 /home/agtecnologyec/public_html/facturacion/frontend/views/layouts/main.php(110): yii\db\ActiveQuery->all()
+#13 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/View.php(336): require('/home/agtecnolo...')
+#14 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/agtecnolo...', Array)
+#15 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/agtecnolo...', Array, Object(frontend\controllers\SiteController))
+#16 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#17 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#18 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#19 [internal function]: yii\web\ErrorAction->run()
+#20 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#21 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#22 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#23 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#24 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#25 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#26 {main}
+
+Next yii\db\Exception: SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO) in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php:624
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#1 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Connection.php(881): yii\db\Schema->quoteValue('WEB')
+#4 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(209): yii\db\Connection->quoteValue('WEB')
+#5 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(1099): yii\db\Command->getRawSql()
+#6 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#8 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#9 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#10 /home/agtecnologyec/public_html/facturacion/frontend/views/layouts/main.php(110): yii\db\ActiveQuery->all()
+#11 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/View.php(336): require('/home/agtecnolo...')
+#12 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/agtecnolo...', Array)
+#13 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/agtecnolo...', Array, Object(frontend\controllers\SiteController))
+#14 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<div class="sit...')
+#15 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#16 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#17 [internal function]: yii\web\ErrorAction->run()
+#18 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#19 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#20 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#21 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#22 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#23 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#24 {main}
+Additional Information:
+
+Previous exception:
+yii\base\InvalidRouteException: Unable to resolve the request "site/images/favicon.ico". in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Module.php:537
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('site/images/fav...', Array)
+#1 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 /home/agtecnologyec/public_html/facturacion/frontend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/agtecnologyec/public_html/facturacion/frontend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'X5R-UmwhKGZaJryQqIGyvQAAAAc',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/frontend/web/site/images/favicon.ico',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/frontend/web/site/images/favicon.ico',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'X5R-UmwhKGZaJryQqIGyvQAAAAc',
+    'REDIRECT_SCRIPT_URL' => '/frontend/web/site/images/favicon.ico',
+    'REDIRECT_SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/frontend/web/site/images/favicon.ico',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php72',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'X5R-UmwhKGZaJryQqIGyvQAAAAc',
+    'SCRIPT_URL' => '/frontend/web/site/images/favicon.ico',
+    'SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/frontend/web/site/images/favicon.ico',
+    'HTTP_HOST' => 'facturacion.agtecnologyec.com',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+    'HTTP_ACCEPT' => 'image/avif,image/webp,image/apng,image/*,*/*;q=0.8',
+    'HTTP_REFERER' => 'http://facturacion.agtecnologyec.com/frontend/web/site/login',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => '_csrf-frontend=69a46c59e6f338866a9ad9d938a3ffb8171e247cf6030eefac0db694d4402ea6a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22fqwy_QnlS9Axxt9iw_VL9O5_W5Cj8tYq%22%3B%7D; _ga=GA1.2.515890425.1603567439; _gid=GA1.2.1048328902.1603567439; _gat_gtag_UA_92085539_1=1; advanced-frontend=239a4d796d2128dd5fcd77487b61ff20',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'facturacion.agtecnologyec.com',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.3',
+    'DOCUMENT_ROOT' => '/home/agtecnologyec/public_html/facturacion',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@facturacion.agtecnologyec.com',
+    'SCRIPT_FILENAME' => '/home/agtecnologyec/public_html/facturacion/frontend/web/index.php',
+    'REMOTE_PORT' => '16565',
+    'REDIRECT_URL' => '/frontend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/frontend/web/site/images/favicon.ico',
+    'SCRIPT_NAME' => '/frontend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php72',
+    'ORIG_PATH_INFO' => '/frontend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/agtecnologyec/public_html/facturacion/frontend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php72',
+    'PHP_SELF' => '/frontend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1603567442.5032389163970947265625,
+    'REQUEST_TIME' => 1603567442,
+    'argv' => [],
+    'argc' => 0,
+]
+[07-Jan-2021 03:11:48 UTC] PHP Warning:  require(/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php): failed to open stream: No such file or directory in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 03:11:48 UTC] PHP Fatal error:  require(): Failed opening required '/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 03:11:52 UTC] PHP Warning:  require(/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php): failed to open stream: No such file or directory in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 03:11:52 UTC] PHP Fatal error:  require(): Failed opening required '/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 03:11:53 UTC] PHP Warning:  require(/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php): failed to open stream: No such file or directory in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 03:11:53 UTC] PHP Fatal error:  require(): Failed opening required '/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 03:11:56 UTC] PHP Warning:  require(/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php): failed to open stream: No such file or directory in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 03:11:56 UTC] PHP Fatal error:  require(): Failed opening required '/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 14:09:52 UTC] PHP Warning:  require(/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php): failed to open stream: No such file or directory in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 14:09:52 UTC] PHP Fatal error:  require(): Failed opening required '/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 14:09:54 UTC] PHP Warning:  require(/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php): failed to open stream: No such file or directory in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 14:09:54 UTC] PHP Fatal error:  require(): Failed opening required '/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 14:09:55 UTC] PHP Warning:  require(/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php): failed to open stream: No such file or directory in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6
+[07-Jan-2021 14:09:55 UTC] PHP Fatal error:  require(): Failed opening required '/home/agtecnologyec/public_html/facturacion/frontend/web/../../vendor/yiisoft/yii2/Yii.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/agtecnologyec/public_html/facturacion/frontend/web/index.php on line 6

@@ -1,0 +1,1853 @@
+[17-Nov-2019 15:08:01 UTC] An Error occurred while handling another error:
+exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php:687
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(687): PDO->__construct('mysql:host=loca...', 'root', '', NULL)
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(613): yii\db\Connection->createPdoInstance()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#5 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(881): yii\db\Schema->quoteValue('WEB')
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(209): yii\db\Connection->quoteValue('WEB')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1099): yii\db\Command->getRawSql()
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->logQuery('yii\\db\\Command:...')
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#10 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#12 /home/todosvuelven/public_html/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php(23): yii\db\ActiveQuery->all()
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#14 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/todosvuel...', Array, NULL)
+#16 /home/todosvuelven/public_html/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/main.php(51): yii\base\View->render('left.php', Array)
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#18 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#19 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(backend\controllers\SiteController))
+#20 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<section class=...')
+#21 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#22 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#23 [internal function]: yii\web\ErrorAction->run()
+#24 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#25 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#26 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#27 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#28 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#29 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#30 {main}
+
+Next exception 'yii\db\Exception' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php:624
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(996): yii\db\Connection->open()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(983): yii\db\Connection->getMasterPdo()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Schema.php(463): yii\db\Connection->getSlavePdo()
+#3 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Connection.php(881): yii\db\Schema->quoteValue('WEB')
+#4 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(209): yii\db\Connection->quoteValue('WEB')
+#5 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1099): yii\db\Command->getRawSql()
+#6 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(1120): yii\db\Command->logQuery('yii\\db\\Command:...')
+#7 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Command.php(399): yii\db\Command->queryInternal('fetchAll', NULL)
+#8 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/Query.php(237): yii\db\Command->queryAll()
+#9 /home/todosvuelven/public_html/vendor/yiisoft/yii2/db/ActiveQuery.php(133): yii\db\Query->all(NULL)
+#10 /home/todosvuelven/public_html/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/left.php(23): yii\db\ActiveQuery->all()
+#11 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#12 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#13 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(156): yii\base\View->renderFile('/home/todosvuel...', Array, NULL)
+#14 /home/todosvuelven/public_html/vendor/dmstr/yii2-adminlte-asset/example-views/yiisoft/yii2-app/layouts/main.php(51): yii\base\View->render('left.php', Array)
+#15 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(336): require('/home/todosvuel...')
+#16 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/View.php(254): yii\base\View->renderPhpFile('/home/todosvuel...', Array)
+#17 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(399): yii\base\View->renderFile('/home/todosvuel...', Array, Object(backend\controllers\SiteController))
+#18 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(385): yii\base\Controller->renderContent('<section class=...')
+#19 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(139): yii\base\Controller->render('error', Array)
+#20 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorAction.php(118): yii\web\ErrorAction->renderHtmlResponse()
+#21 [internal function]: yii\web\ErrorAction->run()
+#22 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Action.php(94): call_user_func_array(Array, Array)
+#23 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php(157): yii\base\Action->runWithParams(Array)
+#24 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('error', Array)
+#25 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(108): yii\base\Module->runAction('site/error')
+#26 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#27 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#28 {main}
+Additional Information:
+
+Previous exception:
+exception 'yii\base\InvalidRouteException' with message 'Unable to resolve the request: productos/verproducto' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Controller.php:128
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Module.php(528): yii\base\Controller->runAction('verproducto', Array)
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php(103): yii\base\Module->runAction('productos/verpr...', Array)
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#3 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#4 {main}
+
+Next exception 'yii\web\NotFoundHttpException' with message 'Page not found.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Application.php:115
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(386): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XdFiUbe-LnqS3LYyWv8HOgAAAA8',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/productos/verproducto',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/verproducto',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XdFiUbe-LnqS3LYyWv8HOgAAAA8',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/productos/verproducto',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/verproducto',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XdFiUbe-LnqS3LYyWv8HOgAAAA8',
+    'SCRIPT_URL' => '/backend/web/productos/verproducto',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/verproducto',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '66.30.106.163',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '8311',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'REDIRECT_QUERY_STRING' => 'id=3',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => 'id=3',
+    'REQUEST_URI' => '/backend/web/productos/verproducto?id=3',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1574003281.3353149890899658203125,
+    'REQUEST_TIME' => 1574003281,
+    'argv' => [
+        'id=3',
+    ],
+    'argc' => 1,
+]
+[17-Nov-2019 15:43:52 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 107.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 107.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XdFquLe-LnqS3LYyWv8HWQAAAA8',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/productos/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XdFquLe-LnqS3LYyWv8HWQAAAA8',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/productos/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XdFquLe-LnqS3LYyWv8HWQAAAA8',
+    'SCRIPT_URL' => '/backend/web/productos/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/productos/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => 'advanced-backend=ku322cv7aofc6lcjghs7k90q10; _identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=4e2932766a0be030401b6f967fc91865a817daf4b83d7516a766fb9de0b0254fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22yQK6XVvJdeLU_UVlyCXkq9YYdVJ_1yth%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '66.30.106.163',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '8751',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/productos/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1574005432.5333979129791259765625,
+    'REQUEST_TIME' => 1574005432,
+    'argv' => [],
+    'argc' => 0,
+]
+[17-Nov-2019 15:44:11 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 107.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 107.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XdFqyw@GYhf@pl-fV91w2AAAABE',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/productos/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XdFqyw@GYhf@pl-fV91w2AAAABE',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/productos/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XdFqyw@GYhf@pl-fV91w2AAAABE',
+    'SCRIPT_URL' => '/backend/web/productos/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_PRAGMA' => 'no-cache',
+    'HTTP_CACHE_CONTROL' => 'no-cache',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/productos/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => 'advanced-backend=ku322cv7aofc6lcjghs7k90q10; _identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=4e2932766a0be030401b6f967fc91865a817daf4b83d7516a766fb9de0b0254fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22yQK6XVvJdeLU_UVlyCXkq9YYdVJ_1yth%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '66.30.106.163',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '8766',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/productos/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1574005451.268466949462890625,
+    'REQUEST_TIME' => 1574005451,
+    'argv' => [],
+    'argc' => 0,
+]
+[17-Nov-2019 15:44:18 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 107.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 107.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XdFq0re-LnqS3LYyWv8HWgAAAA8',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/productos/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XdFq0re-LnqS3LYyWv8HWgAAAA8',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/productos/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XdFq0re-LnqS3LYyWv8HWgAAAA8',
+    'SCRIPT_URL' => '/backend/web/productos/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => 'advanced-backend=ku322cv7aofc6lcjghs7k90q10; _identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=4e2932766a0be030401b6f967fc91865a817daf4b83d7516a766fb9de0b0254fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22yQK6XVvJdeLU_UVlyCXkq9YYdVJ_1yth%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '66.30.106.163',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '8789',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/productos/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1574005458.7695300579071044921875,
+    'REQUEST_TIME' => 1574005458,
+    'argv' => [],
+    'argc' => 0,
+]
+[17-Nov-2019 15:47:24 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 107.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 107.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XdFrjIBMD50ss0thkxOGDwAAAAI',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/productos/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XdFrjIBMD50ss0thkxOGDwAAAAI',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/productos/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XdFrjIBMD50ss0thkxOGDwAAAAI',
+    'SCRIPT_URL' => '/backend/web/productos/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/productos/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'HTTP_CACHE_CONTROL' => 'max-age=0',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.97 Safari/537.36',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => 'advanced-backend=ku322cv7aofc6lcjghs7k90q10; _identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=4e2932766a0be030401b6f967fc91865a817daf4b83d7516a766fb9de0b0254fa%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22yQK6XVvJdeLU_UVlyCXkq9YYdVJ_1yth%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '66.30.106.163',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '9069',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'GET',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/productos/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1574005644.36573696136474609375,
+    'REQUEST_TIME' => 1574005644,
+    'argv' => [],
+    'argc' => 0,
+]
+[17-Nov-2019 15:57:00 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 360
+[17-Nov-2019 16:25:58 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 75
+[17-Nov-2019 16:32:05 UTC] PHP Fatal error:  Class 'backend\components\Globaldata' not found in /home/todosvuelven/public_html/backend/views/productos/verproducto.php on line 10
+[17-Nov-2019 16:33:47 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 75
+[17-Nov-2019 18:14:02 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 75
+[17-Nov-2019 18:17:25 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 219
+[17-Nov-2019 18:17:59 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 219
+[17-Nov-2019 18:19:02 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 219
+[17-Nov-2019 18:19:09 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 219
+[17-Nov-2019 18:19:38 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 219
+[18-Nov-2019 04:23:51 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XdIc1wlIunT6PTb5VKz9GgAAAAs',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XdIc1wlIunT6PTb5VKz9GgAAAAs',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XdIc1wlIunT6PTb5VKz9GgAAAAs',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_SAVE_DATA' => 'on',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 9; SM-J810M) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.96 Mobile Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => 'advanced-backend=h0vqb014b6p3odvbip6ppkf1o1; _identity-backend=3110c23948d22845f3b784056e5c930a942de112544f5cf881425fa0fe955d16a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A79%3A%22%5B%7B%22id%22%3A10002%2C%22cedula%22%3A%220930723682%22%7D%2C%22NSN-4dv8OL3HBjalR3rQTTEhwQpLh8xf%22%2C2592000%5D%22%3B%7D; _csrf-backend=b7c6b071b7e76822e4a362737a5fb0729215f3404092ff12bffdad68684b2c09a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%224gSPfrPt4-sK70aDqz0VxUPnrIXMQ8J9%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.49.154',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '50869',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1574051031.8636810779571533203125,
+    'REQUEST_TIME' => 1574051031,
+    'argv' => [],
+    'argc' => 0,
+]
+[18-Dec-2019 15:48:05 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XfpKNZrCUrHZF3BFGin9TAAAAA0',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XfpKNZrCUrHZF3BFGin9TAAAAA0',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XfpKNZrCUrHZF3BFGin9TAAAAA0',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => '_identity-backend=0f78259cf15ef677654527fbff7cb4a8f1a71775f46011ab240dc109b8aa72cba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A79%3A%22%5B%7B%22id%22%3A10001%2C%22cedula%22%3A%220911969095%22%7D%2C%22NSN-4dv8OL3HBjalR3rQTTEhwQpLh8xf%22%2C2592000%5D%22%3B%7D; advanced-backend=0v7j5s61enjq57h2tfjmmlt6t7; _csrf-backend=7c4cf9c2dfdb3b43221672e87ea4d3c49d86ee660bf9d59a3701c1da3682864ba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22cnNDqg6S33U-9dLceAYfekj95v8yoISg%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.39.253',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '2698',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1576684085.0784180164337158203125,
+    'REQUEST_TIME' => 1576684085,
+    'argv' => [],
+    'argc' => 0,
+]
+[31-Dec-2019 18:11:14 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XguPQiAOFQZC99WljWXHaAAAAAk',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XguPQiAOFQZC99WljWXHaAAAAAk',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XguPQiAOFQZC99WljWXHaAAAAAk',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => '_identity-backend=0f78259cf15ef677654527fbff7cb4a8f1a71775f46011ab240dc109b8aa72cba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A79%3A%22%5B%7B%22id%22%3A10001%2C%22cedula%22%3A%220911969095%22%7D%2C%22NSN-4dv8OL3HBjalR3rQTTEhwQpLh8xf%22%2C2592000%5D%22%3B%7D; advanced-backend=ctkrrkcuh2382t1hutn7q09s50; _csrf-backend=7130df39c75b3be4036956f917cbc52f726d9d263e89ba039a30f3ba02e6f7f1a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22p_SLdIMmWkOwvoq3ny0IKKnOlvfACSv6%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.48.237',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '62345',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1577815874.262608051300048828125,
+    'REQUEST_TIME' => 1577815874,
+    'argv' => [],
+    'argc' => 0,
+]
+[31-Dec-2019 18:44:29 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XguXDb-LL4ohEEnz5DzUewAAAAA',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XguXDb-LL4ohEEnz5DzUewAAAAA',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XguXDb-LL4ohEEnz5DzUewAAAAA',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => '_identity-backend=0f78259cf15ef677654527fbff7cb4a8f1a71775f46011ab240dc109b8aa72cba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A79%3A%22%5B%7B%22id%22%3A10001%2C%22cedula%22%3A%220911969095%22%7D%2C%22NSN-4dv8OL3HBjalR3rQTTEhwQpLh8xf%22%2C2592000%5D%22%3B%7D; _csrf-backend=7130df39c75b3be4036956f917cbc52f726d9d263e89ba039a30f3ba02e6f7f1a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22p_SLdIMmWkOwvoq3ny0IKKnOlvfACSv6%22%3B%7D; advanced-backend=ij12rb4l9fvrra7n1vj8ebqul1',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.48.237',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '22141',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1577817869.75757503509521484375,
+    'REQUEST_TIME' => 1577817869,
+    'argv' => [],
+    'argc' => 0,
+]
+[31-Dec-2019 18:44:49 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XguXIfWvyIZERAUx44rTcwAAAAE',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XguXIfWvyIZERAUx44rTcwAAAAE',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XguXIfWvyIZERAUx44rTcwAAAAE',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => '_identity-backend=0f78259cf15ef677654527fbff7cb4a8f1a71775f46011ab240dc109b8aa72cba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A79%3A%22%5B%7B%22id%22%3A10001%2C%22cedula%22%3A%220911969095%22%7D%2C%22NSN-4dv8OL3HBjalR3rQTTEhwQpLh8xf%22%2C2592000%5D%22%3B%7D; _csrf-backend=7130df39c75b3be4036956f917cbc52f726d9d263e89ba039a30f3ba02e6f7f1a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22p_SLdIMmWkOwvoq3ny0IKKnOlvfACSv6%22%3B%7D; advanced-backend=ij12rb4l9fvrra7n1vj8ebqul1',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.48.237',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '7595',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1577817889.9429690837860107421875,
+    'REQUEST_TIME' => 1577817889,
+    'argv' => [],
+    'argc' => 0,
+]
+[04-Jan-2020 12:58:02 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XhCL2o6g5hNMSiFX7nWGewAAAAM',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XhCL2o6g5hNMSiFX7nWGewAAAAM',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XhCL2o6g5hNMSiFX7nWGewAAAAM',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => '_identity-backend=a42cbd5b7dfff9e580d3bdd40669484c07da4d87173bd3d8a3b123bb7c5cfa0da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A61%3A%22%5B%7B%22id%22%3A10004%2C%22cedula%22%3A%229999999999%22%7D%2C%22%242y%2413%24z%2F0M2Ji%22%2C2592000%5D%22%3B%7D; advanced-backend=p0sui9r35cieqo8u0lsoeedtv4; _csrf-backend=da4ef75ed3b294d75b44a3c4d7ffda4063f285ae3dbfa023935bc65874f7ceb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22NJNwMvA3z3w6Fce0CgkwZnCoHyTlxhRP%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.33.237',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '40897',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1578142682.42463397979736328125,
+    'REQUEST_TIME' => 1578142682,
+    'argv' => [],
+    'argc' => 0,
+]
+[04-Jan-2020 12:58:20 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XhCL7HVv7cZvKPt-Av4cowAAAIE',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XhCL7HVv7cZvKPt-Av4cowAAAIE',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XhCL7HVv7cZvKPt-Av4cowAAAIE',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => '_identity-backend=a42cbd5b7dfff9e580d3bdd40669484c07da4d87173bd3d8a3b123bb7c5cfa0da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A61%3A%22%5B%7B%22id%22%3A10004%2C%22cedula%22%3A%229999999999%22%7D%2C%22%242y%2413%24z%2F0M2Ji%22%2C2592000%5D%22%3B%7D; advanced-backend=p0sui9r35cieqo8u0lsoeedtv4; _csrf-backend=da4ef75ed3b294d75b44a3c4d7ffda4063f285ae3dbfa023935bc65874f7ceb5a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22NJNwMvA3z3w6Fce0CgkwZnCoHyTlxhRP%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.33.237',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '2154',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1578142700.745439052581787109375,
+    'REQUEST_TIME' => 1578142700,
+    'argv' => [],
+    'argc' => 0,
+]
+[03-Feb-2020 01:26:02 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'Xjd2qi5oHMkoCo96ti1lcAAAADM',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'Xjd2qi5oHMkoCo96ti1lcAAAADM',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'Xjd2qi5oHMkoCo96ti1lcAAAADM',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_SAVE_DATA' => 'on',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Linux; Android 9; EML-L09) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => 'advanced-backend=58dm52nktdujc0i9mp3e041nk5; _identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=fef038fa00c9d471d131852543db25c6265be39ca9139d48c72354bc8f077df3a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22pAYlmSzlmMRwesPQIIqH6SA1y2gVI7Tk%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.4',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '49562',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1580693162.64661693572998046875,
+    'REQUEST_TIME' => 1580693162,
+    'argv' => [],
+    'argc' => 0,
+]
+[25-Feb-2020 14:57:29 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XlU12eZ4BgT4wDl-Y-GTywAAAAs',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XlU12eZ4BgT4wDl-Y-GTywAAAAs',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XlU12eZ4BgT4wDl-Y-GTywAAAAs',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => '_identity-backend=0f78259cf15ef677654527fbff7cb4a8f1a71775f46011ab240dc109b8aa72cba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A79%3A%22%5B%7B%22id%22%3A10001%2C%22cedula%22%3A%220911969095%22%7D%2C%22NSN-4dv8OL3HBjalR3rQTTEhwQpLh8xf%22%2C2592000%5D%22%3B%7D; _csrf-backend=de5920097bbeff86da0bc6fdface581f93f797c2907cdd8ce2c4d685325e3c10a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22htIAN60LxvdP089SY-UqG0qZPaGe37X5%22%3B%7D; advanced-backend=0inr7cb8t5u4urr4n36f5i51q2',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.48.237',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '6604',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1582642649.0988709926605224609375,
+    'REQUEST_TIME' => 1582642649,
+    'argv' => [],
+    'argc' => 0,
+]
+[25-Feb-2020 14:58:01 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XlU1@Q13fJ8Jm17pWOhJFgAAAAA',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XlU1@Q13fJ8Jm17pWOhJFgAAAAA',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XlU1@Q13fJ8Jm17pWOhJFgAAAAA',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => '_identity-backend=0f78259cf15ef677654527fbff7cb4a8f1a71775f46011ab240dc109b8aa72cba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A79%3A%22%5B%7B%22id%22%3A10001%2C%22cedula%22%3A%220911969095%22%7D%2C%22NSN-4dv8OL3HBjalR3rQTTEhwQpLh8xf%22%2C2592000%5D%22%3B%7D; _csrf-backend=de5920097bbeff86da0bc6fdface581f93f797c2907cdd8ce2c4d685325e3c10a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22htIAN60LxvdP089SY-UqG0qZPaGe37X5%22%3B%7D; advanced-backend=0inr7cb8t5u4urr4n36f5i51q2',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.48.237',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '2936',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1582642681.3671300411224365234375,
+    'REQUEST_TIME' => 1582642681,
+    'argv' => [],
+    'argc' => 0,
+]
+[25-Feb-2020 14:58:25 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XlU2EQ13fJ8Jm17pWOhJGwAAAAA',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XlU2EQ13fJ8Jm17pWOhJGwAAAAA',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XlU2EQ13fJ8Jm17pWOhJGwAAAAA',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => '_identity-backend=0f78259cf15ef677654527fbff7cb4a8f1a71775f46011ab240dc109b8aa72cba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A79%3A%22%5B%7B%22id%22%3A10001%2C%22cedula%22%3A%220911969095%22%7D%2C%22NSN-4dv8OL3HBjalR3rQTTEhwQpLh8xf%22%2C2592000%5D%22%3B%7D; _csrf-backend=de5920097bbeff86da0bc6fdface581f93f797c2907cdd8ce2c4d685325e3c10a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22htIAN60LxvdP089SY-UqG0qZPaGe37X5%22%3B%7D; advanced-backend=0inr7cb8t5u4urr4n36f5i51q2',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.48.237',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '42643',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1582642705.838673114776611328125,
+    'REQUEST_TIME' => 1582642705,
+    'argv' => [],
+    'argc' => 0,
+]
+[25-Feb-2020 17:07:53 UTC] PHP Fatal error:  Class 'common\models\Presentacion' not found in /home/todosvuelven/public_html/common/models/Inventario.php on line 53
+[25-Feb-2020 17:11:15 UTC] PHP Fatal error:  Class 'common\models\Presentacion' not found in /home/todosvuelven/public_html/common/models/Inventario.php on line 53
+[25-Feb-2020 17:14:21 UTC] PHP Fatal error:  Class 'common\models\Presentacion' not found in /home/todosvuelven/public_html/common/models/Inventario.php on line 53
+[25-Feb-2020 17:15:30 UTC] PHP Fatal error:  Class 'common\models\Presentacion' not found in /home/todosvuelven/public_html/common/models/Inventario.php on line 53
+[25-Feb-2020 17:24:38 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XlVYVrLQOte@NC7wJf@NEgAAAAE',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XlVYVrLQOte@NC7wJf@NEgAAAAE',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XlVYVrLQOte@NC7wJf@NEgAAAAE',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => '_identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=08c3cd649d3e1e780826354ca0c6a11c7f86a59f7558284abc44eeb781431842a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22sGAviua8frtSncwvX1qFGK0nnOC5auBE%22%3B%7D; advanced-backend=b13odjne9i03dah5agqmgo58l5',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.4',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '53836',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1582651478.39892292022705078125,
+    'REQUEST_TIME' => 1582651478,
+    'argv' => [],
+    'argc' => 0,
+]
+[25-Feb-2020 17:24:50 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XlVYYUUh-CZckOdkCe2wWAAAAAg',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XlVYYUUh-CZckOdkCe2wWAAAAAg',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XlVYYUUh-CZckOdkCe2wWAAAAAg',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => '_identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=08c3cd649d3e1e780826354ca0c6a11c7f86a59f7558284abc44eeb781431842a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22sGAviua8frtSncwvX1qFGK0nnOC5auBE%22%3B%7D; advanced-backend=b13odjne9i03dah5agqmgo58l5',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.4',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '13467',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1582651489.9579188823699951171875,
+    'REQUEST_TIME' => 1582651489,
+    'argv' => [],
+    'argc' => 0,
+]
+[25-Feb-2020 17:24:53 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XlVYZEUh-CZckOdkCe2wWgAAAAg',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XlVYZEUh-CZckOdkCe2wWgAAAAg',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XlVYZEUh-CZckOdkCe2wWgAAAAg',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => '_identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=08c3cd649d3e1e780826354ca0c6a11c7f86a59f7558284abc44eeb781431842a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22sGAviua8frtSncwvX1qFGK0nnOC5auBE%22%3B%7D; advanced-backend=b13odjne9i03dah5agqmgo58l5',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.4',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '13467',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1582651493.0023629665374755859375,
+    'REQUEST_TIME' => 1582651493,
+    'argv' => [],
+    'argc' => 0,
+]
+[25-Feb-2020 17:25:03 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/UsuariosController.php on line 99.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XlVYbx8MvdJ-rfg7BNBKPQAAAAk',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XlVYbx8MvdJ-rfg7BNBKPQAAAAk',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XlVYbx8MvdJ-rfg7BNBKPQAAAAk',
+    'SCRIPT_URL' => '/backend/web/usuarios/registros',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/usuarios/registros',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '106',
+    'HTTP_PRAGMA' => 'no-cache',
+    'HTTP_CACHE_CONTROL' => 'no-cache',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.116 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/usuarios/index',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9,en;q=0.8',
+    'HTTP_COOKIE' => '_identity-backend=624ba10aafd943ab88838781c027e8104b17fddc635b68b498301bf5ce101f74a%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-backend=08c3cd649d3e1e780826354ca0c6a11c7f86a59f7558284abc44eeb781431842a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22sGAviua8frtSncwvX1qFGK0nnOC5auBE%22%3B%7D; advanced-backend=b13odjne9i03dah5agqmgo58l5',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.4',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '53864',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/usuarios/registros',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1582651503.129992008209228515625,
+    'REQUEST_TIME' => 1582651503,
+    'argv' => [],
+    'argc' => 0,
+]
+[25-Feb-2020 17:38:08 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 439
+[26-Feb-2020 17:18:02 UTC] PHP Fatal error:  Class 'common\models\Provincias' not found in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 574
+[26-Feb-2020 19:54:25 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 216
+[26-Feb-2020 20:01:16 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 216
+[26-Feb-2020 20:01:24 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 216
+[26-Feb-2020 20:01:26 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 216
+[26-Feb-2020 20:01:32 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 216
+[26-Feb-2020 20:01:42 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 216
+[26-Feb-2020 20:01:46 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 216
+[26-Feb-2020 20:01:46 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 216
+[26-Feb-2020 20:01:47 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 216
+[26-Feb-2020 20:02:29 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 216
+[26-Feb-2020 20:02:34 UTC] PHP Fatal error:  Class 'backend\controllers\Producto' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 216
+[26-Feb-2020 20:59:29 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 356
+[26-Feb-2020 21:01:16 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 356
+[26-Feb-2020 21:01:49 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 356
+[26-Feb-2020 21:24:06 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 356
+[26-Feb-2020 21:24:09 UTC] PHP Fatal error:  Class 'backend\controllers\Slider' not found in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 356
+[26-Feb-2020 21:50:45 UTC] PHP Fatal error:  Class 'common\models\Provincias' not found in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 574
+[26-Feb-2020 21:51:01 UTC] PHP Fatal error:  Class 'common\models\Provincias' not found in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 574
+[27-Feb-2020 14:52:58 UTC] An Error occurred while handling another error:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 862.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+exception 'yii\web\HeadersAlreadySentException' with message 'Headers already sent in /home/todosvuelven/public_html/backend/controllers/InventarioController.php on line 862.' in /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/todosvuelven/public_html/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/todosvuelven/public_html/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/todosvuelven/public_html/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'XlfXylcbRk0kwxNJyEXRaAAAAA4',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/inventario/update',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/inventario/update',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'XlfXylcbRk0kwxNJyEXRaAAAAA4',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/inventario/update',
+    'REDIRECT_SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/inventario/update',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php56',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'XlfXylcbRk0kwxNJyEXRaAAAAA4',
+    'SCRIPT_URL' => '/backend/web/inventario/update',
+    'SCRIPT_URI' => 'http://todosvuelven.com.ec/backend/web/inventario/update',
+    'HTTP_HOST' => 'todosvuelven.com.ec',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '280',
+    'HTTP_ACCEPT' => '*/*',
+    'HTTP_X_CSRF_TOKEN' => '-eweCpTzUQlwO7aJ2mOpwFAOndjzLZzU4CbA6l1Xh3nJpCw-7cYrYC8C9_uwC-_0ATnSrsdr-YevTLfeJQ_NLQ==',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.122 Safari/537.36',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded; charset=UTF-8',
+    'HTTP_ORIGIN' => 'http://todosvuelven.com.ec',
+    'HTTP_REFERER' => 'http://todosvuelven.com.ec/backend/web/inventario/update?id=295',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-ES,es;q=0.9',
+    'HTTP_COOKIE' => '_identity-backend=0f78259cf15ef677654527fbff7cb4a8f1a71775f46011ab240dc109b8aa72cba%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A79%3A%22%5B%7B%22id%22%3A10001%2C%22cedula%22%3A%220911969095%22%7D%2C%22NSN-4dv8OL3HBjalR3rQTTEhwQpLh8xf%22%2C2592000%5D%22%3B%7D; _ga=GA1.3.532509234.1582654880; advanced-backend=8aii7qphemipoauot7ima1rdf6; _csrf-backend=93b6930fe225e484f7814fb6ca7e899cfd3c626f0f75a8bc0c5c3b7fd17b6302a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%220H24y5zi_9ArjhF4Q7Ov4FeSOjw4xXJT%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'todosvuelven.com.ec',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '181.199.48.237',
+    'DOCUMENT_ROOT' => '/home/todosvuelven/public_html',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@todosvuelven.com.ec',
+    'SCRIPT_FILENAME' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'REMOTE_PORT' => '39973',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'REDIRECT_QUERY_STRING' => 'id=295',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => 'id=295',
+    'REQUEST_URI' => '/backend/web/inventario/update?id=295',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php56',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/todosvuelven/public_html/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php56',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1582815178.85453510284423828125,
+    'REQUEST_TIME' => 1582815178,
+    'argv' => [
+        'id=295',
+    ],
+    'argc' => 1,
+]
+[03-Mar-2020 23:53:01 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 2538955 bytes) in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 98
+[04-Mar-2020 00:08:48 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 2538955 bytes) in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 98
+[04-Mar-2020 00:09:10 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 2538955 bytes) in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 98
+[04-Mar-2020 00:18:31 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 2538955 bytes) in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 98
+[04-Mar-2020 00:20:36 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 2538955 bytes) in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 98
+[04-Mar-2020 00:21:40 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 2538955 bytes) in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 98
+[04-Mar-2020 00:28:32 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 2538955 bytes) in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 98
+[04-Mar-2020 00:28:52 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 2538955 bytes) in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 98
+[04-Mar-2020 00:29:04 UTC] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 2538955 bytes) in /home/todosvuelven/public_html/backend/controllers/ProductosController.php on line 98
+[26-Oct-2020 00:13:14 UTC] An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 444. in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 444. in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/agtecnologyec/public_html/facturacion/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'X5YUmszDbCVN6uhtmzCVfAAAAAI',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/productos/nuevo',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/backend/web/productos/nuevo',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'X5YUmszDbCVN6uhtmzCVfAAAAAI',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/productos/nuevo',
+    'REDIRECT_SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/backend/web/productos/nuevo',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php72',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'X5YUmszDbCVN6uhtmzCVfAAAAAI',
+    'SCRIPT_URL' => '/backend/web/productos/nuevo',
+    'SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/backend/web/productos/nuevo',
+    'HTTP_HOST' => 'facturacion.agtecnologyec.com',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '107888',
+    'HTTP_PRAGMA' => 'no-cache',
+    'HTTP_CACHE_CONTROL' => 'no-cache',
+    'HTTP_ACCEPT' => 'text/plain, */*; q=0.01',
+    'HTTP_X_CSRF_TOKEN' => 'zdMKZdGkT2cCJo89oWGLh12BFwjej8D7lTaxTVs5N4y5iWxIn9Q6IndPzkTYE9zfCsJnbq_Vn5DAXOZ9Nm1R6g==',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryVvpX3RkQ3SvCdnYn',
+    'HTTP_ORIGIN' => 'http://facturacion.agtecnologyec.com',
+    'HTTP_REFERER' => 'http://facturacion.agtecnologyec.com/backend/web/productos/nuevo',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9',
+    'HTTP_COOKIE' => 'advanced-backend=edae989c72f6d94f3e9bb1254ebc9c13; _identity-backend=cf334a101c0e844610f0ebc7fa891402e00d361fa445c29c068dcb01d1335e6da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A66%3A%22%5B%7B%22id%22%3A10003%2C%22cedula%22%3A%229999999999%22%7D%2C%22%242y%2413%24z%2F0M2JiQbcIJ%22%2C2592000%5D%22%3B%7D; _csrf-backend=bf1aab1c6b07c0733b25830252e6f72c60dcb42920dc98e1a0e2588f3406e09ba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22tZf-NpuEuiAyyrWXWCpfqZ_kUjW0mTff%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'facturacion.agtecnologyec.com',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.3',
+    'DOCUMENT_ROOT' => '/home/agtecnologyec/public_html/facturacion',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@facturacion.agtecnologyec.com',
+    'SCRIPT_FILENAME' => '/home/agtecnologyec/public_html/facturacion/backend/web/index.php',
+    'REMOTE_PORT' => '62807',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/productos/nuevo',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php72',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/agtecnologyec/public_html/facturacion/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php72',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1603671194.103744983673095703125,
+    'REQUEST_TIME' => 1603671194,
+    'argv' => [],
+    'argc' => 0,
+]
+[26-Oct-2020 00:27:37 UTC] An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 444. in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 444. in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/agtecnologyec/public_html/facturacion/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'X5YX@HhtIVVBrts3DHay8QAAAAk',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/productos/nuevo',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/backend/web/productos/nuevo',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'X5YX@HhtIVVBrts3DHay8QAAAAk',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/productos/nuevo',
+    'REDIRECT_SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/backend/web/productos/nuevo',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php72',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'X5YX@HhtIVVBrts3DHay8QAAAAk',
+    'SCRIPT_URL' => '/backend/web/productos/nuevo',
+    'SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/backend/web/productos/nuevo',
+    'HTTP_HOST' => 'facturacion.agtecnologyec.com',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '107915',
+    'HTTP_ACCEPT' => 'text/plain, */*; q=0.01',
+    'HTTP_X_CSRF_TOKEN' => 'Ms4akqTL1ajLgtqzuIhEFagZ-dhxroYMZOAF0K_IgaNGlHy_6rug7b7rm8rB-hNN_1qJvgD02WcxilLgwpznxQ==',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryYMUDz4UFgwE8Ugdb',
+    'HTTP_ORIGIN' => 'http://facturacion.agtecnologyec.com',
+    'HTTP_REFERER' => 'http://facturacion.agtecnologyec.com/backend/web/productos/nuevo',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9',
+    'HTTP_COOKIE' => 'advanced-backend=edae989c72f6d94f3e9bb1254ebc9c13; _identity-backend=cf334a101c0e844610f0ebc7fa891402e00d361fa445c29c068dcb01d1335e6da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A66%3A%22%5B%7B%22id%22%3A10003%2C%22cedula%22%3A%229999999999%22%7D%2C%22%242y%2413%24z%2F0M2JiQbcIJ%22%2C2592000%5D%22%3B%7D; _csrf-backend=bf1aab1c6b07c0733b25830252e6f72c60dcb42920dc98e1a0e2588f3406e09ba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22tZf-NpuEuiAyyrWXWCpfqZ_kUjW0mTff%22%3B%7D',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'facturacion.agtecnologyec.com',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.3',
+    'DOCUMENT_ROOT' => '/home/agtecnologyec/public_html/facturacion',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@facturacion.agtecnologyec.com',
+    'SCRIPT_FILENAME' => '/home/agtecnologyec/public_html/facturacion/backend/web/index.php',
+    'REMOTE_PORT' => '63100',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/productos/nuevo',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php72',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/agtecnologyec/public_html/facturacion/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php72',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1603672056.9021270275115966796875,
+    'REQUEST_TIME' => 1603672056,
+    'argv' => [],
+    'argc' => 0,
+]
+[26-Oct-2020 00:42:40 UTC] An Error occurred while handling another error:
+yii\web\HeadersAlreadySentException: Headers already sent in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 444. in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/ErrorHandler.php(135): yii\web\Response->send()
+#2 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/ErrorHandler.php(111): yii\web\ErrorHandler->renderException(Object(yii\web\HeadersAlreadySentException))
+#3 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\HeadersAlreadySentException))
+#4 {main}
+Previous exception:
+yii\web\HeadersAlreadySentException: Headers already sent in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 444. in /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Response.php:366
+Stack trace:
+#0 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/web/Response.php(339): yii\web\Response->sendHeaders()
+#1 /home/agtecnologyec/public_html/facturacion/vendor/yiisoft/yii2/base/Application.php(392): yii\web\Response->send()
+#2 /home/agtecnologyec/public_html/facturacion/backend/web/index.php(17): yii\base\Application->run()
+#3 {main}
+$_SERVER = [
+    'TZ' => 'America/Guayaquil',
+    'REDIRECT_REDIRECT_UNIQUE_ID' => 'X5Ybf-iFauqfA3znR4Ml-QAAAAo',
+    'REDIRECT_REDIRECT_SCRIPT_URL' => '/backend/web/productos/nuevo',
+    'REDIRECT_REDIRECT_SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/backend/web/productos/nuevo',
+    'REDIRECT_REDIRECT_STATUS' => '200',
+    'REDIRECT_UNIQUE_ID' => 'X5Ybf-iFauqfA3znR4Ml-QAAAAo',
+    'REDIRECT_SCRIPT_URL' => '/backend/web/productos/nuevo',
+    'REDIRECT_SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/backend/web/productos/nuevo',
+    'REDIRECT_HANDLER' => 'application/x-httpd-ea-php72',
+    'REDIRECT_STATUS' => '200',
+    'UNIQUE_ID' => 'X5Ybf-iFauqfA3znR4Ml-QAAAAo',
+    'SCRIPT_URL' => '/backend/web/productos/nuevo',
+    'SCRIPT_URI' => 'http://facturacion.agtecnologyec.com/backend/web/productos/nuevo',
+    'HTTP_HOST' => 'facturacion.agtecnologyec.com',
+    'HTTP_CONNECTION' => 'keep-alive',
+    'CONTENT_LENGTH' => '64124',
+    'HTTP_ACCEPT' => 'text/plain, */*; q=0.01',
+    'HTTP_X_CSRF_TOKEN' => '377bDHDx7IJ9PPNhEzuJ6ENo08T1Jc3XDGfggL3UlNer5L0hPoGZxwhVshhqSd6wFCujooR_krxZDbew0IDysQ==',
+    'HTTP_X_REQUESTED_WITH' => 'XMLHttpRequest',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36',
+    'CONTENT_TYPE' => 'multipart/form-data; boundary=----WebKitFormBoundaryWbKeK3tuCB6CJzv3',
+    'HTTP_ORIGIN' => 'http://facturacion.agtecnologyec.com',
+    'HTTP_REFERER' => 'http://facturacion.agtecnologyec.com/backend/web/productos/nuevo',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate',
+    'HTTP_ACCEPT_LANGUAGE' => 'es-419,es;q=0.9',
+    'HTTP_COOKIE' => 'advanced-backend=edae989c72f6d94f3e9bb1254ebc9c13; _identity-backend=cf334a101c0e844610f0ebc7fa891402e00d361fa445c29c068dcb01d1335e6da%3A2%3A%7Bi%3A0%3Bs%3A17%3A%22_identity-backend%22%3Bi%3A1%3Bs%3A66%3A%22%5B%7B%22id%22%3A10003%2C%22cedula%22%3A%229999999999%22%7D%2C%22%242y%2413%24z%2F0M2JiQbcIJ%22%2C2592000%5D%22%3B%7D; _csrf-backend=bf1aab1c6b07c0733b25830252e6f72c60dcb42920dc98e1a0e2588f3406e09ba%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22tZf-NpuEuiAyyrWXWCpfqZ_kUjW0mTff%22%3B%7D; _ga=GA1.2.1726220481.1603672346; _gid=GA1.2.1265964885.1603672346; advanced-frontend=6298085a60c76b947d90819ab654853c; _identity-frontend=97a507807331cc417a8b8e7fd735692fa2e79d2719209a9ce3def63f8aca6188a%3A2%3A%7Bi%3A0%3Bs%3A18%3A%22_identity-frontend%22%3Bi%3A1%3Bs%3A75%3A%22%5B%7B%22id%22%3A1%2C%22cedula%22%3A%228888888888%22%7D%2C%22sPLOVRHcWZjqnQLCfFIQytZimLIuxXbl%22%2C2592000%5D%22%3B%7D; _csrf-frontend=70b2a1afa7ba51575e088e1f71cef27c79ff9cb95fccc8320343681184ec236ea%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%22X7OVnaERkeLRMr90eW8q8Fc7IvRRuiX9%22%3B%7D; sesion=1603672351650-52321153',
+    'PATH' => '/usr/local/jdk/bin:/usr/kerberos/sbin:/usr/kerberos/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/usr/X11R6/bin:/usr/local/bin:/usr/X11R6/bin:/root/bin:/opt/bin',
+    'SERVER_SIGNATURE' => '',
+    'SERVER_SOFTWARE' => 'Apache',
+    'SERVER_NAME' => 'facturacion.agtecnologyec.com',
+    'SERVER_ADDR' => '45.77.2.43',
+    'SERVER_PORT' => '80',
+    'REMOTE_ADDR' => '186.3.188.3',
+    'DOCUMENT_ROOT' => '/home/agtecnologyec/public_html/facturacion',
+    'REQUEST_SCHEME' => 'http',
+    'CONTEXT_PREFIX' => '/cgi-sys',
+    'CONTEXT_DOCUMENT_ROOT' => '/usr/local/cpanel/cgi-sys/',
+    'SERVER_ADMIN' => 'webmaster@facturacion.agtecnologyec.com',
+    'SCRIPT_FILENAME' => '/home/agtecnologyec/public_html/facturacion/backend/web/index.php',
+    'REMOTE_PORT' => '63593',
+    'REDIRECT_URL' => '/backend/web/index.php',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'REQUEST_METHOD' => 'POST',
+    'QUERY_STRING' => '',
+    'REQUEST_URI' => '/backend/web/productos/nuevo',
+    'SCRIPT_NAME' => '/backend/web/index.php',
+    'ORIG_SCRIPT_FILENAME' => '/usr/local/cpanel/cgi-sys/ea-php72',
+    'ORIG_PATH_INFO' => '/backend/web/index.php',
+    'ORIG_PATH_TRANSLATED' => '/home/agtecnologyec/public_html/facturacion/backend/web/index.php',
+    'ORIG_SCRIPT_NAME' => '/cgi-sys/ea-php72',
+    'PHP_SELF' => '/backend/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1603672959.835895061492919921875,
+    'REQUEST_TIME' => 1603672959,
+    'argv' => [],
+    'argc' => 0,
+]
+[31-Oct-2020 17:58:52 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 782336 bytes) in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 98
+[31-Oct-2020 18:11:25 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 782336 bytes) in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 98
+[31-Oct-2020 18:29:12 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 811008 bytes) in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 98
+[31-Oct-2020 18:30:02 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 839680 bytes) in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 98
+[31-Oct-2020 18:38:48 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 811008 bytes) in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 98
+[31-Oct-2020 18:53:31 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 839680 bytes) in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 98
+[31-Oct-2020 18:56:26 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 811008 bytes) in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 98
+[31-Oct-2020 19:41:56 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 782336 bytes) in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 98
+[31-Oct-2020 19:42:05 UTC] PHP Fatal error:  Allowed memory size of 33554432 bytes exhausted (tried to allocate 827392 bytes) in /home/agtecnologyec/public_html/facturacion/backend/controllers/ProductosController.php on line 98

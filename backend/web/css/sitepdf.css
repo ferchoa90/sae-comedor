@@ -1,0 +1,51 @@
+.bordergeneral
+{
+    border: 1px solid black;
+}
+.borderbottom
+{
+    border-bottom: 1px solid black;
+}
+
+.bordertop
+{
+    border-top: 1px solid black;
+}
+
+.lh-30
+{
+    line-height: 30px;
+}
+
+.lh-25
+{
+    line-height: 25px;
+}
+
+.lh-20
+{
+    line-height: 20px;
+}
+
+.font-10
+{
+    font-size: 10px;
+}
+.pad-5{
+    padding: 5px;
+}
+
+.pad-20{
+    padding: 20px;
+    text-align: center;
+}
+
+.text-right
+{
+    text-align: right;
+}
+
+.text-center
+{
+    text-align: center;
+}
