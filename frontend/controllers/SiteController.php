@@ -34,6 +34,8 @@ use backend\components\Facturacion_tipoident;
 use backend\components\Facturacion_cliente;
 use backend\components\Sistema_genero;
 use backend\components\Botones;
+use frontend\components\Facturacion_ordenar;
+use frontend\components\Facturacion_mesas;
 
 
 /*
@@ -718,6 +720,40 @@ class SiteController extends Controller
             //var_dump($data["data"][0]);
             return json_encode($return);
         }
+    }
+
+
+    public function actionIngresarorden()
+    {
+       
+         if (Yii::$app->user->isGuest) {
+            return $this->redirect(URL::base() . "/site/login");
+        }
+        extract($_POST);
+        $data= new Facturacion_ordenar;
+        $data= $data->Nuevo($_POST);
+
+        $estatus= new Facturacion_mesas;
+        $estatus= $estatus->setStatus($_POST["mesa"],"OCUPADA");
+        $response=$data;
+        return json_encode($response);
+    }
+
+
+    public function actionCerrarorden()
+    {
+       
+         if (Yii::$app->user->isGuest) {
+            return $this->redirect(URL::base() . "/site/login");
+        }
+        extract($_POST);
+        $data= new Facturacion_ordenar;
+        $data= $data->Cerrarorden($_POST);
+
+        $estatus= new Facturacion_mesas;
+        $estatus= $estatus->setStatus($_POST["mesa"],"LIBRE");
+        $response=$data;
+        return json_encode($response);
     }
 
     

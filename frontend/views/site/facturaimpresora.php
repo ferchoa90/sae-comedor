@@ -21,11 +21,11 @@ $this->title = 'SAE - Sistema Administrativo Contable';
 
     <div class="center-titulos">
 
-        <span> <strong>JOHANA VERA TORRES</strong></span>
+        <span> <strong>SEYOURY AYOUB HISHAM KHADER</strong></span>
 
         <br> <?= Yii::$app->user->identity->sucursal->nombre; ?>
 
-        <br><strong>RUC: </strong>0923719686001
+        <br><strong>RUC: </strong>0965174618001
 
     </div>
 
@@ -156,16 +156,12 @@ $this->title = 'SAE - Sistema Administrativo Contable';
          
 
         <br><strong>Pago:  </strong>Efectivo
-
-        <br>El total tiene incluido el valor del iva para los productos que llevan marcado iva. El desglose se puede revisar en la factura electrónica.
-        <br>Salida la mercadería no se aceptan devoluciones
+        <br>Emitida la factura, no se aceptan devoluciones ni cambios
         <br>Documento sin valor tributario, puede encontrar su factura electrónica en la web.
 
-        <br>Horario de Atención:  </strong>Lunes a Miércoles de 08:30 a 20:30, Jueves a Sábado de 09:00 a 21:00
-
+        <br>Horario de Atención:  </strong>Lunes a Sábado de 14:00 a 22:30, 
         <br><strong>Cajero:  <?= Yii::$app->user->identity->username; ?></strong>
-
-        <br><strong>Caja:  </strong>Caja Principal
+       
 
          
 
@@ -189,7 +185,7 @@ $this->title = 'SAE - Sistema Administrativo Contable';
 
         <span> <strong>GRACIAS POR SU COMPRA</strong></span><br>
 
-        <span> SAMBORONDÓN / ECUADOR</span><br>
+        <span> GUAYAQUIL / ECUADOR</span><br>
 
         <span> ORIGINAL - ADQUIRIENTE</strong></span>
 
@@ -201,9 +197,11 @@ $this->title = 'SAE - Sistema Administrativo Contable';
 
     <div class="left-titulos">
 
-       &nbsp;
+   <br><br><br><br><br><br><br><br><br><br><br><br>  <br> <br> <br>  <br>  <br>  <br>       &nbsp;<br>    &nbsp;<br>    &nbsp;<br>       &nbsp;<br>       &nbsp;<br>       &nbsp;
 
     </div>
+    <hr>
+
 
 
 
