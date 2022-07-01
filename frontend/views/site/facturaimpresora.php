@@ -37,7 +37,7 @@ $this->title = 'SAE - Sistema Administrativo Contable';
 
         <br><strong>COMPROBANTE ELECTRÓNICO:  </strong>001 - 001 - <?= str_pad($factura->nfactura, 3, '0', STR_PAD_LEFT); ?>
 
-        <br><strong>Fecha:  </strong><?=date('d', strtotime(str_replace('-', '/', $factura->fechacreacion)));   ?> Junio del 2022
+        <br><strong>Fecha:  </strong><?=date('d', strtotime(str_replace('-', '/', $factura->fechacreacion)));   ?> Julio del 2022
 
         <br><strong>Cliente:  </strong><?=$factura->cliente->razonsocial ?>
 
@@ -86,7 +86,7 @@ $this->title = 'SAE - Sistema Administrativo Contable';
                     <td><?=$value->cantidad?></td>
 
                     <td><?=$value->narticulo.' - '.$value->tarticulo ?></td> 
-                    <td><?=number_format($value->valoru/ 1.12,2)?></td><td id="preciot-1"><?=number_format($value->valort / 1.12,2)?></td>
+                    <td><?=number_format($value->valoru,2)?></td><td id="preciot-1"><?=number_format($value->valort ,2)?></td>
 
                 </tr>
 
@@ -94,7 +94,7 @@ $this->title = 'SAE - Sistema Administrativo Contable';
 
             <?php } ?>
 
-            <tr style="    text-align: center;" >
+            <tr style="    text-align: center;display:none;" >
 
                     <td> </td>
 
@@ -108,7 +108,7 @@ $this->title = 'SAE - Sistema Administrativo Contable';
 
                 </tr>
 
-                <tr style="    text-align: center;" >
+                <tr style="    text-align: center;display:none;" >
 
                     <td> </td>
 

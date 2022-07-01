@@ -86,10 +86,15 @@ $objeto= new Objetos;
                                     <a href="javascript:atenderMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-success shadow-sm mt-1" title="Atender"><i class="fa fa-cutlery fa-sm text-white-50"></i>&nbsp;</a>
                                     <br>
                                     <?php } ?>
-                                    <?php if ($value->estatusmesa=="OCUPADA"){  ?>
+                                    <?php if ($value->estatusmesa=="OCUPADA"){ $disable='';  ?>
+                                          <?php if (@$value->ordenes->usuariocreacion == Yii::$app->user->identity->id){  ?>
                                       <a href="javascript:editarMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-success shadow-sm mt-1" title="Pedido"><i class="fa fa-list-alt fa-sm text-white-50"></i>&nbsp;</a>
                                           <br>
-                                      <a href="javascript:cerrarMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm mt-1" title="Facturar"><i class="fa fa-tasks fa-sm text-white-50"></i>&nbsp;</a>
+                                          <?php }else{ ?>
+                                            <a href="#" disabled  class=" d-sm-inline-block btn btn-sm btn-secondary shadow-sm mt-1" title="Mesa Ocupada"><i class="fa fa-list-alt fa-sm text-white-50"></i>&nbsp;</a>
+                                            <br>                                            
+                                          <?php } ?>
+                                      <a href="javascript:cerrarMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm mt-1" title="Cerrar cuenta"><i class="fa fa-tasks fa-sm text-white-50"></i>&nbsp;</a>
                                     <?php } ?>
                                     
                                   <div class="p-1"></div>
@@ -106,7 +111,7 @@ $objeto= new Objetos;
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nueva Orden (MESA: <?= $value->nombre ?>)</h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"><?php if (@$value->ordenes->ordencerrada==1){ ?>Nueva Orden (MESA: <?= $value->nombre ?>)<?php }else{ ?> Orden # <?= $value->ordenes->id ?> , MESA: (<?= $value->nombre ?>)   <?php } ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -148,12 +153,12 @@ $objeto= new Objetos;
                       </table>
                     </div>
               
-                    <div class="pull-right">
+                    <div class="pull-right" style=" display:none;">
                       <span style="font-size: 15px;font-weight: bold;" >SUBTOTAL: $</span> 
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="subtotalfin-<?= $value->nombre ?>">0.00</span>
                     </div> 
                     <div class="pull-right " style="clear: both;"></div>
-                    <div class="pull-right " style="clear: both;">
+                    <div class="pull-right " style="clear: both; display:none;">
                       <span style="font-size: 15px;font-weight: bold;" >IVA (12%): $</span> 
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="ivafin-<?= $value->nombre ?>">0.00</span>
                     </div>
@@ -178,17 +183,23 @@ $objeto= new Objetos;
           <?= 
              $contenido=$objeto->getObjetosArray(
               array(
+                array('tipo'=>'input','subtipo'=>'oculto', 'nombre'=>'idorden-'.$value->nombre, 'id'=>'idorden-'.$value->nombre, 'valor'=>@$value->ordenes->id),
                 array('tipo'=>'input','subtipo'=>'oculto', 'nombre'=>'idmesa-'.$value->nombre, 'id'=>'idmesa-'.$value->nombre, 'valor'=>$value->id),
-                array('tipo'=>'input','subtipo'=>'textarea', 'nombre'=>'comentario-'.$value->nombre, 'id'=>'comentario-'.$value->nombre, 'valor'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Comentario: ', 'col'=>'col-12 col-md-12', 'adicional'=>''),
+                array('tipo'=>'input','subtipo'=>'textarea', 'nombre'=>'comentario-'.$value->nombre, 'id'=>'comentario-'.$value->nombre, 'valor'=>@$value->ordenes->comentario, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Comentario: ', 'col'=>'col-12 col-md-12', 'adicional'=>''),
               ),true
           );
            ?>
            </div>
             <div class="form-group pr-3" style="  margin-bottom:0px;" >
+            <?php if (@$value->ordenes->ordencerrada==1){ ?>
               <button type="button" onclick="javascript:encerarPedido();" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm" data-dismiss="modal">Cancelar pedido</button>
               <!--<button type="button" onclick="javascript:guardarPedido();" id="guardarpedido" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" name="save-button">Guardar pedido</button>         -->
               <button type="button" onclick="javascript:enviarPedido();" id="enviarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Enviar pedido</button>         
-             </div>
+                <?php }else{ ?>
+                  <button type="button" onclick="javascript:actualizarPedido();" id="actualizarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Actualizar pedido</button>         
+                <?php } ?>   
+          
+          </div>
           </div>
         </form>
       </div>
@@ -225,7 +236,7 @@ $objeto= new Objetos;
                                         <?php if ($value->estatusmesa=="OCUPADA"){  ?>
                                           <a href="javascript:editarMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-success shadow-sm mt-1" title="Pedido"><i class="fa fa-list-alt fa-sm text-white-50"></i>&nbsp;</a>
                                           <br>
-                                          <a href="javascript:cerrarMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm mt-1" title="Facturar"><i class="fa fa-tasks fa-sm text-white-50"></i>&nbsp;</a>
+                                          <a href="javascript:cerrarMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm mt-1" title="Cerrar cuenta"><i class="fa fa-tasks fa-sm text-white-50"></i>&nbsp;</a>
                                         <?php } ?>
                                         <div class="p-1"></div>
                                         
@@ -239,7 +250,7 @@ $objeto= new Objetos;
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nueva Orden (MESA: <?= $value->nombre ?>)</h5>
+      <h5 class="modal-title" id="exampleModalLongTitle"><?php if (@$value->ordenes->ordencerrada==1){ ?>Nueva Orden (MESA: <?= $value->nombre ?>)<?php }else{ ?> Orden # <?= $value->ordenes->id ?> , MESA: (<?= $value->nombre ?>)   <?php } ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -281,12 +292,12 @@ $objeto= new Objetos;
                       </table>
                     </div>
               
-                    <div class="pull-right">
+                    <div class="pull-right" style=" display:none;">
                       <span style="font-size: 15px;font-weight: bold;" >SUBTOTAL: $</span> 
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="subtotalfin-<?= $value->nombre ?>">0.00</span>
                     </div> 
                     <div class="pull-right " style="clear: both;"></div>
-                    <div class="pull-right " style="clear: both;">
+                    <div class="pull-right " style="clear: both; display:none;">
                       <span style="font-size: 15px;font-weight: bold;" >IVA (12%): $</span> 
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="ivafin-<?= $value->nombre ?>">0.00</span>
                     </div>
@@ -310,18 +321,22 @@ $objeto= new Objetos;
             <div class="col-12">
           <?= 
              $contenido=$objeto->getObjetosArray(
-              array(
+              array(array('tipo'=>'input','subtipo'=>'oculto', 'nombre'=>'idorden-'.$value->nombre, 'id'=>'idorden-'.$value->nombre, 'valor'=>@$value->ordenes->id),
                 array('tipo'=>'input','subtipo'=>'oculto', 'nombre'=>'idmesa-'.$value->nombre, 'id'=>'idmesa-'.$value->nombre, 'valor'=>$value->id),
-                array('tipo'=>'input','subtipo'=>'textarea', 'nombre'=>'comentario-'.$value->nombre, 'id'=>'comentario-'.$value->nombre, 'valor'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Comentario: ', 'col'=>'col-12 col-md-12', 'adicional'=>''),
+                array('tipo'=>'input','subtipo'=>'textarea', 'nombre'=>'comentario-'.$value->nombre, 'id'=>'comentario-'.$value->nombre, 'valor'=>@$value->ordenes->comentario, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Comentario: ', 'col'=>'col-12 col-md-12', 'adicional'=>''),
               ),true
           );
            ?>
            </div>
             <div class="form-group pr-3" style="  margin-bottom:0px;" >
+            <?php if (@$value->ordenes->ordencerrada==1){ ?>
               <button type="button" onclick="javascript:encerarPedido();" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm" data-dismiss="modal">Cancelar pedido</button>
               <!--<button type="button" onclick="javascript:guardarPedido();" id="guardarpedido" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" name="save-button">Guardar pedido</button>         -->
               <button type="button" onclick="javascript:enviarPedido();" id="enviarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Enviar pedido</button>         
-             </div>
+                <?php }else{ ?>
+                  <button type="button" onclick="javascript:actualizarPedido();" id="actualizarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Actualizar pedido</button>         
+                <?php } ?>     
+          </div>
           </div>
         </form>
       </div>
@@ -347,7 +362,7 @@ $objeto= new Objetos;
                                         <?php if ($value->estatusmesa=="OCUPADA"){  ?>
                                           <a href="javascript:editarMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-success shadow-sm mt-1" title="Pedido"><i class="fa fa-list-alt fa-sm text-white-50"></i>&nbsp;</a>
                                           <br>
-                                          <a href="javascript:cerrarMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm mt-1" title="Facturar"><i class="fa fa-tasks fa-sm text-white-50"></i>&nbsp;</a>
+                                          <a href="javascript:cerrarMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm mt-1" title="Cerrar cuenta"><i class="fa fa-tasks fa-sm text-white-50"></i>&nbsp;</a>
                                         <?php } ?>
                                         <div class="p-1"></div>
                                         
@@ -361,7 +376,7 @@ $objeto= new Objetos;
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Nueva Orden (MESA: <?= $value->nombre ?>)</h5>
+      <h5 class="modal-title" id="exampleModalLongTitle"><?php if (@$value->ordenes->ordencerrada==1){ ?>Nueva Orden (MESA: <?= $value->nombre ?>)<?php }else{ ?> Orden # <?= $value->ordenes->id ?> , MESA: (<?= $value->nombre ?>)   <?php } ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -403,12 +418,12 @@ $objeto= new Objetos;
                       </table>
                     </div>
               
-                    <div class="pull-right">
+                    <div class="pull-right" style=" display:none;">
                       <span style="font-size: 15px;font-weight: bold;" >SUBTOTAL: $</span> 
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="subtotalfin-<?= $value->nombre ?>">0.00</span>
                     </div> 
                     <div class="pull-right " style="clear: both;"></div>
-                    <div class="pull-right " style="clear: both;">
+                    <div class="pull-right " style="clear: both; display:none;">
                       <span style="font-size: 15px;font-weight: bold;" >IVA (12%): $</span> 
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="ivafin-<?= $value->nombre ?>">0.00</span>
                     </div>
@@ -433,16 +448,21 @@ $objeto= new Objetos;
           <?= 
              $contenido=$objeto->getObjetosArray(
               array(
+                array('tipo'=>'input','subtipo'=>'oculto', 'nombre'=>'idorden-'.$value->nombre, 'id'=>'idorden-'.$value->nombre, 'valor'=>@$value->ordenes->id),
                 array('tipo'=>'input','subtipo'=>'oculto', 'nombre'=>'idmesa-'.$value->nombre, 'id'=>'idmesa-'.$value->nombre, 'valor'=>$value->id),
-                array('tipo'=>'input','subtipo'=>'textarea', 'nombre'=>'comentario-'.$value->nombre, 'id'=>'comentario-'.$value->nombre, 'valor'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Comentario: ', 'col'=>'col-12 col-md-12', 'adicional'=>''),
+                array('tipo'=>'input','subtipo'=>'textarea', 'nombre'=>'comentario-'.$value->nombre, 'id'=>'comentario-'.$value->nombre, 'valor'=>@$value->ordenes->comentario, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Comentario: ', 'col'=>'col-12 col-md-12', 'adicional'=>''),
               ),true
           );
            ?>
            </div>
             <div class="form-group pr-3" style="  margin-bottom:0px;" >
+              <?php if (@$value->ordenes->ordencerrada==1){ ?>
               <button type="button" onclick="javascript:encerarPedido();" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm" data-dismiss="modal">Cancelar pedido</button>
               <!--<button type="button" onclick="javascript:guardarPedido();" id="guardarpedido" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" name="save-button">Guardar pedido</button>         -->
               <button type="button" onclick="javascript:enviarPedido();" id="enviarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Enviar pedido</button>         
+                <?php }else{ ?>
+                  <button type="button" onclick="javascript:actualizarPedido();" id="actualizarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Actualizar pedido</button>         
+                <?php } ?>
              </div>
           </div>
         </form>
@@ -604,6 +624,15 @@ function atenderMesa(id)
   $('#nuevoPedidoModal-'+id).modal('toggle')
 
 }
+
+function editarMesa(id)
+{
+  selectMesa=id;
+  $('#nuevoPedidoModal-'+id).modal('toggle')
+
+}
+
+
 
 $(function() {
   $('#form-nuevopedido-A1,#form-nuevopedido-A2,#form-nuevopedido-A3,#form-nuevopedido-A4,#form-nuevopedido-A5,#form-nuevopedido-A6,#form-nuevopedido-A7,#form-nuevopedido-B1,#form-nuevopedido-B2,#form-nuevopedido-B3,#form-nuevopedido-B4,#form-nuevopedido-B5,#form-nuevopedido-B6').on('submit', function (event) {
@@ -814,7 +843,7 @@ $(document).ready(function(){
       var step='';
       var input='<input  id=\"cant-'+nproductos+'\" value=\"'+obj.cantidad+'\" type=\"number\" min=\"1\" style=\"width: 30%;text-align: center;\" onchange=\"javascript:cambiarValor('+nproductos+',this)\" '+step+' />'
       var preciou=obj.valoru;
-      var inputprecio='<input onkeypress=\"javascript:cambiarPrecio('+nproductos+',this)\" onchange=\"javascript:cambiarPrecio('+nproductos+',this)\"  id=\"prec-'+nproductos+'\" step=\".01\" style=\" width: 35%;text-align: right;\"  type=\"number\" value=\"'+preciou+'\" >';
+      var inputprecio='<input readonly onkeypress=\"javascript:cambiarPrecio('+nproductos+',this)\" onchange=\"javascript:cambiarPrecio('+nproductos+',this)\"  id=\"prec-'+nproductos+'\" step=\".01\" style=\" width: 35%;text-align: right;\"  type=\"number\" value=\"'+preciou+'\" >';
       var color=obj.color;
       var clasificacion=obj.clasificacion;
       preciou=(parseFloat(preciou)).toFixed(2);
@@ -1063,6 +1092,43 @@ $(document).ready(function(){
       });
     }
 
+    function actualizarPedido()
+    {
+      var dataFactura = JSON.parse(localStorage.getItem('listaFactura-'+selectMesa));
+      var idfac=0;
+      if (!$('#cliente').val()){
+        $('#cliente').val('9999999999');
+        obtenerCliente($('#cliente').val());
+      }
+      var cliente=$('#cliente').val();
+      recuperarDatafac();
+      var idorden= $('#idorden-'+selectMesa).val();
+      var comentario= $('#comentario-'+selectMesa).val();
+      var mesa= $('#idmesa-'+selectMesa).val();
+      $.ajax({
+          url:\"actualizarorden\",
+          method:\"POST\",
+          data: { data: dataFactura, idorden:idorden, cliente:cliente,comentario:comentario, mesa:mesa,'_csrf-frontend':'".Yii::$app->request->getCsrfToken()."' },
+          //dataType:\"json\",
+          success:function(data)
+          {
+            var data = jQuery.parseJSON(data);
+            //loading(0);
+            //console.log(data.success)
+            if (data.success) {
+                if (data.id)
+                {
+                  alertify.success('Pedido Actualizado');
+                  setInterval(location.reload(true),1000);
+                  //imprimirFactura(data.id);
+                }
+            } else {
+              alertify.error('El pedido no se ha podido actualizar');
+            }
+          }
+      });
+    }
+
     function cerrarMesa(id)
     {
       selectMesa=id;
@@ -1089,6 +1155,7 @@ $(document).ready(function(){
                 if (data.id)
                 {
                   alertify.success('Mesa Liberada');
+                  encerarPedido()
                   setInterval(location.reload(true),1000);
                   //imprimirFactura(data.id);
                 }

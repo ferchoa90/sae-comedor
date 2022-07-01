@@ -78,4 +78,9 @@ class Mesas extends \yii\db\ActiveRecord
     {
         return $this->hasOne(User::className(), ['id' => 'usuariocreacion']);
     }
+
+    public function getOrdenes()
+    {
+        return $this->hasOne(Ordenes::className(), ['idmesa' => 'id'])->orderBy(["fechacreacion"=>SORT_DESC]);
+    }
 }

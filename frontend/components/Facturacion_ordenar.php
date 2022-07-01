@@ -108,7 +108,9 @@ class Facturacion_ordenar extends Component
                     $ordenDetalle->idproducto=$inventario->idproducto;
                     $ordenDetalle->idinventario=$value["id"];
                     $ordenDetalle->cantidad=$value["cantidad"];
+                    $ordenDetalle->cantidadfinal=$value["cantidad"];
                     $ordenDetalle->precio=$value["valoru"];
+                    $ordenDetalle->impreso=0;
                     $ordenDetalle->usuariocreacion=Yii::$app->user->identity->id;
                     
                     
@@ -146,11 +148,41 @@ class Facturacion_ordenar extends Component
         $result=false;
         if ($data):
             //$data = $usuario;
-            $dataModel= Ordenes::find()->where(["id"=>$data['id']])->one();
-            $dataModel->nombre=$data['nombres'];
+            $dataModel= Ordenes::find()->where(["id"=>$data['idorden']])->one();
+            $dataModel->comentario=$data['comentario'];
+            $dataModel->impreso=0;
+            
             $dataModel->usuarioact=Yii::$app->user->identity->id;
             $dataModel->fechaact= date("Y-m-d H:i:s");
             if ($dataModel->save()) {
+                foreach ($data["data"] as $key => $value) {
+                    $detalleModel= Ordenesdetalle::find()->where(["idorden"=>$data['idorden'],"idinventario"=>$value["id"]])->one();
+                
+                    if ($detalleModel){ 
+                        if ($detalleModel->cantidadfinal!=$value["cantidad"]){
+                            $diferencia=$value["cantidad"]-$detalleModel->cantidadfinal;
+                            $detalleModel->cantidad=$diferencia;
+                            $detalleModel->cantidadfinal=$detalleModel->cantidad+$diferencia;
+                            $detalleModel->impreso=0;
+                            $detalleModel->usuarioact=Yii::$app->user->identity->id;
+                            $detalleModel->fechaact= date("Y-m-d H:i:s");
+                            $detalleModel->save();
+                        }
+                        
+                    }else{
+                        $ordenDetalle= new Ordenesdetalle();
+                        $ordenDetalle->idorden=$dataModel->id;
+                        $ordenDetalle->nombreprod=$value["nombre"];
+                        $inventario = Inventario::find()->where(['id' => $value["id"]])->one();
+                        $ordenDetalle->idproducto=$inventario->idproducto;
+                        $ordenDetalle->idinventario=$value["id"];
+                        $ordenDetalle->cantidad=$value["cantidad"];
+                        $ordenDetalle->cantidadfinal=$value["cantidad"];
+                        $ordenDetalle->precio=$value["valoru"];
+                        $ordenDetalle->usuariocreacion=Yii::$app->user->identity->id;
+                        $ordenDetalle->save();
+                    }
+                }
                 $error=false;
                 return array("response" => true, "id" => $dataModel->id, "mensaje"=> "Registro actualizado","tipo"=>"success", "success"=>true);
             } else {
