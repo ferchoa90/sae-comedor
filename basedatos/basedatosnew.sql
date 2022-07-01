@@ -3467,7 +3467,7 @@ CREATE TABLE `mesas` (
 
 insert  into `mesas`(`id`,`nombre`,`descripcion`,`seccion`,`numero`,`orden`,`tamanio`,`isDeleted`,`fechacreacion`,`usuariocreacion`,`fechaact`,`usuarioact`,`estatusmesa`,`estatus`) values 
 (1,'A1',NULL,'A',1,4,'100',0,'2022-06-30 10:43:47',1,NULL,NULL,'LIBRE','ACTIVO'),
-(2,'A2',NULL,'A',2,5,'100',0,'2022-06-30 10:44:30',1,NULL,NULL,'LIBRE','ACTIVO'),
+(2,'A2',NULL,'A',2,5,'100',0,'2022-06-30 10:44:30',1,NULL,NULL,'OCUPADA','ACTIVO'),
 (3,'A3',NULL,'A',3,6,'100',0,'2022-06-30 10:44:37',1,NULL,NULL,'LIBRE','ACTIVO'),
 (4,'A4',NULL,'A',4,7,'100',0,'2022-06-30 10:44:44',1,NULL,NULL,'LIBRE','ACTIVO'),
 (5,'A5',NULL,'A',5,1,'125',0,'2022-06-30 10:44:51',1,NULL,NULL,'LIBRE','ACTIVO'),
@@ -3547,13 +3547,14 @@ CREATE TABLE `ordenes` (
   CONSTRAINT `ordenes_ibfk_1` FOREIGN KEY (`usuariocreacion`) REFERENCES `user` (`id`),
   CONSTRAINT `ordenes_ibfk_2` FOREIGN KEY (`idmesa`) REFERENCES `mesas` (`id`),
   CONSTRAINT `ordenes_ibfk_3` FOREIGN KEY (`idcliente`) REFERENCES `clientes` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 /*Data for the table `ordenes` */
 
 insert  into `ordenes`(`id`,`idmesa`,`comentario`,`idcliente`,`isDeleted`,`ordencerrada`,`usuariocreacion`,`fechacreacion`,`usuarioact`,`impreso`,`fechaact`,`estatus`) values 
-(23,8,'Sin cebolla',2,0,1,1,'2022-07-01 06:03:10',NULL,1,NULL,'ACTIVO'),
-(24,10,'sin cebolla',2,0,0,1,'2022-07-01 06:54:25',NULL,0,NULL,'ACTIVO');
+(23,8,'Sin cebolla',2,0,0,1,'2022-07-01 06:03:10',NULL,1,NULL,'ACTIVO'),
+(24,10,'sin cebolla',2,0,0,1,'2022-07-01 06:54:25',NULL,1,NULL,'ACTIVO'),
+(25,2,'',2,0,0,1,'2022-07-01 08:15:15',NULL,1,NULL,'ACTIVO');
 
 /*Table structure for table `ordenesdetalle` */
 
@@ -3583,13 +3584,14 @@ CREATE TABLE `ordenesdetalle` (
   CONSTRAINT `ordenesdetalle_ibfk_2` FOREIGN KEY (`usuariocreacion`) REFERENCES `user` (`id`),
   CONSTRAINT `ordenesdetalle_ibfk_3` FOREIGN KEY (`idproducto`) REFERENCES `productos` (`id`),
   CONSTRAINT `ordenesdetalle_ibfk_4` FOREIGN KEY (`idinventario`) REFERENCES `inventario` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 /*Data for the table `ordenesdetalle` */
 
 insert  into `ordenesdetalle`(`id`,`idorden`,`idproducto`,`nombreprod`,`idinventario`,`cantidad`,`precio`,`impreso`,`isDeleted`,`usuariocreacion`,`fechacreacion`,`usuarioact`,`fechaact`,`estatus`) values 
-(16,23,4,'SHAWARMA MIXTO',2848,1.00,3.75,0,0,1,'2022-07-01 06:03:10',NULL,NULL,'ACTIVO'),
-(17,24,5,'HAMBURGUESA CHIPS',2849,4.00,3.50,0,0,1,'2022-07-01 06:54:25',NULL,NULL,'ACTIVO');
+(16,23,4,'SHAWARMA MIXTO',2848,1.00,3.75,1,0,1,'2022-07-01 06:03:10',NULL,NULL,'ACTIVO'),
+(17,24,5,'HAMBURGUESA CHIPS',2849,4.00,3.50,1,0,1,'2022-07-01 06:54:25',NULL,NULL,'ACTIVO'),
+(18,25,5,'HAMBURGUESA CHIPS',2849,5.00,3.50,1,0,1,'2022-07-01 08:15:16',NULL,NULL,'ACTIVO');
 
 /*Table structure for table `presentacion` */
 
