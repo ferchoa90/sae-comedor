@@ -42,25 +42,25 @@ $objeto= new Objetos;
                                                       <input id="cliente" type="number" class="form-control bg-light border-0 small" placeholder="Cédula o Ruc del Cliente" aria-label="Search" aria-describedby="basic-addon1">
 
                           <div class=" vertical-center align-middle">
-                                &nbsp;&nbsp; 
+                                &nbsp;&nbsp;
                               <a id="agCliente" href="#" data-toggle="modal" data-target="#nuevoClienteModal" class="d-sm-inline-block btn btn-sm btn-success shadow-sm  "> + </a>
                               <a id="dlCliente" href="#" data-toggle="modal d-none" style="display:none;" onclick="javascript:resetCliente();" class=" btn btn-sm btn-danger shadow-sm  "> X </a>
 &nbsp;&nbsp;
                                 <span id="nCliente"  class="vertical-center align-middle"  style="color: #666!important; font-size: 15px;">....</span>
-                          </div>      
+                          </div>
                             <div class="input-group-append align-middle">
                               <a class="btn btn-warning" id="btn-ok" style="display:none;"><i class="fa fa-check"></i></a>
                               <a class="btn btn-danger" id="btn-danger" style="display:none;"><i class="fa fa-times"></i></a>
                             </div>
                         </div>
-        
+
                   </h6>
                   <h6 class="m-0 font-weight-bold text-primary col-5 col-xs-6">
                         <div class="input-group">
-                           <input id="codigobarras" type="text" class="form-control bg-light border-0 small" placeholder="#" aria-label="Search" aria-describedby="basic-addon1">
-                           
-                            <!-- <input style="" id="producto" autocomplete="off" type="text" class="form-control bg-light border-0 small" placeholder="Item..." aria-label="Search" aria-describedby="basic-addon2">
-                             --><div class="input-group-append">
+                           <!--<input id="codigobarras" type="text" class="form-control bg-light border-0 small" placeholder="#" aria-label="Search" aria-describedby="basic-addon1">-->
+
+                            <input style="" id="producto" autocomplete="off" type="text" class="form-control bg-light border-0 small" placeholder="Item..." aria-label="Search" aria-describedby="basic-addon2">
+                            <!--<div class="input-group-append">
                             <!-- <button class="btn btn-primary" type="button"  data-toggle="modal" data-target="#exampleModal">
                                 <i class="fas fa-sign-in-alt fa-sm"></i>
                             </button> -->
@@ -73,7 +73,7 @@ $objeto= new Objetos;
                     <div class="btn-group btn-group-toggle" data-toggle="buttons">
                       <label style="border-color: #cbd3e9;font-size: 11px;" class="btn btn-light active">
                         <input type="radio" name="tipopago" id="option1" onchange="javascript:mostrarTarjeta(this);" autocomplete="off" checked value="1"> Efectivo
-                      </label> 
+                      </label>
                       <label style="border-color: #cbd3e9;font-size: 11px;" class="btn btn-light">
                         <input type="radio" onchange="javascript:mostrarTarjeta(this);" name="tipopago" value="2" id="option2"   autocomplete="off"> Tarjeta Crédito
                       </label>
@@ -88,7 +88,7 @@ $objeto= new Objetos;
                       </label>
                     </div>
                   </h6>
-                  
+
                 </div>
                 <!-- Card Body -->
                 <div class="card-body">
@@ -106,7 +106,7 @@ $objeto= new Objetos;
                       </tr>
                     </thead>
                     <tbody id="contenidoCompra"  >
-                    <!--  
+                    <!--
                       <tr>
                         <th scope="row">3</th>
                         <td colspan="2">Larry the Bird</td>
@@ -115,30 +115,30 @@ $objeto= new Objetos;
                     </tbody>
                   </table>
                   </div>
-              
+
                   <div class="pull-right">
-                    <span style="font-size: 15px;font-weight: bold;" >SUBTOTAL: $</span> 
+                    <span style="font-size: 15px;font-weight: bold;" >SUBTOTAL: $</span>
                     <span  style="font-size: 18px;font-weight: bold; color:orange;" id="subtotalfin">0.00</span>
-                  </div> 
+                  </div>
                   <div class="pull-right " style="clear: both;"></div>
                   <div class="pull-right " style="clear: both;">
-                    <span style="font-size: 15px;font-weight: bold;" >IVA (12%): $</span> 
+                    <span style="font-size: 15px;font-weight: bold;" >IVA (12%): $</span>
                     <span  style="font-size: 18px;font-weight: bold; color:orange;" id="ivafin">0.00</span>
                   </div>
                   <div class="pull-right " style="clear: both;"></div>
                   <div class="pull-right " style="clear: both;">
-                    <span style="font-size: 15px;font-weight: bold;" >TOTAL: $</span> 
+                    <span style="font-size: 15px;font-weight: bold;" >TOTAL: $</span>
                     <span  style="font-size: 18px;font-weight: bold; color:orange;" id="total">0.00</span>
                   </div>
                   <div class="pull-right " style="clear: both;"></div>
                   <div id="dvrecargo" class="pull-right " style="clear: both; display:none;">
-                    <span style="font-size: 15px;font-weight: bold;" >RECARGO (10%): $</span> 
+                    <span style="font-size: 15px;font-weight: bold;" >RECARGO (10%): $</span>
                     <span  style="font-size: 18px;font-weight: bold; color:orange;" id="recargo">0.00</span>
                   </div>
                   </div>
-                  
-                
-                  
+
+
+
                 </div>
               </div>
             </div>
@@ -155,13 +155,13 @@ $objeto= new Objetos;
         </button>
       </div>
       <div class="modal-body">
-      
+
         <form id="form-clientes" action="/frontend/web/site/facturar" method="post">
-     
-           
-        
+
+
+
           <input type="hidden" name="_csrf-frontend" value="<?=Yii::$app->request->getCsrfToken() ?>">
-           <?= 
+           <?=
              $contenido=$objeto->getObjetosArray(
               array(
                   array('tipo'=>'select','subtipo'=>'', 'nombre'=>'tipoident', 'id'=>'tipoident', 'valor'=>$tipoidentificacion, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Tipo Identificación: ', 'col'=>'col-6 col-md-6', 'adicional'=>''),
@@ -175,23 +175,23 @@ $objeto= new Objetos;
                   array('tipo'=>'separador','clase'=>'', 'estilo'=>'', 'color'=>''),
                   array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'credito', 'id'=>'credito', 'valor'=>'Credito', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'Crédito', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
                   array('tipo'=>'input','subtipo'=>'numero', 'nombre'=>'cupocredito', 'id'=>'cupocredito', 'valor'=>'0.00','etiqueta'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Cupo crédito: ', 'col'=>'col-9 col-md-3', 'adicional'=>''),
-                  
+
               ),true
           );
            ?>
 
           <div class="modal-footer" style="padding-right:0px; padding-bottom:0px;">
-            
+
             <div class="form-group" style="padding-right:0px; margin-bottom:0px;">
               <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-dismiss="modal">Cancelar</button>
-        
+
               <button type="button" onclick="javascript:agregarCliente(this);" id="reservassave" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Agregar</button>          </div>
           </div>
-                
+
 
         </form>
       </div>
-     
+
     </div>
   </div>
 </div>
@@ -260,14 +260,14 @@ $objeto= new Objetos;
 <?php
 $this->registerJs("
 
-var tipopago=0;
+var tipopago=1;
 $(document).ready(function(){
- 
- 
+
+
 
 
     $('#producto').typeahead({
-      minLength: 1, 
+      minLength: 1,
       hint: false,
       //autoSelect: false,.
       dynamic: true,
@@ -287,7 +287,7 @@ $(document).ready(function(){
        success:function(data)
        {
         result($.map(data, function(item){
-            //$('#btn-ok').fadeIn(); 
+            //$('#btn-ok').fadeIn();
          return item;
         }));
        }
@@ -298,7 +298,7 @@ $(document).ready(function(){
      event.preventDefault();
      return item;
  },
-    }) 
+    })
 
     $('#cliente').keypress(function(e) {
       var code = (e.keyCode ? e.keyCode : e.which);
@@ -320,7 +320,7 @@ $(document).ready(function(){
      });
    });
 
-  
+
 
    function obtenerProducto(nombre){
        console.log('obtenerP '+nombre)
@@ -344,9 +344,9 @@ $(document).ready(function(){
             alertify.error('Producto no existe');
             $('#producto').val('');
           }
-          //  $('#btn-ok').hide(); 
-           // $('#btn-danger').fadeIn(); 
-           // $('#contenido').fadeIn(); 
+          //  $('#btn-ok').hide();
+           // $('#btn-danger').fadeIn();
+           // $('#contenido').fadeIn();
            // $('#producto').prop('disabled', true);
         }
        })
@@ -389,9 +389,9 @@ $(document).ready(function(){
              //$('#preview').attr ( 'src' ,'/frontend/web/images/articulos/'+data[0].imagen)
              //$('#presentacion').focus();
          }
-         //$('#btn-ok').hide(); 
-         //$('#btn-danger').fadeIn(); 
-         //$('#contenido').fadeIn(); 
+         //$('#btn-ok').hide();
+         //$('#btn-danger').fadeIn();
+         //$('#contenido').fadeIn();
          //$('#cliente').prop('disabled', true);
      }
     })
@@ -428,7 +428,7 @@ $(document).ready(function(){
   {
     //console.log('Agregar Producto');
     agregarItemFac(data)
-    armarGrid();  
+    armarGrid();
   }
 
   function armarGrid()
@@ -437,7 +437,7 @@ $(document).ready(function(){
     dataint = dataFactura;
     var html='';
     var total=0;
-    
+
     for (var i = 0, l = dataint.length; i < l; i++) {
       var obj = dataint[i];
       //console.log(obj);
@@ -481,7 +481,7 @@ $(document).ready(function(){
       armarGrid();
    }
 
-  
+
 
   var dataFactura = [];
   var dataFacturaprod = [];
@@ -494,11 +494,11 @@ $(document).ready(function(){
   $('#codigobarras').focus();
  }
 
-  function inicializarFactura() 
+  function inicializarFactura()
   {
       if (localStorage.getItem('listaFactura')) {
           dataFactura = JSON.parse(localStorage.getItem('listaFactura'));
-          armarGrid();    
+          armarGrid();
       } else {
           if (!localStorage.getItem('listaFactura')) {
               //listarFacturas();
@@ -605,24 +605,24 @@ $(document).ready(function(){
     localStorage.setItem('listaFactura', JSON.stringify(dataFactura));
   }
 
- 
+
   inicializarFactura();
-    $('#btn-ok').click(function() { 
+    $('#btn-ok').click(function() {
         if ($('#idproducto').val() > 0){
-            $('#contenido').fadeIn(); 
-            $('#btn-ok').fadeOut(); 
-            $('#btn-danger').fadeIn(); 
+            $('#contenido').fadeIn();
+            $('#btn-ok').fadeOut();
+            $('#btn-danger').fadeIn();
         }else{
             showMessages('Error', 'Debe seleccionar un producto', 'warning');
         }
-    }); 
+    });
 
-    $('#btn-danger').click(function() { 
-        $('#contenido').fadeOut(); 
-        $('#btn-danger').fadeOut(); 
-        $('#btn-ok').fadeIn(); 
+    $('#btn-danger').click(function() {
+        $('#contenido').fadeOut();
+        $('#btn-danger').fadeOut();
+        $('#btn-ok').fadeIn();
         $('#producto').prop('disabled', false)
-    }); 
+    });
 
     function generarFactura()
     {
@@ -633,7 +633,7 @@ $(document).ready(function(){
         obtenerCliente($('#cliente').val());
       }
       var cliente=$('#cliente').val();
-       
+
       $.ajax({
           url:\"ingresarfactura\",
           method:\"POST\",
@@ -722,7 +722,7 @@ function calcularRecargo()
        }
     function agregarCliente(val)
     {
-      
+
         console.log('agregar cliente')
             $('#clientes-correo').change(function () {
                 $(this).val($.trim($(this).val()));
@@ -733,7 +733,7 @@ function calcularRecargo()
             var direccion = $('#clientes-direccion').val();
             var telefono = $('#clientes-telefono').val();
             var correo = $('#clientes-correo').val();
-           
+
             $.post('nuevocliente', {
                         usuarioc: usuarioc,
                         cedula: cedula,
@@ -754,7 +754,7 @@ function calcularRecargo()
                           obtenerCliente(cedula);
                         } else {
                           alertify.error('Cliente ya existe');
-                          
+
                         }
                     });
     }
@@ -786,7 +786,7 @@ function calcularRecargo()
 }
 
 .modal-footer .form-group button{
-   
+
 }
 
 .vertical-center {
@@ -806,13 +806,13 @@ th     { background:#eee; }
 #cliente
 {
   -moz-appearance:textfield;
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
 }
 
-#cliente::-webkit-inner-spin-button, 
-#cliente::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+#cliente::-webkit-inner-spin-button,
+#cliente::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 @media (min-width: 576px){
 .modal-dialog {

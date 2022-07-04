@@ -53,7 +53,7 @@ use PayPal\Api\Transaction;
 use PayPal\Rest\ApiContext;
 use PayPal\Auth\OAuthTokenCredential;
 */
- 
+
 
 /**
 
@@ -261,7 +261,7 @@ class SiteController extends Controller
 
     }
 
- 
+
 
     public function actionEstadisticas()
     {
@@ -337,7 +337,7 @@ class SiteController extends Controller
             return $this->redirect(URL::base() . "/site/login");
         }
         $page = "eliminarfactura";
-        $model = Ordenes::find()->where(['isDeleted' => '0','facturada' => '0'])->orderBy(["fechacreacion" => SORT_ASC])->all();
+        $model = Ordenes::find()->where(['isDeleted' => '0','facturada' => '0',"ordencerrada"=>1])->orderBy(["fechacreacion" => SORT_ASC])->all();
         //var_dump($model);
         $arrayResp = array();
         $count = 0;
@@ -386,7 +386,7 @@ class SiteController extends Controller
         }
         $orden=Ordenes::find()->where(["id"=>$id])->one();
         $ordendetalle=Ordenesdetalle::find()->where(["idorden"=>$id])->all();
-        
+
         $tipoident = new Facturacion_tipoident();
         $tipoident = $tipoident->getSelect();
         $genero = new Sistema_genero();
@@ -501,7 +501,7 @@ class SiteController extends Controller
 
 
 
-    
+
 
     /**
 
@@ -553,8 +553,8 @@ class SiteController extends Controller
         $count = 1;
         //die(var_dump($model));
             //$modelInventario = Productos::find()->where(['id' => str_replace("-","",$nombrep[0]) ])->orderBy(["fechacreacion" => SORT_DESC])->all();
-            
-            
+
+
             $model =  Inventario::find()->where(['id' =>  str_replace("-","",$nombrep[0])])->orderBy(["fechacreacion" => SORT_DESC])->all();
             //var_dump($modelInventario);
            /* if (!$modelInventario){
@@ -581,7 +581,7 @@ class SiteController extends Controller
                 //$arrayResp[$keyI]['fechacreacion'] = "-";
                 $arrayResp[$keyI]['id'] = $dataI->id;
                 $arrayResp[$keyI]['imagen'] = $dataI->producto->imagen;
-                $count++;       
+                $count++;
             }
         //die(var_dump($arrayResp));
         return json_encode($arrayResp);
@@ -601,10 +601,10 @@ class SiteController extends Controller
         //die(var_dump($model));
             //$modelInventario = Productos::find()->where(['id' => str_replace("-","",$nombrep[0]) ])->orderBy(["fechacreacion" => SORT_DESC])->all();
             $cont=0;
-           
+
            foreach ($ordendetalle as $key => $valuedet) {
             $model =  Inventario::find()->where(['idproducto' =>  $valuedet->idproducto])->orderBy(["fechacreacion" => SORT_DESC])->all();
-             
+
             /* if (!$modelInventario){
                  $arrayResp[0]['id'] = $model->id;
                  $arrayResp[0]['imagen'] = $model>imagen;
@@ -632,11 +632,11 @@ class SiteController extends Controller
                  $arrayResp[$cont]['id'] = $dataI->id;
                  $arrayResp[$cont]['imagen'] = $dataI->producto->imagen;
                  $cont++;
-                 $count++;       
+                 $count++;
              }
              $cont++;
            }
-           
+
         //die(var_dump($arrayResp));
         return json_encode($arrayResp);
     }
@@ -681,7 +681,7 @@ class SiteController extends Controller
                 //$arrayResp[$keyI]['fechacreacion'] = "-";
                 $arrayResp[$keyI]['id'] = $dataI->id;
                 $arrayResp[$keyI]['imagen'] = $dataI->imagen;
-                $count++;       
+                $count++;
             }
         return json_encode($arrayResp);
     }
@@ -709,7 +709,7 @@ class SiteController extends Controller
                 $arrayResp[$key]['correo'] = $data->correo;
                 $arrayResp[$key]['tipo'] = $data->tipo;
                 $arrayResp[$key]['usuariocreacion'] = $data->usuariocreacion0->username;
-                $count++;       
+                $count++;
             }
 
         return json_encode($arrayResp);
@@ -728,7 +728,7 @@ class SiteController extends Controller
         $arrayResp = array();
         $count = 1;
         foreach ($modelI as $key => $data) {
-                    $arrayResp[] = $data->id.' - '.$data->producto->nombreproducto.' - '.$data->producto->marca0->nombre.' '.$data->color->nombre.' '.$data->clasificacion->nombre.' - '.$data->producto->descripcion;
+                    $arrayResp[] = $data->id.' - '.$data->producto->nombreproducto.' '.$data->producto->descripcion;
         }
        //  die(var_dump($arrayResp));
         return json_encode($arrayResp);
@@ -756,7 +756,7 @@ class SiteController extends Controller
                 $cliente->correo=$data['correo'];
                 $cliente->usuariocreacion=  Yii::$app->user->identity->id;
                 $cliente->estatus='ACTIVO';
-                if ($cliente->save()){ 
+                if ($cliente->save()){
                         $return=array("success"=>true,"Mensaje"=>"OK","resp" => true, "id" => $cliente->id);
                 }else{
                     $return=array("success"=>false,"Mensaje"=>"No se ha podido ingresar el cliente.","resp" => false, "id" => "");
@@ -805,15 +805,15 @@ class SiteController extends Controller
                 //$value["id"];
                 $valortotal=$valortotal+($value["valoru"]*$value["cantidad"]);
             }
-        
+
             $valortotal= number_format($valortotal, 2);
             $subtotal= number_format($valortotal/1.12,2);
             $iva= number_format($valortotal-$subtotal,2);
             $factura->subtotal=$subtotal;
-            $factura->iva=$iva;    
+            $factura->iva=$iva;
             $factura->total=$valortotal;
            // die(var_dump($factura));
-            if ($factura->save()){ 
+            if ($factura->save()){
                 foreach ($data["data"] as $key => $value) {
                     //$value["id"];
                     $subtotalI= number_format($value["valoru"]/1.12,2);
@@ -825,10 +825,10 @@ class SiteController extends Controller
                     $facturaDetalle= new Facturadetalle();
                     $facturaDetalle->idfactura=$factura->id;
                     $facturaDetalle->cantidad=$value["cantidad"];
-                    $facturaDetalle->idarticulo=$modelI->id;
+                    $facturaDetalle->idarticulo=1;
                     $facturaDetalle->idinventario=$value["id"];
                     $facturaDetalle->narticulo=$value["nombre"];
-                    $facturaDetalle->tarticulo=$descripcion;
+                    $facturaDetalle->tarticulo=$descripcion.'.';
                     //$facturaDetalle->tarticulo=$value["descripcion"];
                     $facturaDetalle->imagen=$value["imagen"];
                     $facturaDetalle->valoru=$value["valoru"];
@@ -845,6 +845,95 @@ class SiteController extends Controller
                     $return=array("success"=>true,"Mensaje"=>"OK","resp" => true, "id" => $factura->id);
 
             }else{
+               // var_dump($factura->errors);
+                $return=array("success"=>false,"Mensaje"=>"No se ha podido ingresar el banner.","resp" => false, "id" => "");
+            }
+             //var_dump($factura->errors);
+            //var_dump($data["data"][0]);
+            return json_encode($return);
+        }
+    }
+
+    public function actionIngresarfacturapedido()
+    {
+        if (Yii::$app->user->isGuest) {
+            return $this->redirect(URL::base() . "/site/login");
+        }
+
+        $return=array();
+        if (isset($_POST) and !empty($_POST)) {
+            $data = $_POST;
+            //echo $data["cliente"];
+            $factant=Factura::find()->orderBy(["fechacreacion" => SORT_DESC])->one();
+            //var_dump($factant);
+            $facturan=$factant->nfactura+1;
+            $cliente = Clientes::find()->where(['cedula' => $data["cliente"]])->orderBy(["fechacreacion" => SORT_DESC])->all();
+            $factura= new Factura();
+            $factura->nfactura=$facturan;
+            $factura->idcliente=$cliente[0]->id;
+            $factura->nombre=$cliente[0]->razonsocial;
+            $factura->ruc=$cliente[0]->cedula;
+            $factura->usuariocreacion=  Yii::$app->user->identity->id;
+            //$factura->usuariocreacion=  1;
+            $factura->tipopago=$data["tipopago"];
+            $factura->tipodoc=1;
+            $factura->facturae='PENDIENTE';
+            $factura->estatus='ACTIVO';
+            $valortotal=0;
+            $iva=0;
+            $subtotal=0;
+
+            foreach ($data["data"] as $key => $value) {
+                //$value["id"];
+                $valortotal=$valortotal+($value["valoru"]*$value["cantidad"]);
+            }
+
+            $valortotal= number_format($valortotal, 2);
+            $subtotal= number_format($valortotal/1.12,2);
+            $iva= number_format($valortotal-$subtotal,2);
+            $factura->subtotal=$subtotal;
+            $factura->iva=$iva;
+            $factura->total=$valortotal;
+            $factura->idorden=$data["idorden"];
+           // die(var_dump($factura));
+            if ($factura->save()){
+
+                $pedido=  Ordenes::find()->where(['id' => $data["idorden"]])->one();
+                $pedido->facturada=1;
+                $pedido->save();
+
+                foreach ($data["data"] as $key => $value) {
+                    //$value["id"];
+                    $subtotalI= number_format($value["valoru"]/1.12,2);
+                    $ivaI= number_format($value["valoru"]-$subtotalI,2);
+                    $modelI =  Productos::find()->where(['id' => $value["id"]])->one();
+                    $descripcion=$value["descripcion"];
+                    if ($value["color"]!="N/A"){ $descripcion.=' '.$value["color"]; }
+                    if ($value["clasificacion"]!="N/A"){ $descripcion.=' '.$value["clasificacion"]; }
+                    $facturaDetalle= new Facturadetalle();
+                    $facturaDetalle->idfactura=$factura->id;
+                    $facturaDetalle->cantidad=$value["cantidad"];
+                    $facturaDetalle->idarticulo=1;
+                    $facturaDetalle->idinventario=$value["id"];
+                    $facturaDetalle->narticulo=$value["nombre"];
+                    $facturaDetalle->tarticulo=$descripcion.'.';
+                    //$facturaDetalle->tarticulo=$value["descripcion"];
+                    $facturaDetalle->imagen=$value["imagen"];
+                    $facturaDetalle->valoru=$value["valoru"];
+                    $facturaDetalle->valort=number_format($value["valoru"]*$value["cantidad"],2);
+                    $facturaDetalle->iva=$ivaI;
+                    $facturaDetalle->civa=0;
+                    $facturaDetalle->estatus='ACTIVO';
+                    $facturaDetalle->save();
+                     //die(var_dump($facturaDetalle));
+                        //$modelI->stock=$modelInventario->stock- $value["cantidad"];
+                        //$modelI->save();
+                    //var_dump($facturaDetalle->errors);
+                }
+                    $return=array("success"=>true,"Mensaje"=>"OK","resp" => true, "id" => $factura->id);
+
+            }else{
+               // var_dump($factura->errors);
                 $return=array("success"=>false,"Mensaje"=>"No se ha podido ingresar el banner.","resp" => false, "id" => "");
             }
              //var_dump($factura->errors);
@@ -856,33 +945,35 @@ class SiteController extends Controller
 
     public function actionIngresarorden()
     {
-       
+
          if (Yii::$app->user->isGuest) {
             return $this->redirect(URL::base() . "/site/login");
         }
         extract($_POST);
         $data= new Facturacion_ordenar;
         $data= $data->Nuevo($_POST);
-
-        $estatus= new Facturacion_mesas;
-        $estatus= $estatus->setStatus($_POST["mesa"],"OCUPADA");
+        if ($data["success"]){
+            $estatus= new Facturacion_mesas;
+            $estatus= $estatus->setStatus($_POST["mesa"],"OCUPADA");
+        }
         $response=$data;
         return json_encode($response);
     }
 
     public function actionActualizarorden()
     {
-       
+
          if (Yii::$app->user->isGuest) {
             return $this->redirect(URL::base() . "/site/login");
         }
         extract($_POST);
         $data= new Facturacion_ordenar;
         $data= $data->Editar($_POST);
-        
-        
-        $estatus= new Facturacion_mesas;
-        $estatus= $estatus->setStatus($_POST["mesa"],"OCUPADA");
+
+        if ($data["success"]){
+            $estatus= new Facturacion_mesas;
+            $estatus= $estatus->setStatus($_POST["mesa"],"OCUPADA");
+        }
         $response=$data;
         return json_encode($response);
     }
@@ -890,21 +981,24 @@ class SiteController extends Controller
 
     public function actionCerrarorden()
     {
-       
+
          if (Yii::$app->user->isGuest) {
             return $this->redirect(URL::base() . "/site/login");
         }
         extract($_POST);
         $data= new Facturacion_ordenar;
-        $data= $data->Cerrarorden($_POST);
+        $data= $data->cerrarorden($_POST);
 
-        $estatus= new Facturacion_mesas;
-        $estatus= $estatus->setStatus($_POST["mesa"],"LIBRE");
+        if ($data["success"]){
+            $estatus= new Facturacion_mesas;
+            $estatus= $estatus->setStatus($_POST["mesa"],"LIBRE");
+        }
         $response=$data;
+
         return json_encode($response);
     }
 
-    
+
     public function actionFacturaimpresora($id)
     {
 
@@ -936,7 +1030,7 @@ class SiteController extends Controller
         }
     }
 
-    
+
     public function actionRequestPasswordReset()
     {
         $model = new PasswordResetRequestForm();
@@ -977,4 +1071,3 @@ class SiteController extends Controller
     }
 
 }
-

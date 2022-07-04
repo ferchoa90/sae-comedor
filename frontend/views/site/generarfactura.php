@@ -690,9 +690,9 @@ obtenerProductoId();
       var cliente=$('#cliente').val();
        
       $.ajax({
-          url:\"ingresarfactura\",
+          url:\"ingresarfacturapedido\",
           method:\"POST\",
-          data: { data: dataFactura, cliente:cliente, tipopago: tipopago,'_csrf-frontend':'".Yii::$app->request->getCsrfToken()."' },
+          data: { data: dataFactura, cliente:cliente, idorden:'".$idorden."', tipopago: tipopago,'_csrf-frontend':'".Yii::$app->request->getCsrfToken()."' },
           //dataType:\"json\",
           success:function(data)
           {
@@ -703,6 +703,9 @@ obtenerProductoId();
                 if (data.id)
                 {
                   imprimirFactura(data.id);
+                  setInterval(location.replace('/frontend/web/site/ordenes'),1000);
+                  //window.location.href='/frontend/web/site/ordenes';
+                  
                 }
             } else {
                  alert('No se ha podido guardar la factura');

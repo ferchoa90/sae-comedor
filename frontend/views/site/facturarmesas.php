@@ -42,23 +42,23 @@ $objeto= new Objetos;
                                                       <input id="cliente" type="number" class="form-control bg-light border-0 small d-none" placeholder="Cédula o Ruc del Cliente" aria-label="Search" aria-describedby="basic-addon1">
 
                           <div class=" vertical-center align-middle">
-                                &nbsp;&nbsp; 
+                                &nbsp;&nbsp;
                               <a id="agCliente" href="#" data-toggle="modal" data-target="#nuevoClienteModal" class="d-sm-inline-block btn btn-sm btn-success shadow-sm  "> + </a>
                               <a id="dlCliente" href="#" data-toggle="modal d-none" style="display:none;" onclick="javascript:resetCliente();" class=" btn btn-sm btn-danger shadow-sm  "> X </a>
 &nbsp;&nbsp;
                                 <span id="nCliente"  class="vertical-center align-middle"  style="color: #666!important; font-size: 15px;">....</span>
-                          </div>      
+                          </div>
                             <div class="input-group-append align-middle">
                               <a class="btn btn-warning" id="btn-ok" style="display:none;"><i class="fa fa-check"></i></a>
                               <a class="btn btn-danger" id="btn-danger" style="display:none;"><i class="fa fa-times"></i></a>
                             </div>
                         </div>
-        
+
                   </h6>
                   <h6 class="m-0 font-weight-bold text-primary col-5 col-xs-6">
                         <div class="input-group">
                            <!--<input id="codigobarras" type="text" class="form-control bg-light border-0 small" placeholder="#" aria-label="Search" aria-describedby="basic-addon1">-->
-                           
+
                             <!-- <input style="" id="producto" autocomplete="off" type="text" class="form-control bg-light border-0 small" placeholder="Item..." aria-label="Search" aria-describedby="basic-addon2">
                              --><div class="input-group-append">
                             <!-- <button class="btn btn-primary" type="button"  data-toggle="modal" data-target="#exampleModal">
@@ -68,7 +68,7 @@ $objeto= new Objetos;
                         </div>
                   </h6>
                   </div>
-                 
+
                 <!-- Card Body -->
                 <div class="card-body">
                   <div class="row ">
@@ -77,9 +77,9 @@ $objeto= new Objetos;
                         <div class="row p-3">
                             <?php foreach ($mesasb as $key => $value) { ?>
                             <div class="col-5 h-100 hc-<?=$value->tamanio?> image-mesa d-flex align-bottom align-text-bottom ">
-                                
+
                                 <div class=" col-12 text-right align-self-end p-0">
-                                  <div class=" align-top text-left">    
+                                  <div class=" align-top text-left">
                                     <b style="font-size: 15px; color: orange;"><?= $value->nombre ?></b>
                                   </div>
                                     <?php if ($value->estatusmesa=="LIBRE"){  ?>
@@ -92,26 +92,26 @@ $objeto= new Objetos;
                                           <br>
                                           <?php }else{ ?>
                                             <a href="#" disabled  class=" d-sm-inline-block btn btn-sm btn-secondary shadow-sm mt-1" title="Mesa Ocupada"><i class="fa fa-list-alt fa-sm text-white-50"></i>&nbsp;</a>
-                                            <br>                                            
+                                            <br>
                                           <?php } ?>
                                       <a href="javascript:cerrarMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm mt-1" title="Cerrar cuenta"><i class="fa fa-tasks fa-sm text-white-50"></i>&nbsp;</a>
                                     <?php } ?>
-                                    
+
                                   <div class="p-1"></div>
-                                  
+
                                 </div>
                             </div>
                             <?php $cont++; ?>
                             <?php if ($cont==1){ echo '<div class="col-2"></div>';$cont=-1; } ?>
                             <?php if ($cont==0){ echo '<div class="p-2 col-12"></div>';} ?>
 
-                            
-                                  
+
+
 <div class="modal fade" id="nuevoPedidoModal-<?= $value->nombre ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle"><?php if (@$value->ordenes->ordencerrada==1){ ?>Nueva Orden (MESA: <?= $value->nombre ?>)<?php }else{ ?> Orden # <?= $value->ordenes->id ?> , MESA: (<?= $value->nombre ?>)   <?php } ?></h5>
+        <h5 class="modal-title" id="exampleModalLongTitle"><?php if (@$value->ordenes==NULL ||   @$value->ordenes->ordencerrada==1 ){ ?>Nueva Orden (MESA: <?= $value->nombre ?>)<?php }else{ ?> Orden # <?= $value->ordenes->id ?> , MESA: (<?= $value->nombre ?>)   <?php } ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -123,13 +123,13 @@ $objeto= new Objetos;
              <div class="col-11">
                <input style="" id="producto-<?= $value->nombre ?>" autocomplete="off" type="text" class="form-control bg-light border-0 small" placeholder="Item..." aria-label="Search" aria-describedby="basic-addon2">
               </div>
-               
+
         <div class="col">
                  <a id="successprod-<?= $value->nombre ?>" href="#" data-toggle="modal d-none" style="display:none;" onclick="javascript:obtenerProducto($('#producto-<?= $value->nombre ?>').val());" class=" btn btn-sm btn-success shadow-sm  "> + </a>
-        </div>  
+        </div>
       </div>
           <div class="card-body  ">
-                  <div class="chart-area">
+                  <div class="">
                     <div class="tableFixHead" id="tableFixHead-<?= $value->nombre ?>">
                       <table class="table table-hover table-striped">
                         <thead>
@@ -143,7 +143,7 @@ $objeto= new Objetos;
                           </tr>
                         </thead>
                         <tbody id="contenidoCompra-<?= $value->nombre ?>"  >
-                        <!--  
+                        <!--
                           <tr>
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
@@ -152,24 +152,24 @@ $objeto= new Objetos;
                         </tbody>
                       </table>
                     </div>
-              
+
                     <div class="pull-right" style=" display:none;">
-                      <span style="font-size: 15px;font-weight: bold;" >SUBTOTAL: $</span> 
+                      <span style="font-size: 15px;font-weight: bold;" >SUBTOTAL: $</span>
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="subtotalfin-<?= $value->nombre ?>">0.00</span>
-                    </div> 
+                    </div>
                     <div class="pull-right " style="clear: both;"></div>
                     <div class="pull-right " style="clear: both; display:none;">
-                      <span style="font-size: 15px;font-weight: bold;" >IVA (12%): $</span> 
+                      <span style="font-size: 15px;font-weight: bold;" >IVA (12%): $</span>
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="ivafin-<?= $value->nombre ?>">0.00</span>
                     </div>
                     <div class="pull-right " style="clear: both;"></div>
                     <div class="pull-right " style="clear: both;">
-                      <span style="font-size: 15px;font-weight: bold;" >TOTAL: $</span> 
+                      <span style="font-size: 15px;font-weight: bold;" >TOTAL: $</span>
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="total-<?= $value->nombre ?>">0.00</span>
                     </div>
                     <div class="pull-right " style="clear: both;"></div>
                       <div id="dvrecargo" class="pull-right " style="clear: both; display:none;">
-                        <span style="font-size: 15px;font-weight: bold;" >RECARGO (10%): $</span> 
+                        <span style="font-size: 15px;font-weight: bold;" >RECARGO (10%): $</span>
                         <span  style="font-size: 18px;font-weight: bold; color:orange;" id="recargo-<?= $value->nombre ?>">0.00</span>
                       </div>
                     </div>
@@ -180,53 +180,58 @@ $objeto= new Objetos;
 
           <div class="modal-footer row" class="p-2">
             <div class="col-12">
-          <?= 
+              <?php
+                  $coment="";
+                  if (@$value->ordenes->ordencerrada==0){ $coment=@$value->ordenes->comentario; }
+              ?>
+          <?=
              $contenido=$objeto->getObjetosArray(
               array(
                 array('tipo'=>'input','subtipo'=>'oculto', 'nombre'=>'idorden-'.$value->nombre, 'id'=>'idorden-'.$value->nombre, 'valor'=>@$value->ordenes->id),
                 array('tipo'=>'input','subtipo'=>'oculto', 'nombre'=>'idmesa-'.$value->nombre, 'id'=>'idmesa-'.$value->nombre, 'valor'=>$value->id),
-                array('tipo'=>'input','subtipo'=>'textarea', 'nombre'=>'comentario-'.$value->nombre, 'id'=>'comentario-'.$value->nombre, 'valor'=>@$value->ordenes->comentario, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Comentario: ', 'col'=>'col-12 col-md-12', 'adicional'=>''),
+                array('tipo'=>'input','subtipo'=>'textarea', 'nombre'=>'comentario-'.$value->nombre, 'id'=>'comentario-'.$value->nombre, 'valor'=>$coment, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Comentario: ', 'col'=>'col-12 col-md-12', 'adicional'=>''),
               ),true
           );
            ?>
            </div>
             <div class="form-group pr-3" style="  margin-bottom:0px;" >
-            <?php if (@$value->ordenes->ordencerrada==1){ ?>
+            <?php //var_dump( @$value->ordenes) ?>
+            <?php if (@$value->ordenes->ordencerrada==1 || @$value->ordenes == NULL){ ?>
               <button type="button" onclick="javascript:encerarPedido();" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm" data-dismiss="modal">Cancelar pedido</button>
               <!--<button type="button" onclick="javascript:guardarPedido();" id="guardarpedido" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" name="save-button">Guardar pedido</button>         -->
-              <button type="button" onclick="javascript:enviarPedido();" id="enviarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Enviar pedido</button>         
-                <?php }else{ ?>
-                  <button type="button" onclick="javascript:actualizarPedido();" id="actualizarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Actualizar pedido</button>         
-                <?php } ?>   
-          
+              <button type="button" onclick="javascript:enviarPedido();" id="enviarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Enviar pedido</button>
+                <?php }else{   ?>
+                  <button type="button" onclick="javascript:actualizarPedido();" id="actualizarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Actualizar pedido</button>
+                <?php } ?>
+
           </div>
           </div>
         </form>
       </div>
     </div>
   </div>
- 
+
 
                             <?php } ?>
-                            
+
                         </div>
 
 
 
                     </div>
                     <div class="col-12 col-sm-12 col-md-6 border border-primary">
-                        
+
                         <div class="row p-3">
                             <div class="col-6 ">
                                 <div class="col-12 p-3">
-                                     
+
                                 </div>
- 
+
                                 <?php $cont=0; ?>
                                 <?php foreach ($mesasa1 as $key => $value) { ?>
                                   <div class="col-12 h-100 hc-<?=$value->tamanio?> image-mesa d-flex align-bottom align-text-bottom ">
                                     <div class=" col-12 text-right align-self-end p-0">
-                                        <div class=" align-top text-left">    
+                                        <div class=" align-top text-left">
                                           <b style="font-size: 15px; color: orange;"><?= $value->nombre ?></b>
                                         </div>
                                         <?php if ($value->estatusmesa=="LIBRE"){  ?>
@@ -239,18 +244,18 @@ $objeto= new Objetos;
                                           <a href="javascript:cerrarMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm mt-1" title="Cerrar cuenta"><i class="fa fa-tasks fa-sm text-white-50"></i>&nbsp;</a>
                                         <?php } ?>
                                         <div class="p-1"></div>
-                                        
+
                                       </div>
                                   </div>
                                   <div class="col-12 p-2"></div>
                                   <?php $cont++;  ?>
 
-                                  
+
 <div class="modal fade" id="nuevoPedidoModal-<?= $value->nombre ?>" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLongTitle"><?php if (@$value->ordenes->ordencerrada==1){ ?>Nueva Orden (MESA: <?= $value->nombre ?>)<?php }else{ ?> Orden # <?= $value->ordenes->id ?> , MESA: (<?= $value->nombre ?>)   <?php } ?></h5>
+      <h5 class="modal-title" id="exampleModalLongTitle"><?php if (@$value->ordenes==NULL ||   @$value->ordenes->ordencerrada==1 ){ ?>Nueva Orden (MESA: <?= $value->nombre ?>)<?php }else{ ?> Orden # <?= $value->ordenes->id ?> , MESA: (<?= $value->nombre ?>)   <?php } ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -262,13 +267,13 @@ $objeto= new Objetos;
              <div class="col-11">
                <input style="" id="producto-<?= $value->nombre ?>" autocomplete="off" type="text" class="form-control bg-light border-0 small" placeholder="Item..." aria-label="Search" aria-describedby="basic-addon2">
               </div>
-               
+
         <div class="col">
                  <a id="successprod-<?= $value->nombre ?>" href="#" data-toggle="modal d-none" style="display:none;" onclick="javascript:obtenerProducto($('#producto-<?= $value->nombre ?>').val());" class=" btn btn-sm btn-success shadow-sm  "> + </a>
-        </div>  
+        </div>
       </div>
           <div class="card-body  ">
-                  <div class="chart-area">
+                  <div class="">
                     <div class="tableFixHead" id="tableFixHead-<?= $value->nombre ?>">
                       <table class="table table-hover table-striped">
                         <thead>
@@ -282,7 +287,7 @@ $objeto= new Objetos;
                           </tr>
                         </thead>
                         <tbody id="contenidoCompra-<?= $value->nombre ?>"  >
-                        <!--  
+                        <!--
                           <tr>
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
@@ -291,24 +296,24 @@ $objeto= new Objetos;
                         </tbody>
                       </table>
                     </div>
-              
+
                     <div class="pull-right" style=" display:none;">
-                      <span style="font-size: 15px;font-weight: bold;" >SUBTOTAL: $</span> 
+                      <span style="font-size: 15px;font-weight: bold;" >SUBTOTAL: $</span>
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="subtotalfin-<?= $value->nombre ?>">0.00</span>
-                    </div> 
+                    </div>
                     <div class="pull-right " style="clear: both;"></div>
                     <div class="pull-right " style="clear: both; display:none;">
-                      <span style="font-size: 15px;font-weight: bold;" >IVA (12%): $</span> 
+                      <span style="font-size: 15px;font-weight: bold;" >IVA (12%): $</span>
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="ivafin-<?= $value->nombre ?>">0.00</span>
                     </div>
                     <div class="pull-right " style="clear: both;"></div>
                     <div class="pull-right " style="clear: both;">
-                      <span style="font-size: 15px;font-weight: bold;" >TOTAL: $</span> 
+                      <span style="font-size: 15px;font-weight: bold;" >TOTAL: $</span>
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="total-<?= $value->nombre ?>">0.00</span>
                     </div>
                     <div class="pull-right " style="clear: both;"></div>
                       <div id="dvrecargo" class="pull-right " style="clear: both; display:none;">
-                        <span style="font-size: 15px;font-weight: bold;" >RECARGO (10%): $</span> 
+                        <span style="font-size: 15px;font-weight: bold;" >RECARGO (10%): $</span>
                         <span  style="font-size: 18px;font-weight: bold; color:orange;" id="recargo-<?= $value->nombre ?>">0.00</span>
                       </div>
                     </div>
@@ -319,41 +324,45 @@ $objeto= new Objetos;
 
           <div class="modal-footer row" class="p-2">
             <div class="col-12">
-          <?= 
+            <?php
+                  $coment="";
+                  if (@$value->ordenes->ordencerrada==0){ $coment=@$value->ordenes->comentario; }
+              ?>
+          <?=
              $contenido=$objeto->getObjetosArray(
               array(array('tipo'=>'input','subtipo'=>'oculto', 'nombre'=>'idorden-'.$value->nombre, 'id'=>'idorden-'.$value->nombre, 'valor'=>@$value->ordenes->id),
                 array('tipo'=>'input','subtipo'=>'oculto', 'nombre'=>'idmesa-'.$value->nombre, 'id'=>'idmesa-'.$value->nombre, 'valor'=>$value->id),
-                array('tipo'=>'input','subtipo'=>'textarea', 'nombre'=>'comentario-'.$value->nombre, 'id'=>'comentario-'.$value->nombre, 'valor'=>@$value->ordenes->comentario, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Comentario: ', 'col'=>'col-12 col-md-12', 'adicional'=>''),
+                array('tipo'=>'input','subtipo'=>'textarea', 'nombre'=>'comentario-'.$value->nombre, 'id'=>'comentario-'.$value->nombre, 'valor'=>@$coment, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Comentario: ', 'col'=>'col-12 col-md-12', 'adicional'=>''),
               ),true
           );
            ?>
            </div>
             <div class="form-group pr-3" style="  margin-bottom:0px;" >
-            <?php if (@$value->ordenes->ordencerrada==1){ ?>
+            <?php if (@$value->ordenes->ordencerrada==1 || @$value->ordenes == NULL) {  ?>
               <button type="button" onclick="javascript:encerarPedido();" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm" data-dismiss="modal">Cancelar pedido</button>
               <!--<button type="button" onclick="javascript:guardarPedido();" id="guardarpedido" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" name="save-button">Guardar pedido</button>         -->
-              <button type="button" onclick="javascript:enviarPedido();" id="enviarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Enviar pedido</button>         
-                <?php }else{ ?>
-                  <button type="button" onclick="javascript:actualizarPedido();" id="actualizarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Actualizar pedido</button>         
-                <?php } ?>     
+              <button type="button" onclick="javascript:enviarPedido();" id="enviarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Enviar pedido</button>
+                <?php }else{   ?>
+                  <button type="button" onclick="javascript:actualizarPedido();" id="actualizarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Actualizar pedido</button>
+                <?php } ?>
           </div>
           </div>
         </form>
       </div>
     </div>
   </div>
- 
+
 
                                 <?php }  ?>
                               </div>
                               <div class="col-6 ">
- 
- 
+
+
                                 <?php $cont=0; ?>
                                 <?php foreach ($mesasa2 as $key => $value) { ?>
                                   <div class="col-12 h-100 hc-<?=$value->tamanio?> image-mesa d-flex align-bottom align-text-bottom ">
                                     <div class=" col-12 text-right align-self-end p-0">
-                                        <div class=" align-top text-left">    
+                                        <div class=" align-top text-left">
                                           <b style="font-size: 15px; color: orange;"><?= $value->nombre ?></b>
                                         </div>
                                         <?php if ($value->estatusmesa=="LIBRE"){  ?>
@@ -365,7 +374,7 @@ $objeto= new Objetos;
                                           <a href="javascript:cerrarMesa('<?=$value->seccion.$value->numero?>');" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm mt-1" title="Cerrar cuenta"><i class="fa fa-tasks fa-sm text-white-50"></i>&nbsp;</a>
                                         <?php } ?>
                                         <div class="p-1"></div>
-                                        
+
                                       </div>
                                   </div>
                                   <div class="col-12 p-2"></div>
@@ -376,7 +385,7 @@ $objeto= new Objetos;
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">
-      <h5 class="modal-title" id="exampleModalLongTitle"><?php if (@$value->ordenes->ordencerrada==1){ ?>Nueva Orden (MESA: <?= $value->nombre ?>)<?php }else{ ?> Orden # <?= $value->ordenes->id ?> , MESA: (<?= $value->nombre ?>)   <?php } ?></h5>
+      <h5 class="modal-title" id="exampleModalLongTitle"><?php   if (@$value->ordenes==NULL ||   @$value->ordenes->ordencerrada==1 ){?>Nueva Orden (MESA: <?= $value->nombre ?>)<?php }else{ ?> Orden # <?= $value->ordenes->id ?> , MESA: (<?= $value->nombre ?>)   <?php } ?></h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -388,13 +397,13 @@ $objeto= new Objetos;
              <div class="col-11">
                <input style="" id="producto-<?= $value->nombre ?>" autocomplete="off" type="text" class="form-control bg-light border-0 small" placeholder="Item..." aria-label="Search" aria-describedby="basic-addon2">
               </div>
-               
+
         <div class="col">
                  <a id="successprod-<?= $value->nombre ?>" href="#" data-toggle="modal d-none" style="display:none;" onclick="javascript:obtenerProducto($('#producto-<?= $value->nombre ?>').val());" class=" btn btn-sm btn-success shadow-sm  "> + </a>
-        </div>  
+        </div>
       </div>
           <div class="card-body  ">
-                  <div class="chart-area">
+                  <div class="">
                     <div class="tableFixHead" id="tableFixHead-<?= $value->nombre ?>">
                       <table class="table table-hover table-striped">
                         <thead>
@@ -408,7 +417,7 @@ $objeto= new Objetos;
                           </tr>
                         </thead>
                         <tbody id="contenidoCompra-<?= $value->nombre ?>"  >
-                        <!--  
+                        <!--
                           <tr>
                             <th scope="row">3</th>
                             <td colspan="2">Larry the Bird</td>
@@ -417,24 +426,24 @@ $objeto= new Objetos;
                         </tbody>
                       </table>
                     </div>
-              
+
                     <div class="pull-right" style=" display:none;">
-                      <span style="font-size: 15px;font-weight: bold;" >SUBTOTAL: $</span> 
+                      <span style="font-size: 15px;font-weight: bold;" >SUBTOTAL: $</span>
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="subtotalfin-<?= $value->nombre ?>">0.00</span>
-                    </div> 
+                    </div>
                     <div class="pull-right " style="clear: both;"></div>
                     <div class="pull-right " style="clear: both; display:none;">
-                      <span style="font-size: 15px;font-weight: bold;" >IVA (12%): $</span> 
+                      <span style="font-size: 15px;font-weight: bold;" >IVA (12%): $</span>
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="ivafin-<?= $value->nombre ?>">0.00</span>
                     </div>
                     <div class="pull-right " style="clear: both;"></div>
                     <div class="pull-right " style="clear: both;">
-                      <span style="font-size: 15px;font-weight: bold;" >TOTAL: $</span> 
+                      <span style="font-size: 15px;font-weight: bold;" >TOTAL: $</span>
                       <span  style="font-size: 18px;font-weight: bold; color:orange;" id="total-<?= $value->nombre ?>">0.00</span>
                     </div>
                     <div class="pull-right " style="clear: both;"></div>
                       <div id="dvrecargo" class="pull-right " style="clear: both; display:none;">
-                        <span style="font-size: 15px;font-weight: bold;" >RECARGO (10%): $</span> 
+                        <span style="font-size: 15px;font-weight: bold;" >RECARGO (10%): $</span>
                         <span  style="font-size: 18px;font-weight: bold; color:orange;" id="recargo-<?= $value->nombre ?>">0.00</span>
                       </div>
                     </div>
@@ -445,23 +454,28 @@ $objeto= new Objetos;
 
           <div class="modal-footer row" class="p-2">
             <div class="col-12">
-          <?= 
+            <?php
+                  $coment="";
+                  if (@$value->ordenes->ordencerrada==0){ $coment=@$value->ordenes->comentario; }
+              ?>
+          <?=
              $contenido=$objeto->getObjetosArray(
               array(
                 array('tipo'=>'input','subtipo'=>'oculto', 'nombre'=>'idorden-'.$value->nombre, 'id'=>'idorden-'.$value->nombre, 'valor'=>@$value->ordenes->id),
                 array('tipo'=>'input','subtipo'=>'oculto', 'nombre'=>'idmesa-'.$value->nombre, 'id'=>'idmesa-'.$value->nombre, 'valor'=>$value->id),
-                array('tipo'=>'input','subtipo'=>'textarea', 'nombre'=>'comentario-'.$value->nombre, 'id'=>'comentario-'.$value->nombre, 'valor'=>@$value->ordenes->comentario, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Comentario: ', 'col'=>'col-12 col-md-12', 'adicional'=>''),
+                array('tipo'=>'input','subtipo'=>'textarea', 'nombre'=>'comentario-'.$value->nombre, 'id'=>'comentario-'.$value->nombre, 'valor'=>@$coment, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Comentario: ', 'col'=>'col-12 col-md-12', 'adicional'=>''),
               ),true
           );
            ?>
            </div>
             <div class="form-group pr-3" style="  margin-bottom:0px;" >
-              <?php if (@$value->ordenes->ordencerrada==1){ ?>
+              <?php //var_dump(@$value->ordenes) ?>
+              <?php if (@$value->ordenes->ordencerrada==1 ||  @$value->ordenes==NULL){ ?>
               <button type="button" onclick="javascript:encerarPedido();" class=" d-sm-inline-block btn btn-sm btn-danger shadow-sm" data-dismiss="modal">Cancelar pedido</button>
               <!--<button type="button" onclick="javascript:guardarPedido();" id="guardarpedido" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" name="save-button">Guardar pedido</button>         -->
-              <button type="button" onclick="javascript:enviarPedido();" id="enviarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Enviar pedido</button>         
-                <?php }else{ ?>
-                  <button type="button" onclick="javascript:actualizarPedido();" id="actualizarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Actualizar pedido</button>         
+              <button type="button" onclick="javascript:enviarPedido();" id="enviarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Enviar pedido</button>
+                <?php }else{  ?>
+                  <button type="button" onclick="javascript:actualizarPedido();" id="actualizarpedido" class="d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Actualizar pedido</button>
                 <?php } ?>
              </div>
           </div>
@@ -469,24 +483,24 @@ $objeto= new Objetos;
       </div>
     </div>
   </div>
- 
+
 
 
                                 <?php }  ?>
                               </div>
                             </div>
-                            
-                            
+
+
                         </div>
 
 
 
                     </div>
                   </div>
-                  <div class="p-3"></div> 
+                  <div class="p-3"></div>
                 </div>
-                
-                
+
+
               </div>
             </div>
 
@@ -508,13 +522,13 @@ $objeto= new Objetos;
         </button>
       </div>
       <div class="modal-body">
-      
+
         <form id="form-clientes" action="/frontend/web/site/facturar" method="post">
-     
-           
-        
+
+
+
           <input type="hidden" name="_csrf-frontend" value="<?=Yii::$app->request->getCsrfToken() ?>">
-           <?= 
+           <?=
              $contenido=$objeto->getObjetosArray(
               array(
                   array('tipo'=>'select','subtipo'=>'', 'nombre'=>'tipoident', 'id'=>'tipoident', 'valor'=>$tipoidentificacion, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Tipo Identificación: ', 'col'=>'col-6 col-md-6', 'adicional'=>''),
@@ -528,23 +542,23 @@ $objeto= new Objetos;
                   array('tipo'=>'separador','clase'=>'', 'estilo'=>'', 'color'=>''),
                   array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'credito', 'id'=>'credito', 'valor'=>'Credito', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'Crédito', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
                   array('tipo'=>'input','subtipo'=>'numero', 'nombre'=>'cupocredito', 'id'=>'cupocredito', 'valor'=>'0.00','etiqueta'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Cupo crédito: ', 'col'=>'col-9 col-md-3', 'adicional'=>''),
-                  
+
               ),true
           );
            ?>
 
           <div class="modal-footer" style="padding-right:0px; padding-bottom:0px;">
-            
+
             <div class="form-group" style="padding-right:0px; margin-bottom:0px;">
               <button type="button" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm" data-dismiss="modal">Cancelar</button>
-        
+
               <button type="button" onclick="javascript:agregarCliente(this);" id="reservassave" class="d-none d-sm-inline-block btn btn-sm btn-success shadow-sm" name="save-button">Agregar</button>          </div>
           </div>
-                
+
 
         </form>
       </div>
-     
+
     </div>
   </div>
 </div>
@@ -641,12 +655,12 @@ $(function() {
 });
 
 $(document).ready(function(){
- 
- 
+
+
 
 
     $('#producto-A2,#producto-A1,#producto-A3,#producto-A4,#producto-A5,#producto-A6,#producto-A7,#producto-B1,#producto-B2,#producto-B3,#producto-B4,#producto-B5,#producto-B6').typeahead({
-      minLength: 1, 
+      minLength: 1,
       hint: false,
       //autoSelect: false,.
       dynamic: true,
@@ -662,8 +676,8 @@ $(document).ready(function(){
       //console.log(obj);
       //var col=obj.replace('producto-','');
       //console.log('#successprod-'+selectMesa);
-      $('#successprod-'+selectMesa).fadeIn(); 
-      
+      $('#successprod-'+selectMesa).fadeIn();
+
       $.ajax({
        url:\"productoskardex\",
        method:\"POST\",
@@ -672,8 +686,8 @@ $(document).ready(function(){
        success:function(data)
        {
         result($.map(data, function(item){
-            $('#successprod-'+selectMesa).fadeIn(); 
-            
+            $('#successprod-'+selectMesa).fadeIn();
+
          return item;
         }));
        }
@@ -684,7 +698,7 @@ $(document).ready(function(){
      event.preventDefault();
      return item;
  },
-    }) 
+    })
 
     $('#cliente').keypress(function(e) {
       var code = (e.keyCode ? e.keyCode : e.which);
@@ -697,7 +711,7 @@ $(document).ready(function(){
     var code = (e.keyCode ? e.keyCode : e.which);
     if(code==13){
       obtenerProducto(this.value);
-      $('#successprod-'+selectMesa).fadeOut(); 
+      $('#successprod-'+selectMesa).fadeOut();
     }
 });
 
@@ -707,7 +721,7 @@ $(document).ready(function(){
      });
    });
 
-  
+
 
    function obtenerProducto(nombre){
        console.log('obtenerP '+nombre)
@@ -726,15 +740,15 @@ $(document).ready(function(){
             if (data[0].id){
               agregarProducto(data);
               alertify.success('Producto agregado');
-              $('#successprod-'+selectMesa).fadeOut(); 
+              $('#successprod-'+selectMesa).fadeOut();
             }
           }else{
             alertify.error('Producto no existe');
             $('#producto-'+selectMesa).val('');
           }
-          //  $('#btn-ok').hide(); 
-           // $('#btn-danger').fadeIn(); 
-           // $('#contenido').fadeIn(); 
+          //  $('#btn-ok').hide();
+           // $('#btn-danger').fadeIn();
+           // $('#contenido').fadeIn();
            // $('#producto').prop('disabled', true);
         }
        })
@@ -777,9 +791,9 @@ $(document).ready(function(){
              //$('#preview').attr ( 'src' ,'/frontend/web/images/articulos/'+data[0].imagen)
              //$('#presentacion').focus();
          }
-         //$('#btn-ok').hide(); 
-         //$('#btn-danger').fadeIn(); 
-         //$('#contenido').fadeIn(); 
+         //$('#btn-ok').hide();
+         //$('#btn-danger').fadeIn();
+         //$('#contenido').fadeIn();
          //$('#cliente').prop('disabled', true);
      }
     })
@@ -817,7 +831,7 @@ $(document).ready(function(){
     //console.log('Agregar Producto');
     recuperarDatafac();
     agregarItemFac(data)
-    armarGrid();  
+    armarGrid();
   }
 
   function armarGrid()
@@ -826,13 +840,13 @@ $(document).ready(function(){
     dataint = dataFactura;
     var html='';
     var total=0;
-    
+
     for (var i = 0, l = dataint.length; i < l; i++) {
       var obj = dataint[i];
       //console.log(obj);
       nproductos=i+1;
       var idproducto=obj.id;
-      var button='<a href=\"javascript:quitarItem('+i+');\" class=\"d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm\"><i class=\"fas fa-close fa-sm text-white-50\"></i></a>';
+      var button='<a href=\"javascript:quitarItem('+i+');\" class=\"d-sm-inline-block btn btn-sm btn-danger shadow-sm\"><i class=\"fas fa-close fa-sm text-white-50\"></i></a>';
       var trini='<tr id=\"'+nproductos+'\" data-id=\"'+idproducto+'\" >';
       var trfin='</tr>';
       var thini='<th scope=\"row\">';
@@ -871,7 +885,7 @@ $(document).ready(function(){
       armarGrid();
    }
 
-  
+
 
   var dataFactura = [];
   var dataFacturaprod = [];
@@ -881,31 +895,31 @@ $(document).ready(function(){
   dataFacturaprod = [];
   localStorage.setItem('listaFactura-'+selectMesa, JSON.stringify(dataFactura));
   armarGrid();
- 
+
  }
 
  function recuperarDatafac()
  {
     if(localStorage.getItem('listaFactura-'+selectMesa))
     {
-      dataFactura = JSON.parse(localStorage.getItem('listaFactura-'+selectMesa)); 
+      dataFactura = JSON.parse(localStorage.getItem('listaFactura-'+selectMesa));
     }
  }
 
-  function inicializarFactura() 
+  function inicializarFactura()
   {
 
         for (var i = 1; i < 8; i++) {
           if (localStorage.getItem('listaFactura-A'+i)) {
             if (localStorage.getItem('listaFactura-A'+i)==='[]'){
-              
+
 
             }else{
               dataFactura = JSON.parse(localStorage.getItem('listaFactura-A'+i));
               selectMesa='A'+i;
-              armarGrid();    
+              armarGrid();
               selectMesa='';
-              
+
             }
         } else {
             if (!localStorage.getItem('listaFactura-A'+i)) {
@@ -920,15 +934,15 @@ $(document).ready(function(){
       for (var i = 1; i < 7; i++) {
         if (localStorage.getItem('listaFactura-B'+i)) {
           if (localStorage.getItem('listaFactura-B'+i)==='[]'){
-              
+
 
           }else{
             dataFactura = JSON.parse(localStorage.getItem('listaFactura-B'+i));
             selectMesa='B'+i;
-            armarGrid();    
+            armarGrid();
             selectMesa='';
-            
-          }   
+
+          }
       } else {
           if (!localStorage.getItem('listaFactura-B'+i)) {
               //listarFacturas();
@@ -936,7 +950,7 @@ $(document).ready(function(){
           }
       }
     }
-     
+
   }
 
   function cambiarValor(pos,obj) {
@@ -1037,24 +1051,24 @@ $(document).ready(function(){
     localStorage.setItem('listaFactura-'+selectMesa, JSON.stringify(dataFactura));
   }
 
- 
+
   inicializarFactura();
-    $('#btn-ok').click(function() { 
+    $('#btn-ok').click(function() {
         if ($('#idproducto').val() > 0){
-            $('#contenido').fadeIn(); 
-            $('#btn-ok').fadeOut(); 
-            $('#btn-danger').fadeIn(); 
+            $('#contenido').fadeIn();
+            $('#btn-ok').fadeOut();
+            $('#btn-danger').fadeIn();
         }else{
             showMessages('Error', 'Debe seleccionar un producto', 'warning');
         }
-    }); 
+    });
 
-    $('#btn-danger').click(function() { 
-        $('#contenido').fadeOut(); 
-        $('#btn-danger').fadeOut(); 
-        $('#btn-ok').fadeIn(); 
+    $('#btn-danger').click(function() {
+        $('#contenido').fadeOut();
+        $('#btn-danger').fadeOut();
+        $('#btn-ok').fadeIn();
         $('#producto').prop('disabled', false)
-    }); 
+    });
 
     function enviarPedido()
     {
@@ -1160,7 +1174,7 @@ $(document).ready(function(){
                   //imprimirFactura(data.id);
                 }
             } else {
-              alertify.error('La mesa no se ha podido');
+              alertify.error(data.mensaje);
             }
           }
       });
@@ -1231,7 +1245,7 @@ function calcularRecargo()
        }
     function agregarCliente(val)
     {
-      
+
         console.log('agregar cliente')
             $('#clientes-correo').change(function () {
                 $(this).val($.trim($(this).val()));
@@ -1242,7 +1256,7 @@ function calcularRecargo()
             var direccion = $('#clientes-direccion').val();
             var telefono = $('#clientes-telefono').val();
             var correo = $('#clientes-correo').val();
-           
+
             $.post('nuevocliente', {
                         usuarioc: usuarioc,
                         cedula: cedula,
@@ -1263,7 +1277,7 @@ function calcularRecargo()
                           obtenerCliente(cedula);
                         } else {
                           alertify.error('Cliente ya existe');
-                          
+
                         }
                     });
     }
@@ -1295,7 +1309,7 @@ function calcularRecargo()
 }
 
 .modal-footer .form-group button{
-   
+
 }
 
 .vertical-center {
@@ -1304,7 +1318,7 @@ function calcularRecargo()
   align-items: center;
 }
 
-.tableFixHead          { overflow-y: auto; height: 400px; }
+.tableFixHead          { overflow-y: auto; min-height: 200px; height: auto; }
 .tableFixHead thead th { position: sticky; top: 0; }
 /* Just common table stuff. Really. */
 
@@ -1315,13 +1329,13 @@ th     { background:#eee; }
 #cliente
 {
   -moz-appearance:textfield;
-  -webkit-appearance: none; 
+  -webkit-appearance: none;
 }
 
-#cliente::-webkit-inner-spin-button, 
-#cliente::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+#cliente::-webkit-inner-spin-button,
+#cliente::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 @media (min-width: 576px){
 .modal-dialog {
@@ -1334,7 +1348,7 @@ th     { background:#eee; }
 {
   color: white;
     background-color: #358cd2;
-    
+
 }
 
 .image-mesa

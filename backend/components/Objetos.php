@@ -144,6 +144,7 @@ class Objetos extends Component
     }
     public function getSelect($tipo, $nombre='', $id='', $valor=NULL, $valordefecto=NULL, $onchange='', $clase='', $style='', $icono='',$boxbody=false,$etiqueta='',$leyenda='', $col='', $adicional)
     {
+         
         $iconfa=new Iconos;
         $iconfa= $iconfa->getIconofa($icono);
         $input='';
@@ -172,7 +173,7 @@ class Objetos extends Component
                 $select='<select class="'.$clase.'" id="'.$id.'" name="'.$nombre.'" value="'.$valor.'" placeholder="'.$etiqueta.'"  '.$adicional.'>';
                 break;
         }
-        $selectvalue+='<option>'.$etiqueta.'</option>';
+        $selectvalue.='<option>'.$etiqueta.'</option>';
 
       foreach ($valor as $key => $value) {
         if($valordefecto!=NULL && $value["id"]==$valordefecto){$selected=' selected="selected" '; }
