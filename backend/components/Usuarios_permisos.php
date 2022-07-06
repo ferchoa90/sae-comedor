@@ -21,7 +21,7 @@ use backend\components\Log_errores;
 class Usuarios_permisos extends Component
 {
 
-    public function isPermisos($usuario,$origen='')
+    public static function isPermisos($usuario,$origen='')
     {
         //echo 'hola';
        // return $this->render('index');
