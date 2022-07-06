@@ -28,113 +28,21 @@ $botones= new Botones;
 
 //var_dump($clientes);
 //$contenidotab='';
-$modulousuario=$objeto->getObjetosArray(
-    array(
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agusuario', 'id'=>'agusuario', 'valor'=>'Agregar Usu', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edusuario', 'id'=>'edusuario', 'valor'=>'Editar Usu', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'eliusuario', 'id'=>'eliusuario', 'valor'=>'Eliminar Usu', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agroles', 'id'=>'agroles', 'valor'=>'Agregar Rol', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edroles', 'id'=>'edroles', 'valor'=>'Editar Rol', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'eliroles', 'id'=>'eliroles', 'valor'=>'Eliminar Rol', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        //array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'repusuario', 'id'=>'repusuario', 'valor'=>'Reportes', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-    ),true
-);
-
-$modulocontabilidad=$objeto->getObjetosArray(
-    array(
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agcxc', 'id'=>'agcxc', 'valor'=>'Agregar CXC', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edcxc', 'id'=>'edcxc', 'valor'=>'Editar CXC', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'elicxc', 'id'=>'elicxc', 'valor'=>'Eliminar CXC', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agcxp', 'id'=>'agcxp', 'valor'=>'Agregar CPC', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edcxp', 'id'=>'edcxp', 'valor'=>'Editar CPC', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'elicxp', 'id'=>'elicxp', 'valor'=>'Eliminar CPC', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agdiario', 'id'=>'agdiario', 'valor'=>'Agregar Diario', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'eddiario', 'id'=>'eddiario', 'valor'=>'Editar Diario', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'elidiario', 'id'=>'elidiario', 'valor'=>'Eliminar Diario', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agperiodo', 'id'=>'agperiodo', 'valor'=>'Agregar Periodo', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edperiodo', 'id'=>'edperiodo', 'valor'=>'Editar Periodo', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'eliperiodo', 'id'=>'eliperiodo', 'valor'=>'Eliminar Periodo', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'elidiario', 'id'=>'elidiario', 'valor'=>'Eliminar Diario', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agdeclaraciones', 'id'=>'agdeclaraciones', 'valor'=>'Agregar Declaraciones', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'eddeclaraciones', 'id'=>'eddeclaraciones', 'valor'=>'Editar Declaraciones', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'elideclaraciones', 'id'=>'elideclaraciones', 'valor'=>'Eliminar Declaraciones', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-
-    ),true
-);
-
-$modulofacturacion=$objeto->getObjetosArray(
-    array(
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agfacturacion', 'id'=>'agfacturacion', 'valor'=>'Agregar Factura', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edfacturacion', 'id'=>'edfacturacion', 'valor'=>'Editar Factura', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'elifacturacion', 'id'=>'elifacturacion', 'valor'=>'Eliminar Factura', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agentrega', 'id'=>'agentrega', 'valor'=>'Agregar Entrega', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edentrega', 'id'=>'edentrega', 'valor'=>'Editar Entrega', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'elientrega', 'id'=>'elientrega', 'valor'=>'Eliminar Entrega', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-    ),true
-);
-
-$moduloinventario=$objeto->getObjetosArray(
-    array(
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agfacturacion', 'id'=>'agfacturacion', 'valor'=>'Agregar Inv.', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edfacturacion', 'id'=>'edfacturacion', 'valor'=>'Editar Inv.', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'elifacturacion', 'id'=>'elifacturacion', 'valor'=>'Eliminar Inv.', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-
-    ),true
-);
-
-$modulorecursosh=$objeto->getObjetosArray(
-    array(
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agempleado', 'id'=>'agempleado', 'valor'=>'Agregar Empl.', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edempleado', 'id'=>'edempleado', 'valor'=>'Editar Empl.', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'eliempleado', 'id'=>'eliempleado', 'valor'=>'Eliminar Empl.', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agdepartamento', 'id'=>'agdepartamento', 'valor'=>'Agregar Dep.', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'eddepartamento', 'id'=>'eddepartamento', 'valor'=>'Editar Dep.', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'elidepartamento', 'id'=>'elidepartamento', 'valor'=>'Eliminar Dep.', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agrolpagos', 'id'=>'agrolpagos', 'valor'=>'Agregar Rol p.', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edrolpagos', 'id'=>'edrolpagos', 'valor'=>'Editar Rol p.', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'elirolpagos', 'id'=>'elirolpagos', 'valor'=>'Eliminar Rol p.', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-    ),true
-);
-
-$moduloreportes=$objeto->getObjetosArray(
-    array(
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agreportes', 'id'=>'agreportes', 'valor'=>'Agregar', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edreportes', 'id'=>'edreportes', 'valor'=>'Editar', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'elireportes', 'id'=>'elireportes', 'valor'=>'Eliminar', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'repreportes', 'id'=>'repreportes', 'valor'=>'Reportes', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-    ),true
-);
-
-$modulomantenimiento=$objeto->getObjetosArray(
-    array(
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agclientes', 'id'=>'agclientes', 'valor'=>'Agregar', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edclientes', 'id'=>'edclientes', 'valor'=>'Editar', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'eliclientes', 'id'=>'eliclientes', 'valor'=>'Eliminar', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agproveedores', 'id'=>'agproveedores', 'valor'=>'Agregar', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edproveedores', 'id'=>'edproveedores', 'valor'=>'Editar', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'eliproveedores', 'id'=>'eliproveedores', 'valor'=>'Eliminar', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'agsocios', 'id'=>'agsocios', 'valor'=>'Agregar', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'edsocios', 'id'=>'edsocios', 'valor'=>'Editar', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'elisocios', 'id'=>'elisocios', 'valor'=>'Eliminar', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3', 'adicional'=>' data-width="80%" data-height="35"'),
-    ),true
-);
-
-$moduloauditoria=$objeto->getObjetosArray(
-    array(
-        array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>'verauditoria', 'id'=>'verauditoria', 'valor'=>'Ver registros', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-3 col-md-3',  'adicional'=>' data-width="80%" data-height="35"'),
-    ),true
-);
-
-
-
+ 
 
 //var_dump($roles);
 $modulos=array();
 $tabs=array();
-$nombre=  array('tipo'=>'input','subtipo'=>'cajatexto', 'nombre'=>'nombrerol', 'id'=>'nombrerol', 'valor'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'');
-$descripcion=array('tipo'=>'input','subtipo'=>'cajatexto', 'nombre'=>'descripcion', 'id'=>'descripcion', 'valor'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Descripción','leyenda'=>'Descripción del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'');
+$tabsfront=array();
+$contenidoNom=$objeto->getObjetosArray(
+    array(
+        array('tipo'=>'input','subtipo'=>'cajatexto', 'nombre'=>'nombrerol', 'id'=>'nombrerol', 'valor'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>''),
+        array('tipo'=>'input','subtipo'=>'cajatexto', 'nombre'=>'descripcion', 'id'=>'descripcion', 'valor'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Descripción','leyenda'=>'Descripción del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>''),
+    ),true
+);
+
 $configtab=array('tipo'=>'config','nombre'=>'tabpermisos', 'id'=>'tabpermisos', 'valor'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'');
-array_push($modulos,$nombre); array_push($modulos,$descripcion); array_push($tabs,$configtab);
+array_push($tabs,$configtab);
 foreach ($roles as $key => $value) {
     $contenidoRoles="";
     $contenidoRolessub=array();
@@ -153,30 +61,53 @@ foreach ($roles as $key => $value) {
 
 }
 
-
-/*
-array(
-    array('tipo'=>'config','nombre'=>'tabpermisos', 'id'=>'tabpermisos', 'valor'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>''),
-    array('tipo'=>'tab','nombre'=>'tabusuarios', 'id'=>'tabusuarios', 'titulo'=>'Usuarios', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$modulousuario),
-    array('tipo'=>'tab','nombre'=>'tabcontabilidad', 'id'=>'tabcontabilidad', 'titulo'=>'Contabilidad', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$modulocontabilidad),
-    array('tipo'=>'tab','nombre'=>'tabfacturacion', 'id'=>'tabfacturacion', 'titulo'=>'Facturacion', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$modulofacturacion),
-    array('tipo'=>'tab','nombre'=>'tabinventario', 'id'=>'tabinventario', 'titulo'=>'Inventario', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$moduloinventario),
-    array('tipo'=>'tab','nombre'=>'tabrecursosh', 'id'=>'tabrecursosh', 'titulo'=>'R. Humanos', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$modulorecursosh),
-    array('tipo'=>'tab','nombre'=>'tabmantenimientos', 'id'=>'tabmantenimientos', 'titulo'=>'Mantenimientos', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$modulomantenimiento),
-    array('tipo'=>'tab','nombre'=>'tabauditoria', 'id'=>'tabauditoria', 'titulo'=>'Auditoria', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$moduloauditoria),
-)
-*/
 $contenidotab=$nav->getNavsarray($tabs);
+
+$modulosfront=array();
+$data=array();
+$configtabfront=array('tipo'=>'config','nombre'=>'tabpermisosfront', 'id'=>'tabpermisosfront', 'valor'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'');
+array_push($tabsfront,$configtabfront);
+foreach ($rolesfront as $key => $value) {
+    $contenidoRoles="";
+    $contenidoRolessub=array();
+    $data=array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>$value->nameint, 'id'=>$value->nameint, 'valor'=>$value->nombre, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'dinero','boxbody'=>false,'etiqueta'=>'Módulo: ', 'col'=>'col-4 col-md-4', 'adicional'=>' data-width="80%" data-height="35"');
+    array_push($modulosfront,$data);
+    $dataSub=array();
+    $dataSubF=array();
+    foreach ($value->rolessubmodulos as $key => $valueRS) {
+        $dataSub=array('tipo'=>'input','subtipo'=>'onoff', 'nombre'=>$valueRS->nombreint, 'id'=>$valueRS->nombreint, 'valor'=>$valueRS->nombre, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'','boxbody'=>false,'etiqueta'=>'', 'col'=>'col-4 col-md-4', 'adicional'=>' data-width="80%" data-height="35"');
+        array_push($dataSubF,$dataSub);
+    }
+    
+    $contenidoRoles=$objeto->getObjetosArray($dataSubF,true);
+    $datanav=array('tipo'=>'tab','nombre'=>'tab-'.$value->nameint, 'id'=>'tab-'.$value->nameint, 'titulo'=>$value->nombre, 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$contenidoRoles);
+    array_push($tabsfront,$datanav);
+
+}
+
+$contenidotabfront=$nav->getNavsarray($tabsfront);
 
 //var_dump($tabs);
 
-
- $contenido=$objeto->getObjetosArray(
+// var_dump($contenidomodtab);
+ $contenidomodtab=$objeto->getObjetosArray(
     $modulos,true
 );
- //echo $div->getBloque('bloquediv','rr','ee','PRUEBA','col-md-9 col-xs-12 ','','','','');
- //echo $div->getBloque('bloquediv','rr','ee','PRUEBA','col-md-3 col-xs-12 ','','','','');
- //echo $contenido;
+$contenidomodtabfront=$objeto->getObjetosArray(
+    $modulosfront,true
+);
+
+
+$contenido=$nav->getNavsarray(
+    array(
+        array('tipo'=>'config','nombre'=>'tabmodpermisos', 'id'=>'tabmodpermisos', 'valor'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>''),
+        array('tipo'=>'tab','nombre'=>'tabback', 'id'=>'tabback', 'titulo'=>'Backend', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$contenidomodtab.$contenidotab),
+        array('tipo'=>'tab','nombre'=>'tabfront', 'id'=>'tabfront', 'titulo'=>'Frontend', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$contenidomodtabfront),
+        
+    )
+
+);
+ 
  $botonC=$botones->getBotongridArray(
     array(
         array('tipo'=>'separador','clase'=>'', 'estilo'=>'', 'color'=>''),
@@ -189,13 +120,15 @@ $contenidotab=$nav->getNavsarray($tabs);
  $contenido2='<div style="line-height:25px;"><b>Estatus:</b>&nbsp;&nbsp;&nbsp;<span class="badge badge-success"><i class="fa fa-circle"></i>&nbsp; ACTIVO</span><br>';
  $contenido2.='<hr style="color: #0056b2;">';
  $contenido2.='</div>';
+
+//$contenido.=;
 ?>
 
 <?php $form = ActiveForm::begin(['id'=>'frmDatos']); ?>
 <?php
  echo $div->getBloqueArray(
     array(
-        array('tipo'=>'bloquediv','nombre'=>'div1','id'=>'div1','titulo'=>'Datos','clase'=>'col-md-9 col-xs-12 ','style'=>'','col'=>'','tipocolor'=>'','adicional'=>'','contenido'=>$contenido.$contenidotab.$botonC),
+        array('tipo'=>'bloquediv','nombre'=>'div1','id'=>'div1','titulo'=>'Datos','clase'=>'col-md-9 col-xs-12 ','style'=>'','col'=>'','tipocolor'=>'','adicional'=>'','contenido'=>$contenidoNom.$contenido.$botonC),
         array('tipo'=>'bloquediv','nombre'=>'div2','id'=>'div2','titulo'=>'Información','clase'=>'col-md-3 col-xs-12 ','style'=>'','col'=>'','tipocolor'=>'gris','adicional'=>'','contenido'=>$contenido2),
     )
 );

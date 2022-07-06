@@ -25,6 +25,21 @@ body {
     padding-top: 20px;
 }
 
+
+#tabpermisos .nav-item{
+    background-color: rgb(190 230 246 / 50%);
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+
+}
+
+#tabmodpermisos .nav-item .nav-link.active
+{
+    background-color: #29aecd;
+}
+
+
+
 .jumbotron {
     text-align: center;
     background-color: transparent;

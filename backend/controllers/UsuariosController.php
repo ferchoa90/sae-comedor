@@ -141,9 +141,11 @@ class UsuariosController extends Controller
             return $this->redirect(URL::base() . "/site/login");
         }
         $nuevorol= new Configuraciones_rolesmodulo;
-        $nuevorol= $nuevorol->getData();
+        $nuevoroladmin= $nuevorol->getData(1);
+        $nuevorolfront= $nuevorol->getData(2);
         return $this->render('nuevorol', [
-            'roles' => $nuevorol,
+            'roles' => $nuevoroladmin,
+            'rolesfront' => $nuevorolfront,
         ]);
     }
 

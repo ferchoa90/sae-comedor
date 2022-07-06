@@ -64,9 +64,16 @@ class Configuraciones_rolesmodulo extends Component
 
     }
 
-    public function getData()
+    public function getData($tipo=0)
     {
-        $model = Rolesmodulo::find()->where(["isDeleted" => 0, "estatus" => "ACTIVO"])->orderBy(["id" => SORT_ASC])->all();
+        if ($tipo==0){ 
+            $model = Rolesmodulo::find()->where(["isDeleted" => 0, "estatus" => "ACTIVO"])->orderBy(["id" => SORT_ASC])->all();
+        }
+
+        if ($tipo!=0){ 
+            $model = Rolesmodulo::find()->where(["isDeleted" => 0, "estatus" => "ACTIVO", "tipo" => $tipo])->orderBy(["id" => SORT_ASC])->all();
+        }
+
         $dataArray=array();
         $dataArray=$model;
         return $dataArray;
