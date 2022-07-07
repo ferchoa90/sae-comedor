@@ -58,6 +58,11 @@ a:hover {
     transition: 0.3s all;
     color: inherit;
 }
+
+.scroll-to-top {
+
+    background: rgb(74, 175, 246, 0.8) !important;
+  }
 /*
 button {
     background: transparent;

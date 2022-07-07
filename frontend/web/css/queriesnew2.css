@@ -267,6 +267,11 @@
   }
 }
 @media screen and (max-width:450px){
+
+  .scroll-to-top {
+    line-height: 25px !important;
+   
+  }
   .content-tittle {
     padding: 5px 0 !important;
     width: 100%;

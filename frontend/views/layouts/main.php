@@ -13,6 +13,8 @@ use yii\helpers\Url;
 use backend\models\Productos;
 use backend\models\Subproducto;
 use common\models\MenuFront;
+use backend\components\Menu_admin;
+
 //use backend\models\Menuadmin;
 
 AppAsset::register($this);
@@ -106,33 +108,9 @@ AppAsset::register($this);
 <!-- Page Wrapper -->
 <div id="wrapper">
 <?php
-            //$menu=['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest];
-            $menuModel= MenuFront::find()->where(["tipo"=>"WEB","idparent"=>"0","estatus"=>"ACTIVO"])->orderBy(["orden"=>SORT_ASC])->all();
-            foreach ($menuModel as $key => $data) {
-                
-                $subMenuModel= MenuFront::find()->where(["tipo"=>"WEB","idparent"=>$data->id,"estatus"=>"ACTIVO"])->orderBy(["orden"=>SORT_ASC])->all();
-                if ($subMenuModel)
-                {
-                    $subMenu= array();
-                    foreach ($subMenuModel as $key => $data2) {
-                        //if ($data2->nombre=="Mensajes"){ $template='<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">123</small></span></a>'; }
-                        if ($data2->nombre=="Mensajes"){
-                            $template='<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-green">0</small></span></a>';
-                            $subMenu[]=array('label' => $data2->nombre, 'icon' => $data2->icono, 'url' => $data2->link,'active' => '/'.$this->context->route == $data2->link,'template'=>$template);  
-                        }else{
-                            $subMenu[]=array('label' => $data2->nombre, 'icon' => $data2->icono, 'url' => $data2->link,'active' => '/'.$this->context->route == $data2->link);  
-                        }
-                    }
-                    $menu[]= array('label' => $data->nombre, 'icon' => $data->icono,  'seccion' => $data->seccion , 'items' => $subMenu);            
-                }else{
-                    $menu[]= array('label' => $data->nombre, 'icon' => $data->icono,'seccion' => $data->seccion, 'url' => $data->link);            
-                }
-            }
-            //$menu[]= array('label' => 'Gii2', 'icon' => 'file-code-o', 'url' => ['/gii']);
-//
-            //$menu= array_push($menu,'label' => 'Gii2');
-
-            //var_dump($menu);
+          $menu= New Menu_admin;
+          $menu= $menu->getMenufront(0,$this->context->route);
+          //var_dump($menuadmin);
         ?>
         
 
@@ -149,15 +127,20 @@ AppAsset::register($this);
     </a>
 
     <!-- Divider -->
+    <hr class="sidebar-divider my-0">
     
-
+    <li class="nav-item active">
+        <a class="nav-link" href="/frontend/web">
+          <i class="fas fa-fw fa-desktop"></i>
+          <span>Escritorio</span></a>
+      </li>
    
     <?php foreach ($menu as $key => $value) { ?>
       <hr class="sidebar-divider my-0">
-      <?php if (!$value["seccion"]) { ?>
+      <?php if (!$value["parent"]==0) { ?>
       <li class="nav-item active">
         <a class="nav-link" href="<?= URL::base() ?><?= $value["link"] ?>">
-          <i class="fas fa-fw <?= $value["icon"] ?>"></i>
+          <i class=" <?= $value["icon"] ?>"></i>
           <span><?= $value["label"] ?></span></a>
       </li>
       <?php }else{ ?>
@@ -170,7 +153,7 @@ AppAsset::register($this);
       <?php if (@$value["items"]){ foreach ($value["items"] as $keyS => $valueS) { ?>
         <li class="nav-item">
           <a class="nav-link" href="<?= URL::base() ?><?= $valueS["url"] ?>">
-            <i class="fas fa-fw <?= $valueS["icon"] ?>"></i>
+            <i class=" <?= $valueS["icon"] ?>"></i>
             <span><?= $valueS["label"] ?></span></a>
             
         </li>

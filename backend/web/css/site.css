@@ -38,6 +38,19 @@ body {
     background-color: #29aecd;
 }
 
+.card-header {
+    padding: 0.4rem 0.6rem;
+}
+
+
+
+.card-title {
+
+    font-size: 0.95em;
+}
+
+
+
 
 
 .jumbotron {

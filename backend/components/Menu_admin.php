@@ -28,9 +28,9 @@ class Menu_admin extends Component
     public function getMenu($tipo,$array=true,$orderby,$limit,$all=true)
     {
         if ($all){
-            $asiento= Cuentas::find()->where(["isDeleted"=>0])->all();
+            $asiento= Menuadmin::find()->where(["isDeleted"=>0])->all();
         }else{
-            $asiento= Cuentas::find()->where(["isDeleted"=>0])->one();
+            $asiento= Menuadmin::find()->where(["isDeleted"=>0])->one();
         }
     }
 
@@ -42,7 +42,7 @@ class Menu_admin extends Component
 
         }
         //$menu=['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest];
-        $menuModel= Menuadmin::find()->where(["tipo"=>"WEB","idparent"=>"0","estatus"=>"ACTIVO","isDeleted"=>0])->orderBy(["orden"=>SORT_ASC])->all();
+        $menuModel= Menuadmin::find()->where(["tipo"=>"WEB","idparent"=>"0","estatus"=>"ACTIVO","isDeleted"=>0,'tipovista'=>1])->orderBy(["orden"=>SORT_ASC])->all();
         $rolusuario=Rolesusuario::find()->where(["idusuario"=>Yii::$app->user->identity->id,"estatus"=>"ACTIVO","isDeleted"=>0])->one();
         if ($rolusuario){
             $rol=$rolusuario["idrol"];
@@ -86,7 +86,7 @@ class Menu_admin extends Component
                 //var_dump($submodulos);
 
                 if ($permitidomenu){
-                    $subMenuModel= Menuadmin::find()->where(["tipo"=>"WEB","idparent"=>$data->id,"estatus"=>"ACTIVO","isDeleted"=>0])->orderBy(["orden"=>SORT_ASC])->all();
+                    $subMenuModel= Menuadmin::find()->where(["tipo"=>"WEB","idparent"=>$data->id,"estatus"=>"ACTIVO","isDeleted"=>0,'tipovista'=>2])->orderBy(["orden"=>SORT_ASC])->all();
                     if ($subMenuModel)
                     {
                         $subMenu= array();
@@ -140,13 +140,142 @@ class Menu_admin extends Component
             }
         }
         return $menu;
+
+        
+    }
+
+    public function getMenufront($idrol=0,$context='')
+    {
+
+         //$menu=['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest];
+         $menuModel= Menuadmin::find()->where(["tipo"=>"WEB","idparent"=>"0","estatus"=>"ACTIVO","isDeleted"=>0,'tipovista'=>2])->orderBy(["orden"=>SORT_ASC])->all();
+         $rolusuario=Rolesusuario::find()->where(["idusuario"=>Yii::$app->user->identity->id,"estatus"=>"ACTIVO","isDeleted"=>0])->one();
+         if ($rolusuario){
+             $rol=$rolusuario["idrol"];
+             $nombrerol= $rolusuario->idrol0->nombre;
+             $permisos=Rolespermisos::find()->where(["idrol"=>$rol,"estatus"=>"ACTIVO","isDeleted"=>0])->all();
+             $permisosdef=Rolespermisodef::find()->where(["estatus"=>"ACTIVO","isDeleted"=>0])->all();
+             //var_dump($permisosdef);
+             $permitidomenu=false;
+             foreach ($menuModel as $key => $data) {
+                 //$permisosdef=Rolespermisodef::find()->where(["idmenu"=>$data->id,"estatus"=>"ACTIVO","isDeleted"=>0])->one();
+                 //echo $data->id;
+                 //var_dump($permisosdef);
+                 $permitidomenu=false;
+ 
+                 $arrayPermisos= array();
+                 $submodulos= array();
+                 foreach ($permisos as $key => $valueper) {
+                     foreach ($valueper->idmodulo0 as $key => $valueperdet) {
+                         //$submodulos[]=$valueperdet;
+                         //var_dump($valueper);
+                         //echo ($valueperdet["idmenu"].' => '.$data->id.'<br> ');
+                         if ($valueperdet["idmenu"]==$data->id){$permitidomenu=true;}
+                     }
+                     if ($valueper->idsubmodulo){
+                         //echo $valueper->idsubmodulo0->id ;
+                         foreach ($valueper->idsubmodulo0 as $key => $valuepersubdet) {
+                             //echo ($valuepersubdet["nombreint"]. '<br> ');
+ 
+                             $submodulos[]=$valuepersubdet["nombreint"];
+                             //var_dump($valueper);
+                             //echo $valueperdet["nombreint"];
+                         }
+                     }
+ 
+ 
+                 }
+                 foreach ($permisosdef as $key => $valuedef) {
+                     //echo ($valuedef["idmenu"].' => '.$data->id.'<br> ');
+                     if ($valuedef["idmenu"]==$data->id){$permitidomenu=true;}
+                 }
+                 //var_dump($submodulos);
+ 
+                 if ($permitidomenu){
+                     $subMenuModel= Menuadmin::find()->where(["tipo"=>"WEB","idparent"=>$data->id,"estatus"=>"ACTIVO","isDeleted"=>0,'tipovista'=>2])->orderBy(["orden"=>SORT_ASC])->all();
+                     if ($subMenuModel)
+                     {
+                         $subMenu= array();
+                         $contsubmenu=0;
+                         foreach ($subMenuModel as $key => $data2) {
+                             //if ($data2->nombre=="Mensajes"){ $template='<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">123</small></span></a>'; }
+                             //echo ' || '.$data2->rolpermiso. '<br>' ;
+                             //echo ' || '.$data2->nombre. '<br>' ;
+                             if ($data2->nombre=="Mensajes" || $data2->nombre=="mensajes" || $data2->nombre=="notificaciones" || $data2->nombre=="Notificaciones"){
+                                 $contsubmenu++;
+                                 $template='<a href="{url}" class="nav-link " style="width: 100%;">{icon} '.$data2->nombre.' <span class="pull-right-container"><small class="label bg-cyan rounded" style="padding: 2px 5px 2px 5px;">0</small></span></a>';
+                                 $subMenu[]=array('label' => $data2->nombre,'options'=> ['data-class'=>'submenu1','style'=>'padding-left:3%;'], 'icon' => $data2->icono, 'url' => [$data2->link],'active' => '/'.$context == $data2->link,'template'=>$template);
+                             }else{
+                                 $permitidosubmenu=false;
+                                 //echo '||'.$permisonom=$data2->rolpermiso.'||';
+                                 //var_dump ($submodulos);
+                                 if ($data2->rolpermiso){
+                                     foreach ($submodulos as $valsubmodulo) {
+                                         //var_dump($valueper);
+                                         //if ($valueperdet["nombreint"]==$valueper->id){}
+                                         //echo $valueperdet["nombreint"];
+                                         //echo $data2->rolpermiso;
+                                         //echo ' || '.$data2->rolpermiso. ' => '.$valsubmodulo.'<br>' ;
+                                         if ($data2->rolpermiso==$valsubmodulo){$permitidosubmenu=true; }
+                                     }
+ 
+                                     foreach ($permisosdef as $key => $valuedef) {
+                                         //echo ($valuedef["idmenu"].' => '.$data->id.'<br> ');
+                                         if ($valuedef["nombreint"]==$data2->rolpermiso){$permitidosubmenu=true;}
+                                     }
+                                     if ($permitidosubmenu){
+                                         $contsubmenu++;
+                                         //<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-green">0</small></span></a>
+                                         $template='<a href="{url}" class="nav-link " style="width: 100%;">{icon} '.$data2->nombre.' </a>';
+                                         $subMenu[]=array('label' => $data2->nombre,'options'=> ['data-class'=>'submenu2','style'=>'padding-left:3%;'], 'icon' => $data2->icono, 'url' => [$data2->link],'active' => '/'.$context == $data2->link,'template'=>$template);
+                                     }
+                                 }
+                             }
+                         }
+                         if ($contsubmenu!=0){
+                             $menu[]= array('label' => $data->nombre, 'icon' => $data->icono,'options'=> ['data-class'=>'menu1'], 'items' => $subMenu);
+                         }else{
+                             $menu[]= array('label' => $data->nombre, 'icon' => $data->icono,'options'=> ['data-class'=>'menu2'], 'url' => [$data->link]);
+                         }
+                     }else{
+                         $menu[]= array('label' => $data->nombre, 'icon' => $data->icono,'options'=> ['data-class'=>'menu2'], 'url' => [$data->link]);
+                     }
+                 }else{
+                     //$menu[]= array('label' => $data->nombre, 'icon' => $data->icono,'options'=> ['data-class'=>'menu1'], 'items' => $subMenu);
+                 }
+ 
+             }
+         }
+         return $menu;
+        
+ //$menu=['label' => 'Login', 'url' => ['site/login'], 'visible' => Yii::$app->user->isGuest];
+  /*$menuModel= MenuFront::find()->where(["tipo"=>"WEB","idparent"=>"0","estatus"=>"ACTIVO"])->orderBy(["orden"=>SORT_ASC])->all();
+  foreach ($menuModel as $key => $data) {
+      
+      $subMenuModel= MenuFront::find()->where(["tipo"=>"WEB","idparent"=>$data->id,"estatus"=>"ACTIVO"])->orderBy(["orden"=>SORT_ASC])->all();
+      if ($subMenuModel)
+      {
+          $subMenu= array();
+          foreach ($subMenuModel as $key => $data2) {
+              //if ($data2->nombre=="Mensajes"){ $template='<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-yellow">123</small></span></a>'; }
+              if ($data2->nombre=="Mensajes"){
+                  $template='<a href="{url}">{icon} {label}<span class="pull-right-container"><small class="label pull-right bg-green">0</small></span></a>';
+                  $subMenu[]=array('label' => $data2->nombre, 'icon' => $data2->icono, 'url' => $data2->link,'active' => '/'.$this->context->route == $data2->link,'template'=>$template);  
+              }else{
+                  $subMenu[]=array('label' => $data2->nombre, 'icon' => $data2->icono, 'url' => $data2->link,'active' => '/'.$this->context->route == $data2->link);  
+              }
+          }
+          $menu[]= array('label' => $data->nombre, 'icon' => $data->icono,  'seccion' => $data->seccion , 'items' => $subMenu);            
+      }else{
+          $menu[]= array('label' => $data->nombre, 'icon' => $data->icono,'seccion' => $data->seccion, 'url' => $data->link);            
+      }*/
     }
 
     public function getPermiso($id,$condicion=NULL,$itemsret=NULL)
     {
         $result=array();
         if ($id){
-            $result= Cuentas::find()->where(["codigoant"=>$id])->one();
+            $result= Menuadmin::find()->where(["codigoant"=>$id])->one();
             if ($result)
             {
                 $result=$result["codigoant"].' ('.$result["nombre"].')';
