@@ -86,7 +86,7 @@ class Menu_admin extends Component
                 //var_dump($submodulos);
 
                 if ($permitidomenu){
-                    $subMenuModel= Menuadmin::find()->where(["tipo"=>"WEB","idparent"=>$data->id,"estatus"=>"ACTIVO","isDeleted"=>0,'tipovista'=>2])->orderBy(["orden"=>SORT_ASC])->all();
+                    $subMenuModel= Menuadmin::find()->where(["tipo"=>"WEB","idparent"=>$data->id,"estatus"=>"ACTIVO","isDeleted"=>0,'tipovista'=>1])->orderBy(["orden"=>SORT_ASC])->all();
                     if ($subMenuModel)
                     {
                         $subMenu= array();

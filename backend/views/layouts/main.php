@@ -97,7 +97,7 @@ $assetDir = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/admi
 
     }
 .menu-is-opening .nav-treeview .nav-item .nav-link {
-    border-bottom: 1px solid rgba(0,161,64,.3);
+    border-bottom: 1px solid rgba(41,174,205,.3);
     background: rgba(41,174,205,.3);
 }
 
@@ -139,7 +139,7 @@ $assetDir = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/admi
     margin-right: 3px;
 }
 .main-sidebar .sidebar-menu .nav-item a{
-    padding: 12px 5px 12px 15px;
+    padding: 8px 5px 8px 10px;
     display: block;
     border-left: 3px solid transparent;
 }
@@ -152,7 +152,7 @@ $assetDir = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/admi
     }
     .nav-sidebar > li > a
     {
-        padding: 12px 5px 12px 15px;
+        padding: 8px 5px 8px 10px;
         display: block;
         border-left: 3px solid transparent;
     }

@@ -102,7 +102,7 @@ $contenido=$nav->getNavsarray(
     array(
         array('tipo'=>'config','nombre'=>'tabmodpermisos', 'id'=>'tabmodpermisos', 'valor'=>'', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>''),
         array('tipo'=>'tab','nombre'=>'tabback', 'id'=>'tabback', 'titulo'=>'Backend', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$contenidomodtab.$contenidotab),
-        array('tipo'=>'tab','nombre'=>'tabfront', 'id'=>'tabfront', 'titulo'=>'Frontend', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$contenidomodtabfront),
+        array('tipo'=>'tab','nombre'=>'tabfront', 'id'=>'tabfront', 'titulo'=>'Frontend', 'onchange'=>'', 'clase'=>'', 'style'=>'', 'icono'=>'lapiz','boxbody'=>false,'etiqueta'=>'Nombre','leyenda'=>'Nombre del rol ', 'col'=>'col-12 col-md-6', 'adicional'=>'', 'contenido'=>$contenidomodtabfront.$contenidotabfront),
         
     )
 
